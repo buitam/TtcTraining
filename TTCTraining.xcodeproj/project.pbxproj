@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,9 +16,7 @@
 		18A1E52B236015AC005CDBC4 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A1E52A236015AC005CDBC4 /* HistoryViewController.swift */; };
 		18A1E52D236015B7005CDBC4 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A1E52C236015B7005CDBC4 /* SettingViewController.swift */; };
 		18A1E5302360474B005CDBC4 /* DangNhapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A1E52E2360474B005CDBC4 /* DangNhapVC.swift */; };
-		18A1E5312360474B005CDBC4 /* DangNhapVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A1E52F2360474B005CDBC4 /* DangNhapVC.xib */; };
 		18A1E5342360475C005CDBC4 /* DangKiVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A1E5322360475C005CDBC4 /* DangKiVC.swift */; };
-		18A1E5352360475C005CDBC4 /* DangKiVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A1E5332360475C005CDBC4 /* DangKiVC.xib */; };
 		18A1E537236047AF005CDBC4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A1E536236047AF005CDBC4 /* LoginViewController.swift */; };
 		18A1E539236054F5005CDBC4 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A1E538236054F5005CDBC4 /* Info.swift */; };
 		18A1E53C2361535F005CDBC4 /* BannerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A1E53A2361535F005CDBC4 /* BannerCollectionViewCell.swift */; };
@@ -31,6 +29,7 @@
 		18A1E54D2361C4FA005CDBC4 /* AddFriendCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A1E54B2361C4FA005CDBC4 /* AddFriendCollectionViewCell.xib */; };
 		18B324852361F3E20008DF0C /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B324832361F3E20008DF0C /* HomeTableViewCell.swift */; };
 		18B324862361F3E20008DF0C /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B324842361F3E20008DF0C /* HomeTableViewCell.xib */; };
+		98CCFB12F9C087C435CBD42F /* Pods_TTCTraining.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC18C3B54891E26E820AB146 /* Pods_TTCTraining.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,9 +44,7 @@
 		18A1E52A236015AC005CDBC4 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		18A1E52C236015B7005CDBC4 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		18A1E52E2360474B005CDBC4 /* DangNhapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DangNhapVC.swift; sourceTree = "<group>"; };
-		18A1E52F2360474B005CDBC4 /* DangNhapVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DangNhapVC.xib; sourceTree = "<group>"; };
 		18A1E5322360475C005CDBC4 /* DangKiVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DangKiVC.swift; sourceTree = "<group>"; };
-		18A1E5332360475C005CDBC4 /* DangKiVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DangKiVC.xib; sourceTree = "<group>"; };
 		18A1E536236047AF005CDBC4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		18A1E538236054F5005CDBC4 /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
 		18A1E53A2361535F005CDBC4 /* BannerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -60,6 +57,9 @@
 		18A1E54B2361C4FA005CDBC4 /* AddFriendCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddFriendCollectionViewCell.xib; sourceTree = "<group>"; };
 		18B324832361F3E20008DF0C /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		18B324842361F3E20008DF0C /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
+		1CD3AE4F87DF56A2FF0D4C48 /* Pods-TTCTraining.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTCTraining.release.xcconfig"; path = "Target Support Files/Pods-TTCTraining/Pods-TTCTraining.release.xcconfig"; sourceTree = "<group>"; };
+		CC93AE7ABAB2552630CCB6A3 /* Pods-TTCTraining.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTCTraining.debug.xcconfig"; path = "Target Support Files/Pods-TTCTraining/Pods-TTCTraining.debug.xcconfig"; sourceTree = "<group>"; };
+		EC18C3B54891E26E820AB146 /* Pods_TTCTraining.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TTCTraining.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98CCFB12F9C087C435CBD42F /* Pods_TTCTraining.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +79,8 @@
 			children = (
 				18A1E51523600C8E005CDBC4 /* TTCTraining */,
 				18A1E51423600C8E005CDBC4 /* Products */,
+				61D59EFC0D6BDC2888FF749D /* Pods */,
+				66DD0815F20417B4FB68E0EE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,10 +107,8 @@
 				18A1E52A236015AC005CDBC4 /* HistoryViewController.swift */,
 				18A1E52C236015B7005CDBC4 /* SettingViewController.swift */,
 				18A1E52E2360474B005CDBC4 /* DangNhapVC.swift */,
-				18A1E52F2360474B005CDBC4 /* DangNhapVC.xib */,
 				18A1E536236047AF005CDBC4 /* LoginViewController.swift */,
 				18A1E5322360475C005CDBC4 /* DangKiVC.swift */,
-				18A1E5332360475C005CDBC4 /* DangKiVC.xib */,
 				18A1E538236054F5005CDBC4 /* Info.swift */,
 				18A1E53A2361535F005CDBC4 /* BannerCollectionViewCell.swift */,
 				18A1E53B2361535F005CDBC4 /* BannerCollectionViewCell.xib */,
@@ -121,6 +122,23 @@
 			path = TTCTraining;
 			sourceTree = "<group>";
 		};
+		61D59EFC0D6BDC2888FF749D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CC93AE7ABAB2552630CCB6A3 /* Pods-TTCTraining.debug.xcconfig */,
+				1CD3AE4F87DF56A2FF0D4C48 /* Pods-TTCTraining.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		66DD0815F20417B4FB68E0EE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EC18C3B54891E26E820AB146 /* Pods_TTCTraining.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -128,9 +146,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 18A1E52523600C8F005CDBC4 /* Build configuration list for PBXNativeTarget "TTCTraining" */;
 			buildPhases = (
+				CA8EEC8FB1AAC84082A39F68 /* [CP] Check Pods Manifest.lock */,
 				18A1E50F23600C8E005CDBC4 /* Sources */,
 				18A1E51023600C8E005CDBC4 /* Frameworks */,
 				18A1E51123600C8E005CDBC4 /* Resources */,
+				662C5A7E974210BCBEA04D0D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -181,8 +201,6 @@
 			files = (
 				18A1E52123600C8F005CDBC4 /* LaunchScreen.storyboard in Resources */,
 				18A1E5492361B46C005CDBC4 /* MessTableViewCell.xib in Resources */,
-				18A1E5352360475C005CDBC4 /* DangKiVC.xib in Resources */,
-				18A1E5312360474B005CDBC4 /* DangNhapVC.xib in Resources */,
 				18A1E51E23600C8F005CDBC4 /* Assets.xcassets in Resources */,
 				18A1E54D2361C4FA005CDBC4 /* AddFriendCollectionViewCell.xib in Resources */,
 				18A1E53D2361535F005CDBC4 /* BannerCollectionViewCell.xib in Resources */,
@@ -193,6 +211,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		662C5A7E974210BCBEA04D0D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TTCTraining/Pods-TTCTraining-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TTCTraining/Pods-TTCTraining-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TTCTraining/Pods-TTCTraining-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CA8EEC8FB1AAC84082A39F68 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TTCTraining-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		18A1E50F23600C8E005CDBC4 /* Sources */ = {
@@ -356,6 +416,7 @@
 		};
 		18A1E52623600C8F005CDBC4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC93AE7ABAB2552630CCB6A3 /* Pods-TTCTraining.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -373,6 +434,7 @@
 		};
 		18A1E52723600C8F005CDBC4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1CD3AE4F87DF56A2FF0D4C48 /* Pods-TTCTraining.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
