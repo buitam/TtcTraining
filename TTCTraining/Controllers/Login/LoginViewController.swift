@@ -9,18 +9,11 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-    static var index:Int = 0
-    @IBOutlet weak var contentView: UIView!
-    
-    @IBAction func btnCancel(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    @IBOutlet weak var segmentControl: UISegmentedControl!
-   
     var controller: LoginPageView?
-    @IBAction func segment(_ sender: Any) {
-        controller?.didChangePage(segmentControl.selectedSegmentIndex)
-    }
+    static var index:Int = 0
+    
+    @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var segmentControl: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +21,13 @@ class LoginViewController: UIViewController {
         addChild(controller!)
         contentView.addSubview(controller!.view)
         controller!.didMove(toParent: self)
-
+    }
+    
+    @IBAction func btnCancel(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func segment(_ sender: Any) {
+        controller?.didChangePage(segmentControl.selectedSegmentIndex)
     }
 }

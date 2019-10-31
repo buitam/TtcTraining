@@ -8,18 +8,12 @@
 
 import UIKit
 import SVProgressHUD
-protocol ThongTinUserDelegate {
-    func LayThongTinUser(TenUser tenUser:String, Pass pass:String)
-}
-
 class DangNhapVC: UIViewController {
-//kai bao 1 bien delegate
-    var delegate: ThongTinUserDelegate?
-
     @IBOutlet weak var btnLogin: UIButton!
     @IBOutlet weak var loginWithGoogle: UIButton!
     @IBOutlet weak var txtpassword: UITextField!
     @IBOutlet weak var txtUserName: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         btnLogin.cornerRadius(5)
@@ -34,14 +28,11 @@ class DangNhapVC: UIViewController {
         SVProgressHUD.show()
         SVProgressHUD.dismiss(withDelay: 1.5) {
             if(self.txtpassword.text == "123" && self.txtUserName.text == "ttc") {
-                let scr = self.storyboard?.instantiateViewController(withIdentifier: "Home") as! ViewController
-             
-             
-                if self.delegate != nil {
-                    self.delegate?.LayThongTinUser(TenUser: self.txtUserName.text!, Pass: self.txtpassword.text!)
-                }
+                let scr = self.storyboard?.instantiateViewController(withIdentifier: "Tabbar") as! TabbarViewController
                 self.present(scr, animated: true, completion: {
                     let popUp = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PopUp") as! PopUpViewController
+                    popUp.ten = self.txtUserName.text!
+                    popUp.password = self.txtpassword.text!
                     scr.addChild(popUp)
                     popUp.view.frame = scr.view.frame
                     scr.view.addSubview(popUp.view)

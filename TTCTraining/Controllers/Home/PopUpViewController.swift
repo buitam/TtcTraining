@@ -8,14 +8,9 @@
 
 import UIKit
 
-class PopUpViewController: UIViewController, ThongTinUserDelegate {
+class PopUpViewController: UIViewController {
     var ten:String = ""
     var password:String = ""
-    
-        func LayThongTinUser(TenUser tenUser: String, Pass pass: String) {
-        password = pass
-        ten = tenUser
-        }
     @IBOutlet weak var lblTenDangNhap: UILabel!
     @IBOutlet weak var lblMatKhau: UILabel!
     @IBOutlet weak var btnClose: UIButton!
@@ -28,10 +23,6 @@ class PopUpViewController: UIViewController, ThongTinUserDelegate {
         btnClose.cornerRadius(5)
         contentView.cornerRadius(10)
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.4)
-
-        // Do any additional setup after loading the view.
-        let scr = self.storyboard?.instantiateViewController(withIdentifier: "DangNhap") as!  DangNhapVC
-        scr.delegate = self
         lblTenDangNhap.text = ten
         lblMatKhau.text = password
         

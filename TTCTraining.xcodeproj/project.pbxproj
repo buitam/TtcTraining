@@ -12,6 +12,7 @@
 		186236B3236A30B60057B5C8 /* TinNhanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186236B2236A30B60057B5C8 /* TinNhanViewController.swift */; };
 		186236B5236A30DD0057B5C8 /* BanBeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186236B4236A30DD0057B5C8 /* BanBeViewController.swift */; };
 		186236B7236A446E0057B5C8 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186236B6236A446E0057B5C8 /* PopUpViewController.swift */; };
+		18623706236B97610057B5C8 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18623705236B97610057B5C8 /* TabbarViewController.swift */; };
 		18A1E51723600C8E005CDBC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A1E51623600C8E005CDBC4 /* AppDelegate.swift */; };
 		18A1E51923600C8E005CDBC4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A1E51823600C8E005CDBC4 /* ViewController.swift */; };
 		18A1E51C23600C8E005CDBC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18A1E51A23600C8E005CDBC4 /* Main.storyboard */; };
@@ -43,6 +44,7 @@
 		186236B2236A30B60057B5C8 /* TinNhanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinNhanViewController.swift; sourceTree = "<group>"; };
 		186236B4236A30DD0057B5C8 /* BanBeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanBeViewController.swift; sourceTree = "<group>"; };
 		186236B6236A446E0057B5C8 /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
+		18623705236B97610057B5C8 /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
 		18A1E51323600C8E005CDBC4 /* TTCTraining.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TTCTraining.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18A1E51623600C8E005CDBC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18A1E51823600C8E005CDBC4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +86,107 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		186236F9236B90380057B5C8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				18A1E538236054F5005CDBC4 /* Info.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		186236FA236B90470057B5C8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				18623702236B92AE0057B5C8 /* CollectionViewCell */,
+				18623701236B92A20057B5C8 /* TableViewCell */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		186236FB236B905E0057B5C8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				18623700236B923C0057B5C8 /* Login */,
+				186236FF236B92220057B5C8 /* Setting */,
+				186236FE236B921A0057B5C8 /* Home */,
+				186236FD236B92110057B5C8 /* Message */,
+				186236FC236B91F40057B5C8 /* History */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		186236FC236B91F40057B5C8 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				18A1E52A236015AC005CDBC4 /* HistoryViewController.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		186236FD236B92110057B5C8 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				18A1E5282360158A005CDBC4 /* MessageViewController.swift */,
+				186236B0236A30900057B5C8 /* MessagePageView.swift */,
+				186236B2236A30B60057B5C8 /* TinNhanViewController.swift */,
+				186236B4236A30DD0057B5C8 /* BanBeViewController.swift */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		186236FE236B921A0057B5C8 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				186236B6236A446E0057B5C8 /* PopUpViewController.swift */,
+				18A1E51823600C8E005CDBC4 /* ViewController.swift */,
+				18623705236B97610057B5C8 /* TabbarViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		186236FF236B92220057B5C8 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				18A1E52C236015B7005CDBC4 /* SettingViewController.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		18623700236B923C0057B5C8 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				18A1E536236047AF005CDBC4 /* LoginViewController.swift */,
+				186236AE236934B40057B5C8 /* LoginPageView.swift */,
+				18A1E5322360475C005CDBC4 /* DangKiVC.swift */,
+				18A1E52E2360474B005CDBC4 /* DangNhapVC.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		18623701236B92A20057B5C8 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				18A1E53E23619E99005CDBC4 /* HistoryTableViewCell.swift */,
+				18A1E53F23619E99005CDBC4 /* HistoryTableViewCell.xib */,
+				18A1E5462361B46C005CDBC4 /* MessTableViewCell.swift */,
+				18A1E5472361B46C005CDBC4 /* MessTableViewCell.xib */,
+				18B324832361F3E20008DF0C /* HomeTableViewCell.swift */,
+				18B324842361F3E20008DF0C /* HomeTableViewCell.xib */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		18623702236B92AE0057B5C8 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				18A1E54A2361C4FA005CDBC4 /* AddFriendCollectionViewCell.swift */,
+				18A1E54B2361C4FA005CDBC4 /* AddFriendCollectionViewCell.xib */,
+				18A1E53A2361535F005CDBC4 /* BannerCollectionViewCell.swift */,
+				18A1E53B2361535F005CDBC4 /* BannerCollectionViewCell.xib */,
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
 		18A1E50A23600C8E005CDBC4 = {
 			isa = PBXGroup;
 			children = (
@@ -105,34 +208,14 @@
 		18A1E51523600C8E005CDBC4 /* TTCTraining */ = {
 			isa = PBXGroup;
 			children = (
+				186236FB236B905E0057B5C8 /* Controllers */,
+				186236FA236B90470057B5C8 /* Views */,
+				186236F9236B90380057B5C8 /* Models */,
 				18A1E51623600C8E005CDBC4 /* AppDelegate.swift */,
-				18A1E51823600C8E005CDBC4 /* ViewController.swift */,
 				18A1E51A23600C8E005CDBC4 /* Main.storyboard */,
-				18A1E54A2361C4FA005CDBC4 /* AddFriendCollectionViewCell.swift */,
-				18A1E54B2361C4FA005CDBC4 /* AddFriendCollectionViewCell.xib */,
 				18A1E51D23600C8F005CDBC4 /* Assets.xcassets */,
 				18A1E51F23600C8F005CDBC4 /* LaunchScreen.storyboard */,
 				18A1E52223600C8F005CDBC4 /* Info.plist */,
-				18A1E5282360158A005CDBC4 /* MessageViewController.swift */,
-				18A1E52A236015AC005CDBC4 /* HistoryViewController.swift */,
-				18A1E52C236015B7005CDBC4 /* SettingViewController.swift */,
-				18A1E52E2360474B005CDBC4 /* DangNhapVC.swift */,
-				186236B6236A446E0057B5C8 /* PopUpViewController.swift */,
-				18A1E536236047AF005CDBC4 /* LoginViewController.swift */,
-				186236AE236934B40057B5C8 /* LoginPageView.swift */,
-				186236B0236A30900057B5C8 /* MessagePageView.swift */,
-				186236B2236A30B60057B5C8 /* TinNhanViewController.swift */,
-				186236B4236A30DD0057B5C8 /* BanBeViewController.swift */,
-				18A1E5322360475C005CDBC4 /* DangKiVC.swift */,
-				18A1E538236054F5005CDBC4 /* Info.swift */,
-				18A1E53A2361535F005CDBC4 /* BannerCollectionViewCell.swift */,
-				18A1E53B2361535F005CDBC4 /* BannerCollectionViewCell.xib */,
-				18A1E53E23619E99005CDBC4 /* HistoryTableViewCell.swift */,
-				18A1E53F23619E99005CDBC4 /* HistoryTableViewCell.xib */,
-				18A1E5462361B46C005CDBC4 /* MessTableViewCell.swift */,
-				18A1E5472361B46C005CDBC4 /* MessTableViewCell.xib */,
-				18B324832361F3E20008DF0C /* HomeTableViewCell.swift */,
-				18B324842361F3E20008DF0C /* HomeTableViewCell.xib */,
 			);
 			path = TTCTraining;
 			sourceTree = "<group>";
@@ -282,6 +365,7 @@
 				18A1E539236054F5005CDBC4 /* Info.swift in Sources */,
 				18A1E5292360158A005CDBC4 /* MessageViewController.swift in Sources */,
 				18A1E537236047AF005CDBC4 /* LoginViewController.swift in Sources */,
+				18623706236B97610057B5C8 /* TabbarViewController.swift in Sources */,
 				18A1E54C2361C4FA005CDBC4 /* AddFriendCollectionViewCell.swift in Sources */,
 				186236AF236934B40057B5C8 /* LoginPageView.swift in Sources */,
 				186236B3236A30B60057B5C8 /* TinNhanViewController.swift in Sources */,

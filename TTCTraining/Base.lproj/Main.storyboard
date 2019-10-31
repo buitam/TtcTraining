@@ -527,10 +527,10 @@
             </objects>
             <point key="canvasLocation" x="-2143.4782608695655" y="109.82142857142857"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tabbar View Controller-->
         <scene sceneID="RNo-YG-Hdh">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="SzJ-YD-hhC" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="Tabbar" automaticallyAdjustsScrollViewInsets="NO" id="SzJ-YD-hhC" customClass="TabbarViewController" customModule="TTCTraining" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jrW-MJ-eXG">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
