@@ -10,8 +10,10 @@ import UIKit
 
 class DangKiVC: UIViewController {
 
+    @IBOutlet weak var btnDangKi: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        btnDangKi.cornerRadius(5)
 
         // Do any additional setup after loading the view.
     }

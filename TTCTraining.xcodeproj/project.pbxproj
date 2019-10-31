@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		186236AF236934B40057B5C8 /* LoginPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186236AE236934B40057B5C8 /* LoginPageView.swift */; };
+		186236B1236A30900057B5C8 /* MessagePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186236B0236A30900057B5C8 /* MessagePageView.swift */; };
+		186236B3236A30B60057B5C8 /* TinNhanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186236B2236A30B60057B5C8 /* TinNhanViewController.swift */; };
+		186236B5236A30DD0057B5C8 /* BanBeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186236B4236A30DD0057B5C8 /* BanBeViewController.swift */; };
+		186236B7236A446E0057B5C8 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186236B6236A446E0057B5C8 /* PopUpViewController.swift */; };
 		18A1E51723600C8E005CDBC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A1E51623600C8E005CDBC4 /* AppDelegate.swift */; };
 		18A1E51923600C8E005CDBC4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A1E51823600C8E005CDBC4 /* ViewController.swift */; };
 		18A1E51C23600C8E005CDBC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18A1E51A23600C8E005CDBC4 /* Main.storyboard */; };
@@ -33,6 +38,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		186236AE236934B40057B5C8 /* LoginPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageView.swift; sourceTree = "<group>"; };
+		186236B0236A30900057B5C8 /* MessagePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagePageView.swift; sourceTree = "<group>"; };
+		186236B2236A30B60057B5C8 /* TinNhanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinNhanViewController.swift; sourceTree = "<group>"; };
+		186236B4236A30DD0057B5C8 /* BanBeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanBeViewController.swift; sourceTree = "<group>"; };
+		186236B6236A446E0057B5C8 /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 		18A1E51323600C8E005CDBC4 /* TTCTraining.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TTCTraining.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18A1E51623600C8E005CDBC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18A1E51823600C8E005CDBC4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -107,7 +117,12 @@
 				18A1E52A236015AC005CDBC4 /* HistoryViewController.swift */,
 				18A1E52C236015B7005CDBC4 /* SettingViewController.swift */,
 				18A1E52E2360474B005CDBC4 /* DangNhapVC.swift */,
+				186236B6236A446E0057B5C8 /* PopUpViewController.swift */,
 				18A1E536236047AF005CDBC4 /* LoginViewController.swift */,
+				186236AE236934B40057B5C8 /* LoginPageView.swift */,
+				186236B0236A30900057B5C8 /* MessagePageView.swift */,
+				186236B2236A30B60057B5C8 /* TinNhanViewController.swift */,
+				186236B4236A30DD0057B5C8 /* BanBeViewController.swift */,
 				18A1E5322360475C005CDBC4 /* DangKiVC.swift */,
 				18A1E538236054F5005CDBC4 /* Info.swift */,
 				18A1E53A2361535F005CDBC4 /* BannerCollectionViewCell.swift */,
@@ -262,15 +277,20 @@
 				18A1E52D236015B7005CDBC4 /* SettingViewController.swift in Sources */,
 				18A1E5342360475C005CDBC4 /* DangKiVC.swift in Sources */,
 				18B324852361F3E20008DF0C /* HomeTableViewCell.swift in Sources */,
+				186236B5236A30DD0057B5C8 /* BanBeViewController.swift in Sources */,
 				18A1E51923600C8E005CDBC4 /* ViewController.swift in Sources */,
 				18A1E539236054F5005CDBC4 /* Info.swift in Sources */,
 				18A1E5292360158A005CDBC4 /* MessageViewController.swift in Sources */,
 				18A1E537236047AF005CDBC4 /* LoginViewController.swift in Sources */,
 				18A1E54C2361C4FA005CDBC4 /* AddFriendCollectionViewCell.swift in Sources */,
+				186236AF236934B40057B5C8 /* LoginPageView.swift in Sources */,
+				186236B3236A30B60057B5C8 /* TinNhanViewController.swift in Sources */,
 				18A1E51723600C8E005CDBC4 /* AppDelegate.swift in Sources */,
 				18A1E52B236015AC005CDBC4 /* HistoryViewController.swift in Sources */,
 				18A1E54023619E99005CDBC4 /* HistoryTableViewCell.swift in Sources */,
+				186236B7236A446E0057B5C8 /* PopUpViewController.swift in Sources */,
 				18A1E5482361B46C005CDBC4 /* MessTableViewCell.swift in Sources */,
+				186236B1236A30900057B5C8 /* MessagePageView.swift in Sources */,
 				18A1E53C2361535F005CDBC4 /* BannerCollectionViewCell.swift in Sources */,
 				18A1E5302360474B005CDBC4 /* DangNhapVC.swift in Sources */,
 			);

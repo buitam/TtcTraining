@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     var listInfo:[Info] = [];
     
     @IBOutlet weak var tableView: UITableView!
@@ -39,8 +39,20 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 110
     }
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 15
+
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let lastElement = listInfo.count - 1
+        if indexPath.row == lastElement {
+            loadMoreData()
+        }
+    }
+    func loadMoreData(){
+        for i in 0..<5 {
+            let lastItem = listInfo.last!
+            let newItem = listInfo[i]
+            listInfo.append(newItem)
+        }
+        tableView.reloadData()
     }
     
 

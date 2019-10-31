@@ -1,20 +1,24 @@
 PODS:
+  - CenteredCollectionView (2.2.1)
   - FSPagerView (0.8.3)
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
+  - CenteredCollectionView
   - FSPagerView
   - SVProgressHUD
 
 SPEC REPOS:
   trunk:
+    - CenteredCollectionView
     - FSPagerView
     - SVProgressHUD
 
 SPEC CHECKSUMS:
+  CenteredCollectionView: ba6e45fb7774627890621d73c8dd7dbd33391da9
   FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: b538c44063f6e19240012766d82751caf70a7717
+PODFILE CHECKSUM: 0cf27a527f196de8d8e4bc8309f1513abae7c726
 
 COCOAPODS: 1.8.4

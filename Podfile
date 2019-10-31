@@ -5,6 +5,7 @@ target 'TTCTraining' do
 use_frameworks!
 pod 'SVProgressHUD'
 pod 'FSPagerView'
+pod 'CenteredCollectionView'
 
 end
 

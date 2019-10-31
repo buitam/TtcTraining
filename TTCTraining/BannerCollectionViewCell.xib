@@ -24,6 +24,10 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="p6s-0z-iL5">
                                 <rect key="frame" x="0.0" y="0.0" width="317" height="242"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="317" id="6Mu-rm-8Vo"/>
+                                    <constraint firstAttribute="height" constant="242" id="am2-bW-vWf"/>
+                                </constraints>
                             </imageView>
                             <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wCm-pR-Yhn">
                                 <rect key="frame" x="0.0" y="142" width="317" height="100"/>
@@ -103,7 +107,11 @@
                             <constraint firstAttribute="bottom" secondItem="wvm-EY-q1S" secondAttribute="bottom" id="jCG-UV-PCi"/>
                             <constraint firstItem="p6s-0z-iL5" firstAttribute="leading" secondItem="9CN-ir-QK1" secondAttribute="leading" id="jYI-Cv-Daz"/>
                             <constraint firstItem="p6s-0z-iL5" firstAttribute="top" secondItem="9CN-ir-QK1" secondAttribute="top" id="jvV-z5-jdp"/>
+                            <constraint firstAttribute="trailing" secondItem="p6s-0z-iL5" secondAttribute="trailing" id="mDg-vT-Jkw"/>
+                            <constraint firstItem="p6s-0z-iL5" firstAttribute="top" secondItem="9CN-ir-QK1" secondAttribute="top" id="q1D-2a-LoS"/>
+                            <constraint firstItem="p6s-0z-iL5" firstAttribute="leading" secondItem="9CN-ir-QK1" secondAttribute="leading" id="r6P-eJ-nFk"/>
                             <constraint firstAttribute="trailing" secondItem="wCm-pR-Yhn" secondAttribute="trailing" id="u3F-5D-vvz"/>
+                            <constraint firstAttribute="bottom" secondItem="p6s-0z-iL5" secondAttribute="bottom" id="v3M-w6-Xc4"/>
                             <constraint firstAttribute="trailing" secondItem="p6s-0z-iL5" secondAttribute="trailing" id="xUC-7R-icD"/>
                             <constraint firstAttribute="bottom" secondItem="wCm-pR-Yhn" secondAttribute="bottom" id="y8L-Ce-cCV"/>
                         </constraints>
