@@ -42,12 +42,16 @@ class DangNhapVC: UIViewController {
                 //                    popUp.didMove(toParent: scr)
                 //                })
                                 
-                            } else {
-                                let alert: UIAlertController = UIAlertController(title: "Thông báo", message: "Tên đăng nhập hoặc mật khẩu không chính xác", preferredStyle: .alert)
-                                let btn_Ok: UIAlertAction = UIAlertAction(title: "OK", style: .destructive, handler: nil)
-                                alert.addAction(btn_Ok)
-                                self.present(alert, animated: true, completion: nil)
                             }
+            else{
+                AlertView(alertTitle: "Thất bại", sub: nil, alertMainText: "Sai tên tài khoản hoặc mật khẩu.", haveCancel: false, didAccept: nil, didCancel: nil).show()
+            }
+//                            else {
+//                                let alert: UIAlertController = UIAlertController(title: "Thông báo", message: "Tên đăng nhập hoặc mật khẩu không chính xác", preferredStyle: .alert)
+//                                let btn_Ok: UIAlertAction = UIAlertAction(title: "OK", style: .destructive, handler: nil)
+//                                alert.addAction(btn_Ok)
+//                                self.present(alert, animated: true, completion: nil)
+//                            }
                         }
 
                     }

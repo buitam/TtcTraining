@@ -38,6 +38,11 @@
 		323B0BBB24D807D1003C28E4 /* ColorsConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323B0BBA24D807D1003C28E4 /* ColorsConst.swift */; };
 		323B0BBD24D807FE003C28E4 /* StringsConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323B0BBC24D807FE003C28E4 /* StringsConst.swift */; };
 		323B0BBF24D8080A003C28E4 /* VCNameConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323B0BBE24D8080A003C28E4 /* VCNameConst.swift */; };
+		323B0BDB24D81B67003C28E4 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323B0BDA24D81B67003C28E4 /* UIViewExtension.swift */; };
+		323B0BDD24D81BB8003C28E4 /* NumbersConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323B0BDC24D81BB8003C28E4 /* NumbersConst.swift */; };
+		323B0BDF24D81C1D003C28E4 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323B0BDE24D81C1D003C28E4 /* StringExtension.swift */; };
+		323B0BE324D838EB003C28E4 /* AlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 323B0BE224D838EB003C28E4 /* AlertView.xib */; };
+		323B0BE924D83D33003C28E4 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323B0BE824D83D33003C28E4 /* AlertView.swift */; };
 		98CCFB12F9C087C435CBD42F /* Pods_TTCTraining.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC18C3B54891E26E820AB146 /* Pods_TTCTraining.framework */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +81,11 @@
 		323B0BBA24D807D1003C28E4 /* ColorsConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsConst.swift; sourceTree = "<group>"; };
 		323B0BBC24D807FE003C28E4 /* StringsConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringsConst.swift; sourceTree = "<group>"; };
 		323B0BBE24D8080A003C28E4 /* VCNameConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCNameConst.swift; sourceTree = "<group>"; };
+		323B0BDA24D81B67003C28E4 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		323B0BDC24D81BB8003C28E4 /* NumbersConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersConst.swift; sourceTree = "<group>"; };
+		323B0BDE24D81C1D003C28E4 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		323B0BE224D838EB003C28E4 /* AlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertView.xib; sourceTree = "<group>"; };
+		323B0BE824D83D33003C28E4 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		CC93AE7ABAB2552630CCB6A3 /* Pods-TTCTraining.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTCTraining.debug.xcconfig"; path = "Target Support Files/Pods-TTCTraining/Pods-TTCTraining.debug.xcconfig"; sourceTree = "<group>"; };
 		EC18C3B54891E26E820AB146 /* Pods_TTCTraining.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TTCTraining.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -103,6 +113,8 @@
 		186236FA236B90470057B5C8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				323B0BE224D838EB003C28E4 /* AlertView.xib */,
+				323B0BE824D83D33003C28E4 /* AlertView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -214,6 +226,8 @@
 		323B0BB524D806B9003C28E4 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				323B0BDA24D81B67003C28E4 /* UIViewExtension.swift */,
+				323B0BDE24D81C1D003C28E4 /* StringExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -250,6 +264,7 @@
 				323B0BBA24D807D1003C28E4 /* ColorsConst.swift */,
 				323B0BBC24D807FE003C28E4 /* StringsConst.swift */,
 				323B0BBE24D8080A003C28E4 /* VCNameConst.swift */,
+				323B0BDC24D81BB8003C28E4 /* NumbersConst.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -386,6 +401,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				323B0BE324D838EB003C28E4 /* AlertView.xib in Resources */,
 				18A1E52123600C8F005CDBC4 /* LaunchScreen.storyboard in Resources */,
 				18A1E5492361B46C005CDBC4 /* MessTableViewCell.xib in Resources */,
 				18A1E51E23600C8F005CDBC4 /* Assets.xcassets in Resources */,
@@ -448,13 +464,16 @@
 			files = (
 				18A1E52D236015B7005CDBC4 /* SettingViewController.swift in Sources */,
 				18A1E5342360475C005CDBC4 /* DangKiVC.swift in Sources */,
+				323B0BE924D83D33003C28E4 /* AlertView.swift in Sources */,
 				18B324852361F3E20008DF0C /* HomeTableViewCell.swift in Sources */,
 				186236B5236A30DD0057B5C8 /* BanBeViewController.swift in Sources */,
 				18A1E51923600C8E005CDBC4 /* ViewController.swift in Sources */,
+				323B0BDF24D81C1D003C28E4 /* StringExtension.swift in Sources */,
 				18A1E539236054F5005CDBC4 /* Info.swift in Sources */,
 				18A1E5292360158A005CDBC4 /* MessageViewController.swift in Sources */,
 				18A1E537236047AF005CDBC4 /* LoginViewController.swift in Sources */,
 				18623706236B97610057B5C8 /* TabbarViewController.swift in Sources */,
+				323B0BDD24D81BB8003C28E4 /* NumbersConst.swift in Sources */,
 				323B0BBF24D8080A003C28E4 /* VCNameConst.swift in Sources */,
 				323B0BBB24D807D1003C28E4 /* ColorsConst.swift in Sources */,
 				18A1E54C2361C4FA005CDBC4 /* AddFriendCollectionViewCell.swift in Sources */,
@@ -465,6 +484,7 @@
 				18A1E52B236015AC005CDBC4 /* HistoryViewController.swift in Sources */,
 				18A1E54023619E99005CDBC4 /* HistoryTableViewCell.swift in Sources */,
 				186236B7236A446E0057B5C8 /* PopUpViewController.swift in Sources */,
+				323B0BDB24D81B67003C28E4 /* UIViewExtension.swift in Sources */,
 				18A1E5482361B46C005CDBC4 /* MessTableViewCell.swift in Sources */,
 				186236B1236A30900057B5C8 /* MessagePageView.swift in Sources */,
 				18A1E53C2361535F005CDBC4 /* BannerCollectionViewCell.swift in Sources */,

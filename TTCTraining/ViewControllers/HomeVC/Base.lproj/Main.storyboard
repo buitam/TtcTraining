@@ -47,7 +47,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e9T-8d-hj0">
                                                 <rect key="frame" x="319" y="25" width="70" height="35"/>
-                                                <color key="backgroundColor" red="0.93966239689999997" green="0.6668637395" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="0.91610007979999997" green="0.6800907276" blue="0.16012009960000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                                 <state key="normal" title="Post">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -636,7 +636,7 @@
                                         <subviews>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="iAu-Va-CoD">
                                                 <rect key="frame" x="134.5" y="56" width="145" height="29"/>
-                                                <color key="backgroundColor" red="0.93966239689999997" green="0.6668637395" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="0.93362483421750664" green="0.74720972904240968" blue="0.0040101510301010154" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="28" id="hWB-e4-vqS"/>
                                                 </constraints>
@@ -820,6 +820,7 @@
         <!--Home-->
         <scene sceneID="QMt-tx-zGX">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w7Z-Lz-o7E" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8qr-NF-433" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="home" id="NXo-cm-rWo"/>
                     <toolbarItems/>
@@ -832,7 +833,6 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="O38-Ah-jWR"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="w7Z-Lz-o7E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-294.20289855072468" y="107.8125"/>
         </scene>
