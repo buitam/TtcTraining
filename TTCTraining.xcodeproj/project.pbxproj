@@ -43,6 +43,8 @@
 		323B0BDF24D81C1D003C28E4 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323B0BDE24D81C1D003C28E4 /* StringExtension.swift */; };
 		323B0BE324D838EB003C28E4 /* AlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 323B0BE224D838EB003C28E4 /* AlertView.xib */; };
 		323B0BE924D83D33003C28E4 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323B0BE824D83D33003C28E4 /* AlertView.swift */; };
+		323B0C1C24D972A5003C28E4 /* ButtonGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323B0C1B24D972A5003C28E4 /* ButtonGradient.swift */; };
+		323B0C1E24D972D0003C28E4 /* TouchEffectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323B0C1D24D972D0003C28E4 /* TouchEffectButton.swift */; };
 		98CCFB12F9C087C435CBD42F /* Pods_TTCTraining.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC18C3B54891E26E820AB146 /* Pods_TTCTraining.framework */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +88,8 @@
 		323B0BDE24D81C1D003C28E4 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		323B0BE224D838EB003C28E4 /* AlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertView.xib; sourceTree = "<group>"; };
 		323B0BE824D83D33003C28E4 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		323B0C1B24D972A5003C28E4 /* ButtonGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonGradient.swift; sourceTree = "<group>"; };
+		323B0C1D24D972D0003C28E4 /* TouchEffectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchEffectButton.swift; sourceTree = "<group>"; };
 		CC93AE7ABAB2552630CCB6A3 /* Pods-TTCTraining.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTCTraining.debug.xcconfig"; path = "Target Support Files/Pods-TTCTraining/Pods-TTCTraining.debug.xcconfig"; sourceTree = "<group>"; };
 		EC18C3B54891E26E820AB146 /* Pods_TTCTraining.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TTCTraining.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -235,6 +239,7 @@
 		323B0BB624D806CB003C28E4 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				323B0C1824D97244003C28E4 /* Button */,
 				186236FA236B90470057B5C8 /* Views */,
 				323B0BB924D807B7003C28E4 /* Constants */,
 			);
@@ -322,6 +327,15 @@
 				18A1E53B2361535F005CDBC4 /* BannerCollectionViewCell.xib */,
 			);
 			path = Banner;
+			sourceTree = "<group>";
+		};
+		323B0C1824D97244003C28E4 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				323B0C1B24D972A5003C28E4 /* ButtonGradient.swift */,
+				323B0C1D24D972D0003C28E4 /* TouchEffectButton.swift */,
+			);
+			path = Button;
 			sourceTree = "<group>";
 		};
 		61D59EFC0D6BDC2888FF749D /* Pods */ = {
@@ -483,9 +497,11 @@
 				323B0BBD24D807FE003C28E4 /* StringsConst.swift in Sources */,
 				18A1E52B236015AC005CDBC4 /* HistoryViewController.swift in Sources */,
 				18A1E54023619E99005CDBC4 /* HistoryTableViewCell.swift in Sources */,
+				323B0C1C24D972A5003C28E4 /* ButtonGradient.swift in Sources */,
 				186236B7236A446E0057B5C8 /* PopUpViewController.swift in Sources */,
 				323B0BDB24D81B67003C28E4 /* UIViewExtension.swift in Sources */,
 				18A1E5482361B46C005CDBC4 /* MessTableViewCell.swift in Sources */,
+				323B0C1E24D972D0003C28E4 /* TouchEffectButton.swift in Sources */,
 				186236B1236A30900057B5C8 /* MessagePageView.swift in Sources */,
 				18A1E53C2361535F005CDBC4 /* BannerCollectionViewCell.swift in Sources */,
 				18A1E5302360474B005CDBC4 /* DangNhapVC.swift in Sources */,
