@@ -8,7 +8,7 @@
 
 import UIKit
 import CenteredCollectionView
-
+import Alamofire
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITableViewDataSource, UITableViewDelegate {
 
 
@@ -46,6 +46,15 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        MGConnection.request(APIRouter.login(email: "@gmail.com", password: "123456789"), LoginResponse.self,
+                             completion: {(result, err) in
+            guard err == nil else {
+                print("False with code: \(String(describing: err?.mErrorCode)) and message: \(String(describing: err?.mErrorMessage))")
+                return
+            }
+                    
+            print("Fullname: " + (result?.user?.fullname)!)
+        })
         collectionView.delegate = self
         addFriendCollectionView.delegate = self
         tableView.delegate = self
@@ -70,7 +79,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         self.tableView.register(nibHomeTableView, forCellReuseIdentifier: "Cell")
        
         
-        centeredCollectionViewFlowLayout = collectionView.collectionViewLayout as! CenteredCollectionViewFlowLayout
+        centeredCollectionViewFlowLayout = collectionView.collectionViewLayout as? CenteredCollectionViewFlowLayout
         
         // Modify the collectionView's decelerationRate (REQUIRED STEP)
         collectionView.decelerationRate = UIScrollView.DecelerationRate.fast

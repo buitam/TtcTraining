@@ -1,24 +1,38 @@
 PODS:
+  - Alamofire (4.9.1)
+  - AlamofireObjectMapper (5.2.1):
+    - Alamofire (~> 4.7)
+    - ObjectMapper (~> 3.4)
   - CenteredCollectionView (2.2.1)
   - FSPagerView (0.8.3)
+  - ObjectMapper (3.5.3)
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
+  - Alamofire
+  - AlamofireObjectMapper
   - CenteredCollectionView
   - FSPagerView
+  - ObjectMapper
   - SVProgressHUD
 
 SPEC REPOS:
   trunk:
+    - Alamofire
+    - AlamofireObjectMapper
     - CenteredCollectionView
     - FSPagerView
+    - ObjectMapper
     - SVProgressHUD
 
 SPEC CHECKSUMS:
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  AlamofireObjectMapper: 1989f690e982b71921b9253f53a4f33a9bc00d88
   CenteredCollectionView: ba6e45fb7774627890621d73c8dd7dbd33391da9
   FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
+  ObjectMapper: 97111c97e054a6ee25917662106689f0b4127b37
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 0cf27a527f196de8d8e4bc8309f1513abae7c726
+PODFILE CHECKSUM: 51e7f32557e94ab2fb8a93e2bc5270c01524e9b6
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.0

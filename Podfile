@@ -6,6 +6,9 @@ use_frameworks!
 pod 'SVProgressHUD'
 pod 'FSPagerView'
 pod 'CenteredCollectionView'
+pod 'Alamofire'
+pod 'ObjectMapper'
+pod 'AlamofireObjectMapper'
 
 end
 
