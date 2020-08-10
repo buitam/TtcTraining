@@ -1,14 +1,18 @@
 //
-//  TinNhanViewController.swift
+//  EditProfileVC.swift
 //  TTCTraining
 //
-//  Created by Apple on 10/31/19.
-//  Copyright © 2019 Apple. All rights reserved.
+//  Created by Bui Tam on 8/10/20.
+//  Copyright © 2020 Apple. All rights reserved.
 //
 
 import UIKit
 
-class TinNhanViewController: UIViewController {
+class EditProfileVC: UIViewController {
+    @IBAction func btnBackAction(_ sender: Any) {
+        createAnimated(self: self)
+        self.dismiss(animated: false, completion: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,4 +32,3 @@ class TinNhanViewController: UIViewController {
      */
     
 }
-

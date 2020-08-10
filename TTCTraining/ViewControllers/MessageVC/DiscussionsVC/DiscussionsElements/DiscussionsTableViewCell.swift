@@ -1,17 +1,18 @@
 //
-//  MessTableViewCell.swift
+//  DiscussionsTableViewCell.swift
 //  TTCTraining
 //
-//  Created by Apple on 10/24/19.
-//  Copyright © 2019 Apple. All rights reserved.
+//  Created by Bui Tam on 8/9/20.
+//  Copyright © 2020 Apple. All rights reserved.
 //
 
 import UIKit
 
-class MessTableViewCell: UITableViewCell {
+class DiscussionsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var profileImg: UIImageView!
     @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var newMesage: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -28,6 +29,7 @@ class MessTableViewCell: UITableViewCell {
         // Config Data
         profileImg.image = data.profileImg
         name.text = data.name
+        newMesage.text = data.name
     }
     
 }

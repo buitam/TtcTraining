@@ -22,16 +22,16 @@ class DangNhapVC: UIViewController {
         // Do any additional setup after loading the view.
         
     }
-
+    
     @IBAction func btnLoginAction(_ sender: Any){
         SVProgressHUD.setDefaultMaskType(.black)
         SVProgressHUD.setForegroundColor(.blue)
         SVProgressHUD.show()
         SVProgressHUD.dismiss(withDelay: 1.5) {
             if(self.txtpassword.text == self.userName && self.txtUserName.text == self.pass) {
-                 let scr = self.storyboard?.instantiateViewController(withIdentifier: "Tabbar") as! TabbarViewController
-                                self.navigationController?.pushViewController(scr, animated: true)
-                                
+                let scr = self.storyboard?.instantiateViewController(withIdentifier: "Tabbar") as! TabbarViewController
+                self.navigationController?.pushViewController(scr, animated: true)
+                
                 //                (scr, animated: true, completion: {
                 //                    let popUp = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PopUp") as! PopUpViewController
                 //                    popUp.ten = self.txtUserName.text!
@@ -41,19 +41,19 @@ class DangNhapVC: UIViewController {
                 //                    scr.view.addSubview(popUp.view)
                 //                    popUp.didMove(toParent: scr)
                 //                })
-                                
-                            }
+                
+            }
             else{
                 AlertView(alertTitle: "Thất bại", sub: nil, alertMainText: "Sai tên tài khoản hoặc mật khẩu.", haveCancel: false, didAccept: nil, didCancel: nil).show()
             }
-//                            else {
-//                                let alert: UIAlertController = UIAlertController(title: "Thông báo", message: "Tên đăng nhập hoặc mật khẩu không chính xác", preferredStyle: .alert)
-//                                let btn_Ok: UIAlertAction = UIAlertAction(title: "OK", style: .destructive, handler: nil)
-//                                alert.addAction(btn_Ok)
-//                                self.present(alert, animated: true, completion: nil)
-//                            }
-                        }
-
-                    }
-
-                }
+            //                            else {
+            //                                let alert: UIAlertController = UIAlertController(title: "Thông báo", message: "Tên đăng nhập hoặc mật khẩu không chính xác", preferredStyle: .alert)
+            //                                let btn_Ok: UIAlertAction = UIAlertAction(title: "OK", style: .destructive, handler: nil)
+            //                                alert.addAction(btn_Ok)
+            //                                self.present(alert, animated: true, completion: nil)
+            //                            }
+        }
+        
+    }
+    
+}

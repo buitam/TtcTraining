@@ -46,15 +46,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        MGConnection.request(APIRouter.login(email: "@gmail.com", password: "123456789"), LoginResponse.self,
-                             completion: {(result, err) in
-            guard err == nil else {
-                print("False with code: \(String(describing: err?.mErrorCode)) and message: \(String(describing: err?.mErrorMessage))")
-                return
-            }
-                    
-            print("Fullname: " + (result?.user?.fullname)!)
-        })
+
         collectionView.delegate = self
         addFriendCollectionView.delegate = self
         tableView.delegate = self

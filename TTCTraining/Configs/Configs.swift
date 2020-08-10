@@ -8,7 +8,7 @@
 
 import Foundation
 struct Production {
-    static let BASE_URL: String = "https://run.mocky.io/v3/a2238982-9be4-472b-a537-0c3fe6da44af"
+    static let BASE_URL: String = "https://run.mocky.io/v3/a7d526ee-5cfa-4aed-a250-b193b36589ae"
 }
 
 enum NetworkErrorType {

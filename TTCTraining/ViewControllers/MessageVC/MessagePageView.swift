@@ -11,7 +11,7 @@ import UIKit
 class MessagePageView: UIPageViewController {
     lazy var subviewControllers:[UIViewController] = {
         return [
-            UIStoryboard(name: "Main", bundle:nil).instantiateViewController(withIdentifier: "TinNhan"),UIStoryboard(name: "Main", bundle:nil).instantiateViewController(withIdentifier: "BanBe")]
+            UIStoryboard(name: "Main", bundle:nil).instantiateViewController(withIdentifier: "DiscussionsVC"),UIStoryboard(name: "Main", bundle:nil).instantiateViewController(withIdentifier: "BanBeVC")]
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
