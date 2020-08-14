@@ -42,22 +42,3 @@ class Info:NSObject {
     }
     
 }
-
-class SettingMD: NSObject{
-    var imgSettingURL: String?
-    var desSetting: String?
-    init(imgSettingURL: String?, desSetting: String?) {
-        self.imgSettingURL = imgSettingURL
-        self.desSetting = desSetting
-    }
-    
-    func clone() -> SettingMD{
-        return SettingMD(imgSettingURL: self.imgSettingURL, desSetting: self.desSetting)
-    }
-    static func initSetting() -> [SettingMD]{
-        return [SettingMD(imgSettingURL: "gear", desSetting: "Settings gear"),
-                SettingMD(imgSettingURL: "gear", desSetting: "Settings gear"),
-                SettingMD(imgSettingURL: "gear", desSetting: "Settings gear")
-        ]
-    }
-}

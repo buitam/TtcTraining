@@ -10,6 +10,7 @@ import UIKit
 
 class SettingVC: UIViewController {
     var lstSetting = SettingMD.initSetting()
+    var lstTitleSection = ["ACCOUNT", "GENERAL","SUPPORT","ABOUT"]
     @IBOutlet weak var settingTableView: UITableView!
     @IBAction func btnBackAction(_ sender: Any) {
         createAnimated(self: self)
@@ -23,9 +24,6 @@ class SettingVC: UIViewController {
     }
     
     func initData(){
-        for settingItem in lstSetting{
-            lstSetting.append(settingItem.clone())
-        }
     }
     
     func initUI(){
@@ -37,17 +35,23 @@ class SettingVC: UIViewController {
 
 // MARK: - TableViewDelegates and datasources
 extension SettingVC: UITableViewDelegate, UITableViewDataSource{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return lstSetting.count
+    }
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return lstTitleSection[section]
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return lstSetting[section].count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = settingTableView.dequeueReusableCell(withIdentifier: "SettingTBVCell", for: indexPath) as? SettingTBVCell
-        cell?.configCell(lstSetting[indexPath.row])
+        cell?.configCell(lstSetting[indexPath.section][indexPath.row])
         return cell!
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+        return 40
     }
 }

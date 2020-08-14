@@ -10,9 +10,8 @@ import Foundation
 import UIKit
 func createAnimated(self: UIViewController) {
     let transition: CATransition = CATransition()
-    transition.duration = 0.5
+    transition.duration = 0.3
     transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
-    transition.type = CATransitionType.reveal
     transition.subtype = CATransitionSubtype.fromRight
     self.view.window!.layer.add(transition, forKey: nil)
 }
