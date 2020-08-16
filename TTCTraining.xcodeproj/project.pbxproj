@@ -19,7 +19,6 @@
 		18A1E5292360158A005CDBC4 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A1E5282360158A005CDBC4 /* MessageViewController.swift */; };
 		18A1E52B236015AC005CDBC4 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A1E52A236015AC005CDBC4 /* HistoryViewController.swift */; };
 		18A1E5302360474B005CDBC4 /* DangNhapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A1E52E2360474B005CDBC4 /* DangNhapVC.swift */; };
-		18A1E5342360475C005CDBC4 /* DangKiVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A1E5322360475C005CDBC4 /* DangKiVC.swift */; };
 		18A1E537236047AF005CDBC4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A1E536236047AF005CDBC4 /* LoginViewController.swift */; };
 		18A1E539236054F5005CDBC4 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A1E538236054F5005CDBC4 /* Info.swift */; };
 		18A1E53C2361535F005CDBC4 /* BannerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A1E53A2361535F005CDBC4 /* BannerCollectionViewCell.swift */; };
@@ -52,6 +51,8 @@
 		323B0C5024E0594B003C28E4 /* ContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 323B0C4E24E0594B003C28E4 /* ContactTableViewCell.xib */; };
 		323B0C5224E05BC7003C28E4 /* DiscussionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323B0C5124E05BC7003C28E4 /* DiscussionsVC.swift */; };
 		3241C8F624E6BCA9003D5011 /* PostedMD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3241C8F524E6BCA9003D5011 /* PostedMD.swift */; };
+		3263164D24E8EB9C002DCD0F /* EditDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3263164B24E8EB9C002DCD0F /* EditDetailVC.swift */; };
+		3263164E24E8EB9C002DCD0F /* EditDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3263164C24E8EB9C002DCD0F /* EditDetailVC.xib */; };
 		32983CED24E182FB0025D503 /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32983CEB24E182FB0025D503 /* EditProfileVC.swift */; };
 		32983CEE24E182FB0025D503 /* EditProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32983CEC24E182FB0025D503 /* EditProfileVC.xib */; };
 		32983CF224E198450025D503 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32983CF124E198450025D503 /* UIViewControllerExtension.swift */; };
@@ -67,8 +68,11 @@
 		32983D0E24E69CA00025D503 /* PostedTBVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32983D0C24E69CA00025D503 /* PostedTBVCell.xib */; };
 		32983D1524E69D130025D503 /* CreatePostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32983D1324E69D130025D503 /* CreatePostVC.swift */; };
 		32983D1624E69D130025D503 /* CreatePostVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32983D1424E69D130025D503 /* CreatePostVC.xib */; };
+		32B7096924E95A0900B74732 /* ButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B7096824E95A0900B74732 /* ButtonExtension.swift */; };
 		32D70A0E24E060C600E00771 /* DiscussionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D70A0C24E060C600E00771 /* DiscussionsTableViewCell.swift */; };
 		32D70A0F24E060C600E00771 /* DiscussionsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32D70A0D24E060C600E00771 /* DiscussionsTableViewCell.xib */; };
+		32F1EDBF24E927E500392F24 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F1EDBD24E927E400392F24 /* SignUpVC.swift */; };
+		32F1EDC024E927E500392F24 /* SignUpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32F1EDBE24E927E400392F24 /* SignUpVC.xib */; };
 		98CCFB12F9C087C435CBD42F /* Pods_TTCTraining.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC18C3B54891E26E820AB146 /* Pods_TTCTraining.framework */; };
 /* End PBXBuildFile section */
 
@@ -87,7 +91,6 @@
 		18A1E5282360158A005CDBC4 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		18A1E52A236015AC005CDBC4 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		18A1E52E2360474B005CDBC4 /* DangNhapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DangNhapVC.swift; sourceTree = "<group>"; };
-		18A1E5322360475C005CDBC4 /* DangKiVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DangKiVC.swift; sourceTree = "<group>"; };
 		18A1E536236047AF005CDBC4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		18A1E538236054F5005CDBC4 /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
 		18A1E53A2361535F005CDBC4 /* BannerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -121,6 +124,8 @@
 		323B0C4E24E0594B003C28E4 /* ContactTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactTableViewCell.xib; sourceTree = "<group>"; };
 		323B0C5124E05BC7003C28E4 /* DiscussionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscussionsVC.swift; sourceTree = "<group>"; };
 		3241C8F524E6BCA9003D5011 /* PostedMD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostedMD.swift; sourceTree = "<group>"; };
+		3263164B24E8EB9C002DCD0F /* EditDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDetailVC.swift; sourceTree = "<group>"; };
+		3263164C24E8EB9C002DCD0F /* EditDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditDetailVC.xib; sourceTree = "<group>"; };
 		32983CEB24E182FB0025D503 /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
 		32983CEC24E182FB0025D503 /* EditProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditProfileVC.xib; sourceTree = "<group>"; };
 		32983CF124E198450025D503 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
@@ -136,8 +141,11 @@
 		32983D0C24E69CA00025D503 /* PostedTBVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostedTBVCell.xib; sourceTree = "<group>"; };
 		32983D1324E69D130025D503 /* CreatePostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostVC.swift; sourceTree = "<group>"; };
 		32983D1424E69D130025D503 /* CreatePostVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreatePostVC.xib; sourceTree = "<group>"; };
+		32B7096824E95A0900B74732 /* ButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonExtension.swift; sourceTree = "<group>"; };
 		32D70A0C24E060C600E00771 /* DiscussionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscussionsTableViewCell.swift; sourceTree = "<group>"; };
 		32D70A0D24E060C600E00771 /* DiscussionsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiscussionsTableViewCell.xib; sourceTree = "<group>"; };
+		32F1EDBD24E927E400392F24 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		32F1EDBE24E927E400392F24 /* SignUpVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpVC.xib; sourceTree = "<group>"; };
 		CC93AE7ABAB2552630CCB6A3 /* Pods-TTCTraining.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTCTraining.debug.xcconfig"; path = "Target Support Files/Pods-TTCTraining/Pods-TTCTraining.debug.xcconfig"; sourceTree = "<group>"; };
 		EC18C3B54891E26E820AB146 /* Pods_TTCTraining.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TTCTraining.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -220,7 +228,6 @@
 			children = (
 				18A1E536236047AF005CDBC4 /* LoginViewController.swift */,
 				186236AE236934B40057B5C8 /* LoginPageView.swift */,
-				18A1E5322360475C005CDBC4 /* DangKiVC.swift */,
 				18A1E52E2360474B005CDBC4 /* DangNhapVC.swift */,
 			);
 			path = LoginVC;
@@ -271,6 +278,7 @@
 		323B0BB424D806AC003C28E4 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				32F1EDB424E9218100392F24 /* SignUpVC */,
 				323B0C4724E04D4E003C28E4 /* AboutMeVC */,
 				18623700236B923C0057B5C8 /* LoginVC */,
 				186236FE236B921A0057B5C8 /* HomeVC */,
@@ -286,6 +294,7 @@
 				323B0BDA24D81B67003C28E4 /* UIViewExtension.swift */,
 				323B0BDE24D81C1D003C28E4 /* StringExtension.swift */,
 				32983CF124E198450025D503 /* UIViewControllerExtension.swift */,
+				32B7096824E95A0900B74732 /* ButtonExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -473,6 +482,8 @@
 				32983CEC24E182FB0025D503 /* EditProfileVC.xib */,
 				32983CFB24E262980025D503 /* EditProfileTBVCell.swift */,
 				32983CFC24E262980025D503 /* EditProfileTBVCell.xib */,
+				3263164B24E8EB9C002DCD0F /* EditDetailVC.swift */,
+				3263164C24E8EB9C002DCD0F /* EditDetailVC.xib */,
 			);
 			path = EditProfileVC;
 			sourceTree = "<group>";
@@ -496,6 +507,15 @@
 				32983D1424E69D130025D503 /* CreatePostVC.xib */,
 			);
 			path = PostVC;
+			sourceTree = "<group>";
+		};
+		32F1EDB424E9218100392F24 /* SignUpVC */ = {
+			isa = PBXGroup;
+			children = (
+				32F1EDBD24E927E400392F24 /* SignUpVC.swift */,
+				32F1EDBE24E927E400392F24 /* SignUpVC.xib */,
+			);
+			path = SignUpVC;
 			sourceTree = "<group>";
 		};
 		61D59EFC0D6BDC2888FF749D /* Pods */ = {
@@ -581,12 +601,14 @@
 				18A1E51E23600C8F005CDBC4 /* Assets.xcassets in Resources */,
 				32983D1624E69D130025D503 /* CreatePostVC.xib in Resources */,
 				18A1E54D2361C4FA005CDBC4 /* AddFriendCollectionViewCell.xib in Resources */,
+				32F1EDC024E927E500392F24 /* SignUpVC.xib in Resources */,
 				18A1E53D2361535F005CDBC4 /* BannerCollectionViewCell.xib in Resources */,
 				32983CF624E1A2090025D503 /* SettingVC.xib in Resources */,
 				32983CEE24E182FB0025D503 /* EditProfileVC.xib in Resources */,
 				32983D0E24E69CA00025D503 /* PostedTBVCell.xib in Resources */,
 				18A1E54123619E99005CDBC4 /* HistoryTableViewCell.xib in Resources */,
 				18B324862361F3E20008DF0C /* HomeTableViewCell.xib in Resources */,
+				3263164E24E8EB9C002DCD0F /* EditDetailVC.xib in Resources */,
 				323B0C5024E0594B003C28E4 /* ContactTableViewCell.xib in Resources */,
 				32D70A0F24E060C600E00771 /* DiscussionsTableViewCell.xib in Resources */,
 				32983CFE24E262980025D503 /* EditProfileTBVCell.xib in Resources */,
@@ -644,7 +666,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				323B0C4F24E0594B003C28E4 /* ContactTableViewCell.swift in Sources */,
-				18A1E5342360475C005CDBC4 /* DangKiVC.swift in Sources */,
 				323B0C3C24E02274003C28E4 /* LoginResponse.swift in Sources */,
 				323B0C5224E05BC7003C28E4 /* DiscussionsVC.swift in Sources */,
 				323B0BE924D83D33003C28E4 /* AlertView.swift in Sources */,
@@ -653,6 +674,7 @@
 				186236B5236A30DD0057B5C8 /* ContactsVC.swift in Sources */,
 				32983D0524E269AB0025D503 /* EditProfileMD.swift in Sources */,
 				323B0C3024E021B7003C28E4 /* Configs.swift in Sources */,
+				32B7096924E95A0900B74732 /* ButtonExtension.swift in Sources */,
 				18A1E51923600C8E005CDBC4 /* ViewController.swift in Sources */,
 				323B0C4924E04D7C003C28E4 /* AboutMeViewController.swift in Sources */,
 				323B0BDF24D81C1D003C28E4 /* StringExtension.swift in Sources */,
@@ -661,6 +683,7 @@
 				18A1E5292360158A005CDBC4 /* MessageViewController.swift in Sources */,
 				18A1E537236047AF005CDBC4 /* LoginViewController.swift in Sources */,
 				18623706236B97610057B5C8 /* TabbarViewController.swift in Sources */,
+				32F1EDBF24E927E500392F24 /* SignUpVC.swift in Sources */,
 				32983D0D24E69CA00025D503 /* PostedTBVCell.swift in Sources */,
 				323B0BDD24D81BB8003C28E4 /* NumbersConst.swift in Sources */,
 				32983CF924E1A95D0025D503 /* SettingTBVCell.swift in Sources */,
@@ -685,6 +708,7 @@
 				32983CFD24E262980025D503 /* EditProfileTBVCell.swift in Sources */,
 				323B0C3624E0222B003C28E4 /* MGConnection.swift in Sources */,
 				323B0C1E24D972D0003C28E4 /* TouchEffectButton.swift in Sources */,
+				3263164D24E8EB9C002DCD0F /* EditDetailVC.swift in Sources */,
 				186236B1236A30900057B5C8 /* MessagePageView.swift in Sources */,
 				32983CF224E198450025D503 /* UIViewControllerExtension.swift in Sources */,
 				18A1E53C2361535F005CDBC4 /* BannerCollectionViewCell.swift in Sources */,

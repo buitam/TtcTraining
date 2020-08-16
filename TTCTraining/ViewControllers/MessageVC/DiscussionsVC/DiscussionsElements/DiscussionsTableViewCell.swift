@@ -25,7 +25,6 @@ class DiscussionsTableViewCell: UITableViewCell {
     }
     func configCell(_ data: Info){
         // config UI
-        profileImg.cornerRadius(30)
         // Config Data
         profileImg.image = data.profileImg
         name.text = data.name

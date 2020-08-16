@@ -54,4 +54,13 @@ class EditProfileVC: UIViewController {
         func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
             return 50
         }
+        
+        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            let editDetailVC = EditDetailVC(nibName: "EditDetailVC", bundle: nil) as EditDetailVC
+            editDetailVC.editTitle = lstEditProfile[indexPath.row].infoItem
+            editDetailVC.editUser = lstEditProfile[indexPath.row].infoUser
+            editDetailVC.modalPresentationStyle = .fullScreen
+            createAnimated(self: self)
+            self.present(editDetailVC, animated: false, completion: nil)
+        }
     }

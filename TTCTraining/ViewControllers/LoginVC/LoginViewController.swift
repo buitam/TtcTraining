@@ -21,7 +21,7 @@ class LoginViewController: UIViewController {
         topConstraintHeight.constant = 1000
         logoTopConstraint.constant = 252
         topTravelMatesConstraint.constant = 446
-        lblTravelMates.font = UIFont(name:"Noteworthy", size: 35.0)
+        lblTravelMates.font = UIFont(name:"Noteworthy", size: 45.0)
         lblWelcome.isHidden = false
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0, options: .curveEaseOut, animations:{ self.view.layoutIfNeeded()}, completion: { (_) in
             MGConnection.request(APIRouter.login(email: self.lblEmail.text!, password: self.lblPassword.text!), LoginResponse.self,completion: {(result, err) in
@@ -77,10 +77,38 @@ class LoginViewController: UIViewController {
         topTravelMatesConstraint.constant = 446
         
         lblWelcome.isHidden = false
-        lblTravelMates.font = UIFont(name:"Noteworthy", size: 35.0)
+        lblTravelMates.font = UIFont(name:"Noteworthy", size: 45.0)
         // Do any additional setup after loading the view.
-    }
+            showHideKeyBoard()
+        }
+        func showHideKeyBoard() {
+            
+            self.hideKeyboardWhenTappedAround()
+            NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+            NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+            
+        }
+        
+        
+        @objc func keyboardWillShow(notification: NSNotification) {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= 50
+            }
+            
+        }
+        
+        @objc func keyboardWillHide(notification: NSNotification) {
+            if self.view.frame.origin.y != 0 {
+                self.view.frame.origin.y = 0
+            }
+        }
     
+    @IBAction func btnSignUpAction(_ sender: Any) {
+        let signUpVC = SignUpVC(nibName: "SignUpVC", bundle: nil)
+        signUpVC.modalPresentationStyle = .fullScreen
+        self.present(signUpVC, animated: true, completion: nil)
+        
+    }
     
 }
 
