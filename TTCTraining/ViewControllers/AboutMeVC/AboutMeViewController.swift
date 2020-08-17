@@ -17,6 +17,11 @@ class AboutMeViewController: UIViewController {
         self.dismiss(animated: false, completion: nil)
     }
     
+    @IBAction func createPostGestureAction(_ sender: Any) {
+        let createPostVC = CreatePostVC(nibName: "CreatePostVC", bundle: nil)
+        createPostVC.modalPresentationStyle = .fullScreen
+        self.present(createPostVC, animated: true, completion: nil)
+    }
     @IBAction func btnEditProfileAction(_ sender: Any) {
         let editProfileVC = EditProfileVC(nibName: "EditProfileVC", bundle: nil)
         editProfileVC.modalPresentationStyle = .fullScreen
