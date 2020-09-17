@@ -37,7 +37,13 @@ class EditProfileVC: UIViewController {
             editProfileTableView.register(UINib(nibName: "EditProfileTBVCell", bundle: nil), forCellReuseIdentifier: "EditProfileTBVCell")
             editProfileTableViewHeight.constant = CGFloat(lstEditProfile.count * 50)
         }
+    @IBAction func changePhotoAction(_ sender: Any) {
+//        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+//            var imagePicker
+//        }
+        
     }
+}
 
     // MARK: - TableViewDelegates and datasources
     extension EditProfileVC: UITableViewDelegate, UITableViewDataSource{
@@ -64,3 +70,6 @@ class EditProfileVC: UIViewController {
             self.present(editDetailVC, animated: false, completion: nil)
         }
     }
+extension EditProfileVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+}

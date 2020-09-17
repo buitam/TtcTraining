@@ -112,6 +112,9 @@
                                                             <integer key="value" value="1"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="changePhotoAction:" destination="-1" eventType="touchUpInside" id="Hz9-RQ-bjH"/>
+                                                    </connections>
                                                 </button>
                                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gkM-nI-HWi">
                                                     <rect key="frame" x="0.0" y="225" width="400" height="500"/>

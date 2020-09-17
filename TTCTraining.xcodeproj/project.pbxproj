@@ -53,6 +53,8 @@
 		3241C8F624E6BCA9003D5011 /* PostedMD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3241C8F524E6BCA9003D5011 /* PostedMD.swift */; };
 		3263164D24E8EB9C002DCD0F /* EditDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3263164B24E8EB9C002DCD0F /* EditDetailVC.swift */; };
 		3263164E24E8EB9C002DCD0F /* EditDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3263164C24E8EB9C002DCD0F /* EditDetailVC.xib */; };
+		32856E7B2512389B0062221B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 32856E7A2512389B0062221B /* GoogleService-Info.plist */; };
+		32856E7E2513068A0062221B /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32856E7D2513068A0062221B /* TestViewController.swift */; };
 		32983CED24E182FB0025D503 /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32983CEB24E182FB0025D503 /* EditProfileVC.swift */; };
 		32983CEE24E182FB0025D503 /* EditProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32983CEC24E182FB0025D503 /* EditProfileVC.xib */; };
 		32983CF224E198450025D503 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32983CF124E198450025D503 /* UIViewControllerExtension.swift */; };
@@ -81,7 +83,7 @@
 		186236B0236A30900057B5C8 /* MessagePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagePageView.swift; sourceTree = "<group>"; };
 		186236B4236A30DD0057B5C8 /* ContactsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsVC.swift; sourceTree = "<group>"; };
 		18623705236B97610057B5C8 /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
-		18A1E51323600C8E005CDBC4 /* TTCTraining.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TTCTraining.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		18A1E51323600C8E005CDBC4 /* TravelApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18A1E51623600C8E005CDBC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18A1E51823600C8E005CDBC4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		18A1E51B23600C8E005CDBC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -126,6 +128,8 @@
 		3241C8F524E6BCA9003D5011 /* PostedMD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostedMD.swift; sourceTree = "<group>"; };
 		3263164B24E8EB9C002DCD0F /* EditDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDetailVC.swift; sourceTree = "<group>"; };
 		3263164C24E8EB9C002DCD0F /* EditDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditDetailVC.xib; sourceTree = "<group>"; };
+		32856E7A2512389B0062221B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		32856E7D2513068A0062221B /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		32983CEB24E182FB0025D503 /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
 		32983CEC24E182FB0025D503 /* EditProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditProfileVC.xib; sourceTree = "<group>"; };
 		32983CF124E198450025D503 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
@@ -246,7 +250,7 @@
 		18A1E51423600C8E005CDBC4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				18A1E51323600C8E005CDBC4 /* TTCTraining.app */,
+				18A1E51323600C8E005CDBC4 /* TravelApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -254,6 +258,7 @@
 		18A1E51523600C8E005CDBC4 /* TTCTraining */ = {
 			isa = PBXGroup;
 			children = (
+				32856E7A2512389B0062221B /* GoogleService-Info.plist */,
 				323B0C3F24E02434003C28E4 /* Services */,
 				323B0BB324D80696003C28E4 /* ViewModels */,
 				186236F9236B90380057B5C8 /* Models */,
@@ -343,6 +348,7 @@
 				323B0BC624D80A4C003C28E4 /* Banner */,
 				323B0BC524D80A3A003C28E4 /* AddFriend */,
 				323B0BC424D80A0E003C28E4 /* DanhLam */,
+				32856E7D2513068A0062221B /* TestViewController.swift */,
 			);
 			path = Elements;
 			sourceTree = "<group>";
@@ -554,7 +560,7 @@
 			);
 			name = TTCTraining;
 			productName = TTCTraining;
-			productReference = 18A1E51323600C8E005CDBC4 /* TTCTraining.app */;
+			productReference = 18A1E51323600C8E005CDBC4 /* TravelApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -595,6 +601,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32856E7B2512389B0062221B /* GoogleService-Info.plist in Resources */,
 				32983CFA24E1A95D0025D503 /* SettingTBVCell.xib in Resources */,
 				323B0BE324D838EB003C28E4 /* AlertView.xib in Resources */,
 				18A1E52123600C8F005CDBC4 /* LaunchScreen.storyboard in Resources */,
@@ -679,6 +686,7 @@
 				323B0C4924E04D7C003C28E4 /* AboutMeViewController.swift in Sources */,
 				323B0BDF24D81C1D003C28E4 /* StringExtension.swift in Sources */,
 				323B0C3224E021F2003C28E4 /* APIRouter.swift in Sources */,
+				32856E7E2513068A0062221B /* TestViewController.swift in Sources */,
 				18A1E539236054F5005CDBC4 /* Info.swift in Sources */,
 				18A1E5292360158A005CDBC4 /* MessageViewController.swift in Sources */,
 				18A1E537236047AF005CDBC4 /* LoginViewController.swift in Sources */,
@@ -859,14 +867,19 @@
 			baseConfigurationReference = CC93AE7ABAB2552630CCB6A3 /* Pods-TTCTraining.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TTCTraining/TravelApp.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4A5DF2UGDK;
 				INFOPLIST_FILE = TTCTraining/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = tam.TTCTraining;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = tam.TravelApp;
+				PRODUCT_NAME = TravelApp;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -877,14 +890,19 @@
 			baseConfigurationReference = 1CD3AE4F87DF56A2FF0D4C48 /* Pods-TTCTraining.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TTCTraining/TravelApp.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4A5DF2UGDK;
 				INFOPLIST_FILE = TTCTraining/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = tam.TTCTraining;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = tam.TravelApp;
+				PRODUCT_NAME = TravelApp;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
