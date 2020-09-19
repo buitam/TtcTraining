@@ -7,11 +7,11 @@
 //
 
 import UIKit
-
+import JGProgressHUD
 class DiscussionsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     var listInfo:[Info] = Info.initInfo()
     let initialDataAry:[Info] = Info.initInfo()
-    
+    private let spinner = JGProgressHUD(style: .dark)
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     override func viewDidLoad() {
@@ -20,11 +20,23 @@ class DiscussionsVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         tableView.delegate = self
         searchBar.delegate = self
         searchBar.cornerRadius(10)
+        view.addSubview(noConversationsLabel)
         let nib = UINib.init(nibName: "DiscussionsTableViewCell", bundle: nil)
         self.tableView.register(nib, forCellReuseIdentifier: "Cell")
         
         // Do any additional setup after loading the view.
     }
+    // MARK: - init UI
+    private let noConversationsLabel: UILabel = {
+        let label = UILabel()
+        label.text = "No Conversations!"
+        label.textAlignment = .center
+        label.textColor = .gray
+        label.font = .systemFont(ofSize: 21, weight: .medium)
+        label.isHidden = true
+        return label
+    }()
+    
     
     // MARK: - search bar delegate
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
