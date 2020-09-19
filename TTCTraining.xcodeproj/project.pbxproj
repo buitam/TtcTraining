@@ -18,7 +18,6 @@
 		18A1E52123600C8F005CDBC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18A1E51F23600C8F005CDBC4 /* LaunchScreen.storyboard */; };
 		18A1E5292360158A005CDBC4 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A1E5282360158A005CDBC4 /* MessageViewController.swift */; };
 		18A1E52B236015AC005CDBC4 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A1E52A236015AC005CDBC4 /* HistoryViewController.swift */; };
-		18A1E5302360474B005CDBC4 /* DangNhapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A1E52E2360474B005CDBC4 /* DangNhapVC.swift */; };
 		18A1E537236047AF005CDBC4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A1E536236047AF005CDBC4 /* LoginViewController.swift */; };
 		18A1E539236054F5005CDBC4 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A1E538236054F5005CDBC4 /* Info.swift */; };
 		18A1E53C2361535F005CDBC4 /* BannerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A1E53A2361535F005CDBC4 /* BannerCollectionViewCell.swift */; };
@@ -44,7 +43,6 @@
 		323B0C3424E0220D003C28E4 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323B0C3324E0220D003C28E4 /* BaseResponse.swift */; };
 		323B0C3624E0222B003C28E4 /* MGConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323B0C3524E0222B003C28E4 /* MGConnection.swift */; };
 		323B0C3824E02247003C28E4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323B0C3724E02247003C28E4 /* User.swift */; };
-		323B0C3A24E0225D003C28E4 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323B0C3924E0225D003C28E4 /* Auth.swift */; };
 		323B0C3C24E02274003C28E4 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323B0C3B24E02274003C28E4 /* LoginResponse.swift */; };
 		323B0C4924E04D7C003C28E4 /* AboutMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323B0C4824E04D7C003C28E4 /* AboutMeViewController.swift */; };
 		323B0C4F24E0594B003C28E4 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323B0C4D24E0594B003C28E4 /* ContactTableViewCell.swift */; };
@@ -53,8 +51,9 @@
 		3241C8F624E6BCA9003D5011 /* PostedMD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3241C8F524E6BCA9003D5011 /* PostedMD.swift */; };
 		3263164D24E8EB9C002DCD0F /* EditDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3263164B24E8EB9C002DCD0F /* EditDetailVC.swift */; };
 		3263164E24E8EB9C002DCD0F /* EditDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3263164C24E8EB9C002DCD0F /* EditDetailVC.xib */; };
-		32856E7B2512389B0062221B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 32856E7A2512389B0062221B /* GoogleService-Info.plist */; };
-		32856E7E2513068A0062221B /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32856E7D2513068A0062221B /* TestViewController.swift */; };
+		32856EC2251354900062221B /* AuthToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32856EC1251354900062221B /* AuthToken.swift */; };
+		32856EC42513A4450062221B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 32856EC32513A4450062221B /* GoogleService-Info.plist */; };
+		32856EC62513AAF10062221B /* DatabaseManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32856EC52513AAF10062221B /* DatabaseManage.swift */; };
 		32983CED24E182FB0025D503 /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32983CEB24E182FB0025D503 /* EditProfileVC.swift */; };
 		32983CEE24E182FB0025D503 /* EditProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32983CEC24E182FB0025D503 /* EditProfileVC.xib */; };
 		32983CF224E198450025D503 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32983CF124E198450025D503 /* UIViewControllerExtension.swift */; };
@@ -92,7 +91,6 @@
 		18A1E52223600C8F005CDBC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18A1E5282360158A005CDBC4 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		18A1E52A236015AC005CDBC4 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
-		18A1E52E2360474B005CDBC4 /* DangNhapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DangNhapVC.swift; sourceTree = "<group>"; };
 		18A1E536236047AF005CDBC4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		18A1E538236054F5005CDBC4 /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
 		18A1E53A2361535F005CDBC4 /* BannerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -119,7 +117,6 @@
 		323B0C3324E0220D003C28E4 /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
 		323B0C3524E0222B003C28E4 /* MGConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGConnection.swift; sourceTree = "<group>"; };
 		323B0C3724E02247003C28E4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		323B0C3924E0225D003C28E4 /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		323B0C3B24E02274003C28E4 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		323B0C4824E04D7C003C28E4 /* AboutMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMeViewController.swift; sourceTree = "<group>"; };
 		323B0C4D24E0594B003C28E4 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
@@ -128,8 +125,9 @@
 		3241C8F524E6BCA9003D5011 /* PostedMD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostedMD.swift; sourceTree = "<group>"; };
 		3263164B24E8EB9C002DCD0F /* EditDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDetailVC.swift; sourceTree = "<group>"; };
 		3263164C24E8EB9C002DCD0F /* EditDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditDetailVC.xib; sourceTree = "<group>"; };
-		32856E7A2512389B0062221B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		32856E7D2513068A0062221B /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		32856EC1251354900062221B /* AuthToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthToken.swift; sourceTree = "<group>"; };
+		32856EC32513A4450062221B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		32856EC52513AAF10062221B /* DatabaseManage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManage.swift; sourceTree = "<group>"; };
 		32983CEB24E182FB0025D503 /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
 		32983CEC24E182FB0025D503 /* EditProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditProfileVC.xib; sourceTree = "<group>"; };
 		32983CF124E198450025D503 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
@@ -232,7 +230,6 @@
 			children = (
 				18A1E536236047AF005CDBC4 /* LoginViewController.swift */,
 				186236AE236934B40057B5C8 /* LoginPageView.swift */,
-				18A1E52E2360474B005CDBC4 /* DangNhapVC.swift */,
 			);
 			path = LoginVC;
 			sourceTree = "<group>";
@@ -258,7 +255,6 @@
 		18A1E51523600C8E005CDBC4 /* TTCTraining */ = {
 			isa = PBXGroup;
 			children = (
-				32856E7A2512389B0062221B /* GoogleService-Info.plist */,
 				323B0C3F24E02434003C28E4 /* Services */,
 				323B0BB324D80696003C28E4 /* ViewModels */,
 				186236F9236B90380057B5C8 /* Models */,
@@ -268,6 +264,7 @@
 				323B0BB624D806CB003C28E4 /* Commons */,
 				323B0BB724D806DC003C28E4 /* Assests */,
 				323B0BB824D806E6003C28E4 /* DefaultFiles */,
+				32856EC32513A4450062221B /* GoogleService-Info.plist */,
 				18A1E52223600C8F005CDBC4 /* Info.plist */,
 			);
 			path = TTCTraining;
@@ -348,7 +345,6 @@
 				323B0BC624D80A4C003C28E4 /* Banner */,
 				323B0BC524D80A3A003C28E4 /* AddFriend */,
 				323B0BC424D80A0E003C28E4 /* DanhLam */,
-				32856E7D2513068A0062221B /* TestViewController.swift */,
 			);
 			path = Elements;
 			sourceTree = "<group>";
@@ -428,8 +424,8 @@
 			isa = PBXGroup;
 			children = (
 				323B0C3B24E02274003C28E4 /* LoginResponse.swift */,
-				323B0C3924E0225D003C28E4 /* Auth.swift */,
 				323B0C3724E02247003C28E4 /* User.swift */,
+				32856EC1251354900062221B /* AuthToken.swift */,
 			);
 			path = LoginModel;
 			sourceTree = "<group>";
@@ -440,6 +436,7 @@
 				323B0C2F24E021B7003C28E4 /* Configs.swift */,
 				323B0C3524E0222B003C28E4 /* MGConnection.swift */,
 				323B0C3324E0220D003C28E4 /* BaseResponse.swift */,
+				32856EC52513AAF10062221B /* DatabaseManage.swift */,
 			);
 			path = Configs;
 			sourceTree = "<group>";
@@ -601,13 +598,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32856E7B2512389B0062221B /* GoogleService-Info.plist in Resources */,
 				32983CFA24E1A95D0025D503 /* SettingTBVCell.xib in Resources */,
 				323B0BE324D838EB003C28E4 /* AlertView.xib in Resources */,
 				18A1E52123600C8F005CDBC4 /* LaunchScreen.storyboard in Resources */,
 				18A1E51E23600C8F005CDBC4 /* Assets.xcassets in Resources */,
 				32983D1624E69D130025D503 /* CreatePostVC.xib in Resources */,
 				18A1E54D2361C4FA005CDBC4 /* AddFriendCollectionViewCell.xib in Resources */,
+				32856EC42513A4450062221B /* GoogleService-Info.plist in Resources */,
 				32F1EDC024E927E500392F24 /* SignUpVC.xib in Resources */,
 				18A1E53D2361535F005CDBC4 /* BannerCollectionViewCell.xib in Resources */,
 				32983CF624E1A2090025D503 /* SettingVC.xib in Resources */,
@@ -677,6 +674,7 @@
 				323B0C5224E05BC7003C28E4 /* DiscussionsVC.swift in Sources */,
 				323B0BE924D83D33003C28E4 /* AlertView.swift in Sources */,
 				32983D1524E69D130025D503 /* CreatePostVC.swift in Sources */,
+				32856EC2251354900062221B /* AuthToken.swift in Sources */,
 				18B324852361F3E20008DF0C /* HomeTableViewCell.swift in Sources */,
 				186236B5236A30DD0057B5C8 /* ContactsVC.swift in Sources */,
 				32983D0524E269AB0025D503 /* EditProfileMD.swift in Sources */,
@@ -684,9 +682,9 @@
 				32B7096924E95A0900B74732 /* ButtonExtension.swift in Sources */,
 				18A1E51923600C8E005CDBC4 /* ViewController.swift in Sources */,
 				323B0C4924E04D7C003C28E4 /* AboutMeViewController.swift in Sources */,
+				32856EC62513AAF10062221B /* DatabaseManage.swift in Sources */,
 				323B0BDF24D81C1D003C28E4 /* StringExtension.swift in Sources */,
 				323B0C3224E021F2003C28E4 /* APIRouter.swift in Sources */,
-				32856E7E2513068A0062221B /* TestViewController.swift in Sources */,
 				18A1E539236054F5005CDBC4 /* Info.swift in Sources */,
 				18A1E5292360158A005CDBC4 /* MessageViewController.swift in Sources */,
 				18A1E537236047AF005CDBC4 /* LoginViewController.swift in Sources */,
@@ -710,7 +708,6 @@
 				32D70A0E24E060C600E00771 /* DiscussionsTableViewCell.swift in Sources */,
 				323B0C3824E02247003C28E4 /* User.swift in Sources */,
 				32983D0124E265980025D503 /* SettingMD.swift in Sources */,
-				323B0C3A24E0225D003C28E4 /* Auth.swift in Sources */,
 				323B0C1C24D972A5003C28E4 /* ButtonGradient.swift in Sources */,
 				323B0BDB24D81B67003C28E4 /* UIViewExtension.swift in Sources */,
 				32983CFD24E262980025D503 /* EditProfileTBVCell.swift in Sources */,
@@ -720,7 +717,6 @@
 				186236B1236A30900057B5C8 /* MessagePageView.swift in Sources */,
 				32983CF224E198450025D503 /* UIViewControllerExtension.swift in Sources */,
 				18A1E53C2361535F005CDBC4 /* BannerCollectionViewCell.swift in Sources */,
-				18A1E5302360474B005CDBC4 /* DangNhapVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

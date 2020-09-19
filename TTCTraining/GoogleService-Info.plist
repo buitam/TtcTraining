@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>357546737680-tih3o1q1tqmm58aj6bghhcg4an57of2m.apps.googleusercontent.com</string>
+	<string>448171648541-gsqlqkh3thofvsjojorv881spo1dkmur.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.357546737680-tih3o1q1tqmm58aj6bghhcg4an57of2m</string>
+	<string>com.googleusercontent.apps.448171648541-gsqlqkh3thofvsjojorv881spo1dkmur</string>
 	<key>API_KEY</key>
-	<string>AIzaSyB2P1mGq1hxxOGCzh2A_jMyKv-X74u10Mo</string>
+	<string>AIzaSyA8ifVi4Wj08hPT15lJghvzmTjvX8VE48U</string>
 	<key>GCM_SENDER_ID</key>
-	<string>357546737680</string>
+	<string>448171648541</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>tam.TravelApp</string>
 	<key>PROJECT_ID</key>
-	<string>travelapp-83af4</string>
+	<string>travelapp-3b402</string>
 	<key>STORAGE_BUCKET</key>
-	<string>travelapp-83af4.appspot.com</string>
+	<string>travelapp-3b402.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,8 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:357546737680:ios:db25013c134058123a8a95</string>
+	<string>1:448171648541:ios:1f9474ca0043c4e871c8f4</string>
 	<key>DATABASE_URL</key>
-	<string>https://travelapp-83af4.firebaseio.com</string>
+	<string>https://travelapp-3b402.firebaseio.com</string>
 </dict>
 </plist>

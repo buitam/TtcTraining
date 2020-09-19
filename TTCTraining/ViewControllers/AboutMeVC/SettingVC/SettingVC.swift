@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import FirebaseAuth
 class SettingVC: UIViewController {
     var lstSetting = SettingMD.initSetting()
     var lstTitleSection = ["ACCOUNT", "GENERAL","SUPPORT","ABOUT"]
@@ -34,7 +34,7 @@ class SettingVC: UIViewController {
 }
 
 // MARK: - TableViewDelegates and datasources
-extension SettingVC: UITableViewDelegate, UITableViewDataSource{
+extension SettingVC: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return lstSetting.count
     }
@@ -50,8 +50,25 @@ extension SettingVC: UITableViewDelegate, UITableViewDataSource{
         cell?.configCell(lstSetting[indexPath.section][indexPath.row])
         return cell!
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath == [self.settingTableView!.numberOfSections - 1, 5] {
+            do {
+                try FirebaseAuth.Auth.auth().signOut()
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let loginVC = storyboard.instantiateViewController(withIdentifier: "Login") as! LoginViewController
+                loginVC.modalPresentationStyle = .fullScreen
+                self.present(loginVC, animated: true, completion: nil)
+            }
+            catch {
+                alertError()
+            }
+            
+        }
+        
+        
+    }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath:IndexPath) -> CGFloat {
         return 40
     }
 }

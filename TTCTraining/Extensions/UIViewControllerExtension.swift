@@ -16,6 +16,15 @@ func createAnimated(self: UIViewController) {
     self.view.window!.layer.add(transition, forKey: nil)
 }
 extension UIViewController {
+    func alertError(message: String = "An unexpected error occurred.") {
+        let alert = UIAlertController(title: "Woops",
+                                      message: message,
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title:"Dismiss",
+                                      style: .cancel, handler: nil))
+        present(alert, animated: true)
+    }
+    
     func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
         tap.cancelsTouchesInView = false
@@ -28,4 +37,6 @@ extension UIViewController {
             self.view.frame.origin.y = 0
         }
     }
+    
+    
 }

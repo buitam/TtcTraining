@@ -1,15 +1,15 @@
 //
-//  Auth.swift
+//  AuthToken.swift
 //  TTCTraining
 //
-//  Created by Bui Tam on 8/9/20.
+//  Created by Bui Tam on 9/17/20.
 //  Copyright © 2020 Apple. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-class Auth: Mappable {
+class AuthToken: Mappable {
     var tokenType: String?
     var expiresIn: Int?
     var accessToken: String?

@@ -21,9 +21,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     @IBOutlet weak var btnFind: UIButton!
     @IBOutlet weak var btnPost: UIButton!
     @IBAction func btnPostLogin(_ sender: Any) {
-                let loginVC = storyboard?.instantiateViewController(withIdentifier: "Main") as! LoginViewController
+        let loginVC = storyboard?.instantiateViewController(withIdentifier: "Login") as! LoginViewController
         loginVC.modalPresentationStyle = .fullScreen
-               self.present(loginVC, animated: true, completion: nil)
+        self.present(loginVC, animated: true, completion: nil)
         
             }
     @IBOutlet weak var addFriendCollectionView: UICollectionView!
