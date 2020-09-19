@@ -8,6 +8,8 @@
 
 import UIKit
 import FirebaseAuth
+import FBSDKLoginKit
+import GoogleSignIn
 class SettingVC: UIViewController {
     var lstSetting = SettingMD.initSetting()
     var lstTitleSection = ["ACCOUNT", "GENERAL","SUPPORT","ABOUT"]
@@ -52,19 +54,29 @@ extension SettingVC: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath == [self.settingTableView!.numberOfSections - 1, 5] {
-            do {
-                try FirebaseAuth.Auth.auth().signOut()
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let loginVC = storyboard.instantiateViewController(withIdentifier: "Login") as! LoginViewController
-                loginVC.modalPresentationStyle = .fullScreen
-                self.present(loginVC, animated: true, completion: nil)
-            }
-            catch {
-                alertError()
-            }
+            let actionSheet = UIAlertController(title: "", message: "Do you want to log out? ", preferredStyle: .actionSheet)
+            actionSheet.addAction(UIAlertAction(title: "Log Out", style: .destructive, handler: { _ in
+                // Log out FB
+                FBSDKLoginKit.LoginManager().logOut()
+                // Log out Google
+                GIDSignIn.sharedInstance()?.signOut()
+                do {
+                    try FirebaseAuth.Auth.auth().signOut()
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let loginVC = storyboard.instantiateViewController(withIdentifier: "Login") as! LoginViewController
+                    loginVC.modalPresentationStyle = .fullScreen
+                    self.present(loginVC, animated: true, completion: nil)
+                }
+                catch {
+                    self.alertError(message: "Fail to logout")
+                }
+                
+            }))
+            actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            
+            present(actionSheet, animated: true, completion: nil)
             
         }
-        
         
     }
     

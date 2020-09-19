@@ -8,7 +8,6 @@
 
 import UIKit
 import CenteredCollectionView
-import Alamofire
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITableViewDataSource, UITableViewDelegate {
 
 

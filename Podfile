@@ -4,16 +4,24 @@
 target 'TTCTraining' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-pod 'SVProgressHUD'
-pod 'FSPagerView'
-pod 'CenteredCollectionView'
-pod 'Alamofire'
-pod 'ObjectMapper'
-pod 'AlamofireObjectMapper'
-# Firebase
-pod 'Firebase/Auth'
-pod 'Firebase/Core'
-pod 'Firebase/Database'
-  # Pods for TTCTraining
+	pod 'SVProgressHUD'
+	pod 'FSPagerView'
+	pod 'CenteredCollectionView'
 
+
+# Firebase
+	pod 'Firebase/Auth'
+	pod 'Firebase/Core'
+	pod 'Firebase/Database'
+
+# Facebook
+
+    	pod 'FBSDKLoginKit'
+# Google
+	pod 'GoogleSignIn'
+# Message
+	pod 'MessageKit'
+	pod 'JGProgressHUD'
+	pod 'RealmSwift'
+	pod 'SDWebImage'
 end

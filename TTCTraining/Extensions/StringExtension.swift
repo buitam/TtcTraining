@@ -24,3 +24,7 @@ extension Optional where Wrapped == String {
         return self ?? defaultValue
     }
 }
+
+extension NSNotification.Name {
+    static let didLoginNotification = Notification.Name("didLoginNotification")
+}

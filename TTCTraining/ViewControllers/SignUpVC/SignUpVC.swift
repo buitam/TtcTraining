@@ -8,7 +8,16 @@
 
 import UIKit
 import FirebaseAuth
+import FBSDKLoginKit
+import GoogleSignIn
 class SignUpVC: UIViewController {
+    private let googleLoginButton = GIDSignInButton()
+    private var loginObserver: NSObjectProtocol?
+    let facebookLoginButton : FBLoginButton = {
+        let button = FBLoginButton()
+        button.permissions = ["email,public_profile"]
+        return button
+    }()
     @IBOutlet weak var tfPassword: UITextField!
     @IBOutlet weak var tfConfirmPassword: UITextField!
     @IBOutlet weak var imageView: UIImageView!
@@ -30,14 +39,15 @@ class SignUpVC: UIViewController {
     @IBAction func btnSignInAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
     override func viewDidLoad() {
-        
         super.viewDidLoad()
-        
         tfEmail.delegate = self
         tfUsername.delegate = self
         tfPassword.delegate = self
         tfConfirmPassword.delegate = self
+        facebookLoginButton.delegate = self
+        GIDSignIn.sharedInstance()?.presentingViewController = self
         
         self.hideKeyboardWhenTappedAround()
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -47,10 +57,42 @@ class SignUpVC: UIViewController {
         imageView.addGestureRecognizer(gesture)
         imageView.layer.borderWidth = 1
         imageView.layer.borderColor = UIColor.lightGray.cgColor
+        
+        
+        facebookLoginButton.frame = CGRect(x: 40, y: view.frame.height - 130, width: view.frame.width - 80, height: 40)
+        googleLoginButton.frame = CGRect(x: 35, y: view.frame.height - 80, width: view.frame.width - 70, height: 40)
+        view.addSubview(facebookLoginButton)
+        view.addSubview(googleLoginButton)
+        loginObserver = NotificationCenter.default.addObserver(forName: .didLoginNotification, object: nil,
+                                                               queue: .main,
+                                                               using: {[weak self ] _ in
+                                                                guard let strongSelf = self else {
+                                                                    return
+                                                                }
+        
+                                                                strongSelf.navigationController?.dismiss(animated: true, completion: nil)
+                                                                print("login success")
+                                                                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                                                                let homeVC = storyboard.instantiateViewController(withIdentifier: "Tabbar") as! TabbarViewController
+                                                                homeVC.modalPresentationStyle = .fullScreen
+                                                                self!.present(homeVC, animated: true, completion: nil)
+                                                                
+                                                               }
+                                                               
+        )
+        
     }
+    
+    deinit {
+        if let observer = loginObserver {
+            NotificationCenter.default.removeObserver(observer)
+        }
+    }
+    
     @objc private func didTapChangeProfilePic() {
         presentPhotoActionSheet()
     }
+    
     
     @objc func keyboardWillShow(notification: NSNotification) {
         if self.view.frame.origin.y == 0 {
@@ -65,16 +107,16 @@ class SignUpVC: UIViewController {
         tfPassword.autocorrectionType = .no
         tfConfirmPassword.autocorrectionType = .no
         guard let userName = tfUsername.text,
-            let password = tfPassword.text,
-            let email = tfEmail.text,
-            let cfpassword = tfConfirmPassword.text,
-            !userName.isEmpty,
-            !password.isEmpty,
-            !email.isEmpty,
-            !cfpassword.isEmpty
-            else {
-                alertError()
-                return
+              let password = tfPassword.text,
+              let email = tfEmail.text,
+              let cfpassword = tfConfirmPassword.text,
+              !userName.isEmpty,
+              !password.isEmpty,
+              !email.isEmpty,
+              !cfpassword.isEmpty
+        else {
+            alertError()
+            return
         }
         // Fire base create user accouunt
         DatabaseManager.shared.userExists(with: email, completion: {[weak self] exist in
@@ -102,10 +144,6 @@ class SignUpVC: UIViewController {
         })
         
     }
-    
-    
-    
-    
 }
 
 extension SignUpVC: UITextFieldDelegate {
@@ -144,14 +182,13 @@ extension SignUpVC: UIImagePickerControllerDelegate, UINavigationControllerDeleg
                                                 
                                                 self?.presentCamera()
                                                 
-        }))
+                                            }))
         actionSheet.addAction(UIAlertAction(title: "Chose Photo",
                                             style: .default,
                                             handler: { [weak self] _ in
                                                 
                                                 self?.presentPhotoPicker()
-                                                
-        }))
+                                            }))
         
         present(actionSheet, animated: true)
     }
@@ -186,5 +223,59 @@ extension SignUpVC: UIImagePickerControllerDelegate, UINavigationControllerDeleg
     }
     
 }
-
+extension SignUpVC: LoginButtonDelegate {
+    func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
+        guard let token = result?.token?.tokenString else {
+            print("Fail login fb")
+            return
+        }
+        let facebookRequest = FBSDKLoginKit.GraphRequest(graphPath: "me",
+                                                         parameters: ["fields" : "email, name"],
+                                                         tokenString: token,
+                                                         version: nil,
+                                                         httpMethod: .get)
+        facebookRequest.start(completionHandler: { _, result, error in
+            guard let result = result as? [String : Any]
+                  , error == nil else {
+                print("Fail to make facebook request")
+                return
+            }
+            guard let userName = result["name"] as? String,
+                  let email = result["email"] as? String else {
+                print("Fail to get email result from fb")
+                return
+            }
+            DatabaseManager.shared.userExists(with: email, completion: { exists in
+                if !exists {
+                    DatabaseManager.shared.insertUser(with: ChatAppUser(userName: userName, emailAddress: email))
+                }
+            })
+            let credential = FacebookAuthProvider.credential(withAccessToken: token)
+            FirebaseAuth.Auth.auth().signIn(with: credential, completion: {[weak self] authResult, error in
+                guard let strongSelf = self else {
+                    return
+                }
+                guard authResult != nil, error == nil else {
+                    print("FB creaditial login fail")
+                    return
+                }
+                strongSelf.navigationController?.dismiss(animated: true, completion: nil)
+                print("login success")
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let homeVC = storyboard.instantiateViewController(withIdentifier: "Tabbar") as! TabbarViewController
+                homeVC.modalPresentationStyle = .fullScreen
+                self!.present(homeVC, animated: true, completion: nil)
+            })
+            
+        })
+        
+    }
+    
+    func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
+        
+        
+    }
+    
+    
+}
 

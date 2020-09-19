@@ -20,6 +20,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //validateAuth()
         topConstraintHeight.constant = 1000
         logoTopConstraint.constant = 252
         topTravelMatesConstraint.constant = 446
@@ -31,15 +32,16 @@ class LoginViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        validateAuth()
+        
 
     }
     
     private func validateAuth(){
         if FirebaseAuth.Auth.auth().currentUser == nil {
-//            let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "Login") as! LoginViewController
-//            loginVC.modalPresentationStyle = .fullScreen
-//            self.present(loginVC, animated: true, completion: nil)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let loginVC = storyboard.instantiateViewController(withIdentifier: "Login") as! LoginViewController
+            loginVC.modalPresentationStyle = .fullScreen
+            self.present(loginVC, animated: true, completion: nil)
         }
     }
 
@@ -91,6 +93,7 @@ class LoginViewController: UIViewController {
                                      }
                        return
                        }
+                
                 strongSelf.navigationController?.dismiss(animated: true, completion: nil)
                  
                    let homeVC = self?.storyboard?.instantiateViewController(withIdentifier: "Tabbar") as! TabbarViewController
