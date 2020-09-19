@@ -489,6 +489,21 @@
             </objects>
             <point key="canvasLocation" x="-1177" y="108"/>
         </scene>
+        <!--Chat ContentVC-->
+        <scene sceneID="j72-tv-jqY">
+            <objects>
+                <viewController storyboardIdentifier="ChatContentVC" id="hxw-50-vnd" customClass="ChatContentVC" customModule="TravelApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RF8-m3-2Dp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="6tP-PD-3tA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QZR-qG-kl4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2170" y="851"/>
+        </scene>
         <!--Noti-->
         <scene sceneID="dbP-Ln-GSd">
             <objects>
@@ -568,7 +583,7 @@
         <!--Message-->
         <scene sceneID="lpk-q6-Oah">
             <objects>
-                <viewController storyboardIdentifier="MessVC" id="ze1-vt-0GN" customClass="MessageViewController" customModule="TravelApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MessVC" id="ze1-vt-0GN" customClass="MessViewController" customModule="TravelApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vje-LE-BTw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1152,6 +1167,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

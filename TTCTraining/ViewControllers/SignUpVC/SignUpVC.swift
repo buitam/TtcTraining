@@ -10,7 +10,9 @@ import UIKit
 import FirebaseAuth
 import FBSDKLoginKit
 import GoogleSignIn
+import JGProgressHUD
 class SignUpVC: UIViewController {
+    private let spinner = JGProgressHUD(style: .dark)
     private let googleLoginButton = GIDSignInButton()
     private var loginObserver: NSObjectProtocol?
     let facebookLoginButton : FBLoginButton = {
@@ -69,7 +71,7 @@ class SignUpVC: UIViewController {
                                                                 guard let strongSelf = self else {
                                                                     return
                                                                 }
-        
+                                                                
                                                                 strongSelf.navigationController?.dismiss(animated: true, completion: nil)
                                                                 print("login success")
                                                                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -100,6 +102,7 @@ class SignUpVC: UIViewController {
         }
     }
     func registerButtonTapped() {
+        spinner.show(in: view)
         tfUsername.resignFirstResponder()
         tfEmail.resignFirstResponder()
         tfPassword.resignFirstResponder()
@@ -122,6 +125,9 @@ class SignUpVC: UIViewController {
         DatabaseManager.shared.userExists(with: email, completion: {[weak self] exist in
             guard let strongSelf = self else {
                 return
+            }
+            DispatchQueue.main.async {
+                strongSelf.spinner.dismiss()
             }
             guard !exist else {
                 strongSelf.alertError(message: "A user account for that email already exists!")
@@ -245,6 +251,7 @@ extension SignUpVC: LoginButtonDelegate {
                 print("Fail to get email result from fb")
                 return
             }
+            
             DatabaseManager.shared.userExists(with: email, completion: { exists in
                 if !exists {
                     DatabaseManager.shared.insertUser(with: ChatAppUser(userName: userName, emailAddress: email))

@@ -16,7 +16,6 @@
 		18A1E51C23600C8E005CDBC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18A1E51A23600C8E005CDBC4 /* Main.storyboard */; };
 		18A1E51E23600C8F005CDBC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18A1E51D23600C8F005CDBC4 /* Assets.xcassets */; };
 		18A1E52123600C8F005CDBC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18A1E51F23600C8F005CDBC4 /* LaunchScreen.storyboard */; };
-		18A1E5292360158A005CDBC4 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A1E5282360158A005CDBC4 /* MessageViewController.swift */; };
 		18A1E52B236015AC005CDBC4 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A1E52A236015AC005CDBC4 /* HistoryViewController.swift */; };
 		18A1E537236047AF005CDBC4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A1E536236047AF005CDBC4 /* LoginViewController.swift */; };
 		18A1E539236054F5005CDBC4 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A1E538236054F5005CDBC4 /* Info.swift */; };
@@ -28,6 +27,8 @@
 		18A1E54D2361C4FA005CDBC4 /* AddFriendCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A1E54B2361C4FA005CDBC4 /* AddFriendCollectionViewCell.xib */; };
 		18B324852361F3E20008DF0C /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B324832361F3E20008DF0C /* HomeTableViewCell.swift */; };
 		18B324862361F3E20008DF0C /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B324842361F3E20008DF0C /* HomeTableViewCell.xib */; };
+		32290128251641F90093D20F /* ChatContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32290127251641F90093D20F /* ChatContentVC.swift */; };
+		3229017525164F220093D20F /* MessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3229017425164F220093D20F /* MessViewController.swift */; };
 		323B0BBB24D807D1003C28E4 /* ColorsConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323B0BBA24D807D1003C28E4 /* ColorsConst.swift */; };
 		323B0BBD24D807FE003C28E4 /* StringsConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323B0BBC24D807FE003C28E4 /* StringsConst.swift */; };
 		323B0BBF24D8080A003C28E4 /* VCNameConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323B0BBE24D8080A003C28E4 /* VCNameConst.swift */; };
@@ -82,7 +83,6 @@
 		18A1E51D23600C8F005CDBC4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18A1E52023600C8F005CDBC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18A1E52223600C8F005CDBC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		18A1E5282360158A005CDBC4 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		18A1E52A236015AC005CDBC4 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		18A1E536236047AF005CDBC4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		18A1E538236054F5005CDBC4 /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
@@ -95,6 +95,8 @@
 		18B324832361F3E20008DF0C /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		18B324842361F3E20008DF0C /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 		1CD3AE4F87DF56A2FF0D4C48 /* Pods-TTCTraining.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTCTraining.release.xcconfig"; path = "Target Support Files/Pods-TTCTraining/Pods-TTCTraining.release.xcconfig"; sourceTree = "<group>"; };
+		32290127251641F90093D20F /* ChatContentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatContentVC.swift; sourceTree = "<group>"; };
+		3229017425164F220093D20F /* MessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessViewController.swift; sourceTree = "<group>"; };
 		323B0BBA24D807D1003C28E4 /* ColorsConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsConst.swift; sourceTree = "<group>"; };
 		323B0BBC24D807FE003C28E4 /* StringsConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringsConst.swift; sourceTree = "<group>"; };
 		323B0BBE24D8080A003C28E4 /* VCNameConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCNameConst.swift; sourceTree = "<group>"; };
@@ -182,8 +184,8 @@
 			children = (
 				323B0C4B24E058D9003C28E4 /* ContactsVC */,
 				323B0C4A24E058C8003C28E4 /* DiscussionsVC */,
-				18A1E5282360158A005CDBC4 /* MessageViewController.swift */,
 				186236B0236A30900057B5C8 /* MessagePageView.swift */,
+				3229017425164F220093D20F /* MessViewController.swift */,
 			);
 			path = MessageVC;
 			sourceTree = "<group>";
@@ -349,6 +351,7 @@
 				32D70A0C24E060C600E00771 /* DiscussionsTableViewCell.swift */,
 				32D70A0D24E060C600E00771 /* DiscussionsTableViewCell.xib */,
 				323B0C5124E05BC7003C28E4 /* DiscussionsVC.swift */,
+				32290127251641F90093D20F /* ChatContentVC.swift */,
 			);
 			path = DiscussionsElements;
 			sourceTree = "<group>";
@@ -544,6 +547,7 @@
 				TargetAttributes = {
 					18A1E51223600C8E005CDBC4 = {
 						CreatedOnToolsVersion = 10.2;
+						LastSwiftMigration = 1200;
 					};
 				};
 			};
@@ -664,6 +668,7 @@
 				32983D1524E69D130025D503 /* CreatePostVC.swift in Sources */,
 				18B324852361F3E20008DF0C /* HomeTableViewCell.swift in Sources */,
 				186236B5236A30DD0057B5C8 /* ContactsVC.swift in Sources */,
+				32290128251641F90093D20F /* ChatContentVC.swift in Sources */,
 				32983D0524E269AB0025D503 /* EditProfileMD.swift in Sources */,
 				32B7096924E95A0900B74732 /* ButtonExtension.swift in Sources */,
 				18A1E51923600C8E005CDBC4 /* ViewController.swift in Sources */,
@@ -671,11 +676,11 @@
 				32856EC62513AAF10062221B /* DatabaseManage.swift in Sources */,
 				323B0BDF24D81C1D003C28E4 /* StringExtension.swift in Sources */,
 				18A1E539236054F5005CDBC4 /* Info.swift in Sources */,
-				18A1E5292360158A005CDBC4 /* MessageViewController.swift in Sources */,
 				18A1E537236047AF005CDBC4 /* LoginViewController.swift in Sources */,
 				18623706236B97610057B5C8 /* TabbarViewController.swift in Sources */,
 				32F1EDBF24E927E500392F24 /* SignUpVC.swift in Sources */,
 				32983D0D24E69CA00025D503 /* PostedTBVCell.swift in Sources */,
+				3229017525164F220093D20F /* MessViewController.swift in Sources */,
 				323B0BDD24D81BB8003C28E4 /* NumbersConst.swift in Sources */,
 				32983CF924E1A95D0025D503 /* SettingTBVCell.swift in Sources */,
 				3241C8F624E6BCA9003D5011 /* PostedMD.swift in Sources */,
@@ -845,6 +850,7 @@
 			baseConfigurationReference = CC93AE7ABAB2552630CCB6A3 /* Pods-TTCTraining.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = TTCTraining/TravelApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -858,6 +864,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = tam.TravelApp;
 				PRODUCT_NAME = TravelApp;
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -868,6 +875,7 @@
 			baseConfigurationReference = 1CD3AE4F87DF56A2FF0D4C48 /* Pods-TTCTraining.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = TTCTraining/TravelApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;

@@ -68,6 +68,13 @@ class DiscussionsVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         cell.configCell(listInfo[indexPath.row])
         return cell
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let chatVC = storyboard.instantiateViewController(withIdentifier: "ChatContentVC") as! ChatContentVC
+        chatVC.title = "hihi"
+        chatVC.navigationItem.largeTitleDisplayMode = .never
+        self.navigationController?.pushViewController(chatVC, animated: true)
+    }
     
     
 }

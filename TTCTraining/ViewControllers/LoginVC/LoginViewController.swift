@@ -8,7 +8,9 @@
 
 import UIKit
 import FirebaseAuth
+import JGProgressHUD
 class LoginViewController: UIViewController {
+    private let spinner = JGProgressHUD(style: .dark)
     
     @IBOutlet weak var topConstraintHeight: NSLayoutConstraint!
     @IBOutlet weak var logoTopConstraint: NSLayoutConstraint!
@@ -20,7 +22,6 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //validateAuth()
         topConstraintHeight.constant = 1000
         logoTopConstraint.constant = 252
         topTravelMatesConstraint.constant = 446
@@ -32,27 +33,28 @@ class LoginViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-
+        validateAuth()
     }
-    
-    private func validateAuth(){
+
+    private func validateAuth() {
         if FirebaseAuth.Auth.auth().currentUser == nil {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let loginVC = storyboard.instantiateViewController(withIdentifier: "Login") as! LoginViewController
             loginVC.modalPresentationStyle = .fullScreen
-            self.present(loginVC, animated: true, completion: nil)
+            present(loginVC, animated: false)
         }
     }
+    
 
+    
     
     @objc func keyboardWillShow(notification: NSNotification) {
-            if self.view.frame.origin.y == 0 {
-                self.view.frame.origin.y -= 50
-    
+        if self.view.frame.origin.y == 0 {
+            self.view.frame.origin.y -= 50
+            
         }
     }
-
+    
     
     @IBAction func btnSignUpAction(_ sender: Any) {
         let signUpVC = SignUpVC(nibName: "SignUpVC", bundle: nil)
@@ -62,59 +64,63 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func btnShowPasswordAction(_ sender: Any) {
-           tfPassword.isSecureTextEntry.toggle()
-       }
-       @IBAction func hideSigInPop(_ sender: Any) {
-           topConstraintHeight.constant = 1000
-           logoTopConstraint.constant = 252
-           topTravelMatesConstraint.constant = 446
-           lblTravelMates.font = UIFont(name:"Noteworthy", size: 45.0)
-           lblWelcome.isHidden = false
+        tfPassword.isSecureTextEntry.toggle()
+    }
+    @IBAction func hideSigInPop(_ sender: Any) {
+        topConstraintHeight.constant = 1000
+        logoTopConstraint.constant = 252
+        topTravelMatesConstraint.constant = 446
+        lblTravelMates.font = UIFont(name:"Noteworthy", size: 45.0)
+        lblWelcome.isHidden = false
         guard let email = self.tfEmail.text, let password = self.tfPassword.text else {
             return
         }
-           UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0, options: .curveEaseOut, animations:{ self.view.layoutIfNeeded()}, completion: { (_) in
-               FirebaseAuth.Auth.auth().signIn(withEmail: email, password: password , completion: {
-                  [weak self] authResult, error in
+        spinner.show(in: view)
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0, options: .curveEaseOut, animations:{ self.view.layoutIfNeeded()}, completion: { (_) in
+            FirebaseAuth.Auth.auth().signIn(withEmail: email, password: password , completion: {
+                [weak self] authResult, error in
                 guard let strongSelf = self else {
                     return
                 }
-                   guard let _ = authResult, error == nil else {
+                DispatchQueue.main.async {
+                    strongSelf.spinner.dismiss()
+                }
+                guard let _ = authResult, error == nil else {
                     if (email == "" || password == "") {
-                                         let alert: UIAlertController = UIAlertController(title: "Thông báo", message: "Vui lòng nhập đầy đủ thông tin", preferredStyle: .alert)
-                                         let btn_Ok: UIAlertAction = UIAlertAction(title: "OK", style: .destructive, handler: nil)
-                                         alert.addAction(btn_Ok)
+                        let alert: UIAlertController = UIAlertController(title: "Thông báo", message: "Vui lòng nhập đầy đủ thông tin", preferredStyle: .alert)
+                        let btn_Ok: UIAlertAction = UIAlertAction(title: "OK", style: .destructive, handler: nil)
+                        alert.addAction(btn_Ok)
                         self!.present(alert, animated: true, completion: nil)
-                                     } else{
-                                         let alert: UIAlertController = UIAlertController(title: "Thông báo", message: "Tên đăng nhập hoặc mật khẩu không chính xác", preferredStyle: .alert)
-                                         let btn_Ok: UIAlertAction = UIAlertAction(title: "OK", style: .destructive, handler: nil)
-                                         alert.addAction(btn_Ok)
+                    } else{
+                        let alert: UIAlertController = UIAlertController(title: "Thông báo", message: "Tên đăng nhập hoặc mật khẩu không chính xác", preferredStyle: .alert)
+                        let btn_Ok: UIAlertAction = UIAlertAction(title: "OK", style: .destructive, handler: nil)
+                        alert.addAction(btn_Ok)
                         self?.present(alert, animated: true, completion: nil)
-                                     }
-                       return
-                       }
+                    }
+                    return
+                }
                 
                 strongSelf.navigationController?.dismiss(animated: true, completion: nil)
-                 
-                   let homeVC = self?.storyboard?.instantiateViewController(withIdentifier: "Tabbar") as! TabbarViewController
-                   homeVC.modalPresentationStyle = .fullScreen
-                   self!.present(homeVC, animated: true, completion: nil)
-               })
-               
-           })
-       }
-
-       @IBAction func showLoginPop(_ sender: Any) {
-           topConstraintHeight.constant = 180
-           logoTopConstraint.constant = 50
-           topTravelMatesConstraint.constant = 175
-           
-           lblTravelMates.font = UIFont(name:"Noteworthy", size: 25.0)
-           
-           lblWelcome.isHidden = true
-           UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0, options: .curveEaseOut, animations:{ self.view.layoutIfNeeded()}, completion: nil)
-           print("clicked")
-       }
+                
+                let homeVC = self?.storyboard?.instantiateViewController(withIdentifier: "Tabbar") as! TabbarViewController
+                homeVC.modalPresentationStyle = .fullScreen
+                self!.present(homeVC, animated: true, completion: nil)
+            })
+            
+        })
+    }
+    
+    @IBAction func showLoginPop(_ sender: Any) {
+        topConstraintHeight.constant = 180
+        logoTopConstraint.constant = 50
+        topTravelMatesConstraint.constant = 175
+        
+        lblTravelMates.font = UIFont(name:"Noteworthy", size: 25.0)
+        
+        lblWelcome.isHidden = true
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0, options: .curveEaseOut, animations:{ self.view.layoutIfNeeded()}, completion: nil)
+        print("clicked")
+    }
     
 }
 

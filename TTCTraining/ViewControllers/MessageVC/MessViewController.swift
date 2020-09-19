@@ -1,15 +1,15 @@
 //
-//  MessageViewController.swift
+//  MessViewController.swift
 //  TTCTraining
 //
-//  Created by Apple on 10/23/19.
-//  Copyright © 2019 Apple. All rights reserved.
+//  Created by Bui Tam on 9/19/20.
+//  Copyright © 2020 Apple. All rights reserved.
 //
 
 import UIKit
 
-class MessageViewController: UIViewController{
-
+class MessViewController: UIViewController{
+    
     static var index:Int = 0
     @IBOutlet weak var contentView: UIView!
     
