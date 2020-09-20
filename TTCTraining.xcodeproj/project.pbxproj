@@ -63,6 +63,7 @@
 		32983D0E24E69CA00025D503 /* PostedTBVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32983D0C24E69CA00025D503 /* PostedTBVCell.xib */; };
 		32983D1524E69D130025D503 /* CreatePostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32983D1324E69D130025D503 /* CreatePostVC.swift */; };
 		32983D1624E69D130025D503 /* CreatePostVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32983D1424E69D130025D503 /* CreatePostVC.xib */; };
+		32ABC9E62517537300E76B1B /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABC9E52517537300E76B1B /* TestViewController.swift */; };
 		32B7096924E95A0900B74732 /* ButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B7096824E95A0900B74732 /* ButtonExtension.swift */; };
 		32D70A0E24E060C600E00771 /* DiscussionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D70A0C24E060C600E00771 /* DiscussionsTableViewCell.swift */; };
 		32D70A0F24E060C600E00771 /* DiscussionsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32D70A0D24E060C600E00771 /* DiscussionsTableViewCell.xib */; };
@@ -131,6 +132,7 @@
 		32983D0C24E69CA00025D503 /* PostedTBVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostedTBVCell.xib; sourceTree = "<group>"; };
 		32983D1324E69D130025D503 /* CreatePostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostVC.swift; sourceTree = "<group>"; };
 		32983D1424E69D130025D503 /* CreatePostVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreatePostVC.xib; sourceTree = "<group>"; };
+		32ABC9E52517537300E76B1B /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		32B7096824E95A0900B74732 /* ButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonExtension.swift; sourceTree = "<group>"; };
 		32D70A0C24E060C600E00771 /* DiscussionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscussionsTableViewCell.swift; sourceTree = "<group>"; };
 		32D70A0D24E060C600E00771 /* DiscussionsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiscussionsTableViewCell.xib; sourceTree = "<group>"; };
@@ -352,6 +354,7 @@
 				32D70A0D24E060C600E00771 /* DiscussionsTableViewCell.xib */,
 				323B0C5124E05BC7003C28E4 /* DiscussionsVC.swift */,
 				32290127251641F90093D20F /* ChatContentVC.swift */,
+				32ABC9E52517537300E76B1B /* TestViewController.swift */,
 			);
 			path = DiscussionsElements;
 			sourceTree = "<group>";
@@ -669,6 +672,7 @@
 				18B324852361F3E20008DF0C /* HomeTableViewCell.swift in Sources */,
 				186236B5236A30DD0057B5C8 /* ContactsVC.swift in Sources */,
 				32290128251641F90093D20F /* ChatContentVC.swift in Sources */,
+				32ABC9E62517537300E76B1B /* TestViewController.swift in Sources */,
 				32983D0524E269AB0025D503 /* EditProfileMD.swift in Sources */,
 				32B7096924E95A0900B74732 /* ButtonExtension.swift in Sources */,
 				18A1E51923600C8E005CDBC4 /* ViewController.swift in Sources */,

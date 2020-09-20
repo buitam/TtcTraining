@@ -56,6 +56,12 @@ class ContactsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         cell.configCell(listInfo[indexPath.row])
         return cell
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let chatVC = TestViewController()
+        chatVC.title = "hihi"
+        chatVC.navigationItem.largeTitleDisplayMode = .never
+        navigationController?.pushViewController(chatVC, animated: true)
+    }
     
     
 }

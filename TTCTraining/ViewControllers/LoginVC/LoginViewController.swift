@@ -31,20 +31,7 @@ class LoginViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        validateAuth()
-    }
 
-    private func validateAuth() {
-        if FirebaseAuth.Auth.auth().currentUser == nil {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let loginVC = storyboard.instantiateViewController(withIdentifier: "Login") as! LoginViewController
-            loginVC.modalPresentationStyle = .fullScreen
-            present(loginVC, animated: false)
-        }
-    }
-    
 
     
     
