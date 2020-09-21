@@ -37,11 +37,12 @@ final class ConversationsViewController: UIViewController {
         tableView.frame = view.bounds
     }
     @objc private func didTapComposeButton() {
-        let vc = TestViewController()
+        let vc = NewConversationViewController()
         let navVC = UINavigationController(rootViewController: vc)
         present(navVC, animated: true)
+        
     }
-
+    
     func fetchConversation() {
         tableView.isHidden = false
     }

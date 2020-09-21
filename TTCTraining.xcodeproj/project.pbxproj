@@ -62,9 +62,6 @@
 		32C1B5B5251865EA00404623 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C1B5B4251865EA00404623 /* SearchResult.swift */; };
 		32C1B5BA2518813200404623 /* ConversationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C1B5B92518813200404623 /* ConversationsViewController.swift */; };
 		32C1B5BE2518825800404623 /* NewConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C1B5BD2518825800404623 /* NewConversationViewController.swift */; };
-		32C1B5CD2518DF9100404623 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C1B5CC2518DF9100404623 /* TestViewController.swift */; };
-		32C1B5D12518E19F00404623 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C1B5CF2518E19F00404623 /* Cell.swift */; };
-		32C1B5D22518E19F00404623 /* Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32C1B5D02518E19F00404623 /* Cell.xib */; };
 		32D70A0E24E060C600E00771 /* DiscussionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D70A0C24E060C600E00771 /* DiscussionsTableViewCell.swift */; };
 		32D70A0F24E060C600E00771 /* DiscussionsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32D70A0D24E060C600E00771 /* DiscussionsTableViewCell.xib */; };
 		32F1EDBF24E927E500392F24 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F1EDBD24E927E400392F24 /* SignUpVC.swift */; };
@@ -131,9 +128,6 @@
 		32C1B5B4251865EA00404623 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		32C1B5B92518813200404623 /* ConversationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsViewController.swift; sourceTree = "<group>"; };
 		32C1B5BD2518825800404623 /* NewConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewConversationViewController.swift; sourceTree = "<group>"; };
-		32C1B5CC2518DF9100404623 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
-		32C1B5CF2518E19F00404623 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
-		32C1B5D02518E19F00404623 /* Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Cell.xib; sourceTree = "<group>"; };
 		32D70A0C24E060C600E00771 /* DiscussionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscussionsTableViewCell.swift; sourceTree = "<group>"; };
 		32D70A0D24E060C600E00771 /* DiscussionsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiscussionsTableViewCell.xib; sourceTree = "<group>"; };
 		32F1EDBD24E927E400392F24 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
@@ -355,9 +349,6 @@
 				32290127251641F90093D20F /* ChatContentVC.swift */,
 				32C1B5B92518813200404623 /* ConversationsViewController.swift */,
 				32C1B5BD2518825800404623 /* NewConversationViewController.swift */,
-				32C1B5CC2518DF9100404623 /* TestViewController.swift */,
-				32C1B5CF2518E19F00404623 /* Cell.swift */,
-				32C1B5D02518E19F00404623 /* Cell.xib */,
 			);
 			path = DiscussionsElements;
 			sourceTree = "<group>";
@@ -573,7 +564,6 @@
 				32983CF624E1A2090025D503 /* SettingVC.xib in Resources */,
 				32983CEE24E182FB0025D503 /* EditProfileVC.xib in Resources */,
 				32983D0E24E69CA00025D503 /* PostedTBVCell.xib in Resources */,
-				32C1B5D22518E19F00404623 /* Cell.xib in Resources */,
 				18A1E54123619E99005CDBC4 /* HistoryTableViewCell.xib in Resources */,
 				18B324862361F3E20008DF0C /* HomeTableViewCell.xib in Resources */,
 				3263164E24E8EB9C002DCD0F /* EditDetailVC.xib in Resources */,
@@ -677,8 +667,6 @@
 				18A1E51723600C8E005CDBC4 /* AppDelegate.swift in Sources */,
 				323B0BBD24D807FE003C28E4 /* StringsConst.swift in Sources */,
 				18A1E52B236015AC005CDBC4 /* HistoryViewController.swift in Sources */,
-				32C1B5D12518E19F00404623 /* Cell.swift in Sources */,
-				32C1B5CD2518DF9100404623 /* TestViewController.swift in Sources */,
 				32983CF524E1A2090025D503 /* SettingVC.swift in Sources */,
 				18A1E54023619E99005CDBC4 /* HistoryTableViewCell.swift in Sources */,
 				32D70A0E24E060C600E00771 /* DiscussionsTableViewCell.swift in Sources */,

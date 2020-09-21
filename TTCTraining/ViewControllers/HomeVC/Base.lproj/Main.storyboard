@@ -179,46 +179,6 @@
             </objects>
             <point key="canvasLocation" x="-284" y="108"/>
         </scene>
-        <!--Test View Controller-->
-        <scene sceneID="jrm-Jy-XVe">
-            <objects>
-                <viewController id="MaJ-XM-UaC" customClass="TestViewController" customModule="TravelApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="LKb-9Q-942">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ODo-lA-XBl">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="kZh-EF-HaP">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kZh-EF-HaP" id="YTu-sF-4JB">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="QXc-Sr-jwv"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="QXc-Sr-jwv" firstAttribute="trailing" secondItem="ODo-lA-XBl" secondAttribute="trailing" id="1St-sx-Zex"/>
-                            <constraint firstItem="ODo-lA-XBl" firstAttribute="leading" secondItem="QXc-Sr-jwv" secondAttribute="leading" id="EVU-ER-wkw"/>
-                            <constraint firstItem="ODo-lA-XBl" firstAttribute="top" secondItem="QXc-Sr-jwv" secondAttribute="top" id="qgv-2M-Od3"/>
-                            <constraint firstItem="QXc-Sr-jwv" firstAttribute="bottom" secondItem="ODo-lA-XBl" secondAttribute="bottom" id="v9P-Zd-wy1"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="tableView" destination="ODo-lA-XBl" id="39R-RF-H9A"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RVP-Z2-Mwv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="431" y="80"/>
-        </scene>
         <!--Login View Controller-->
         <scene sceneID="hS2-t2-nlt">
             <objects>
