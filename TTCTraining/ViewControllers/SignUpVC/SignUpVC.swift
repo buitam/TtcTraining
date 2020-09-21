@@ -143,7 +143,29 @@ class SignUpVC: UIViewController {
                 
                 strongSelf.navigationController?.dismiss(animated: true, completion: nil)
                 
-                DatabaseManager.shared.insertUser(with: ChatAppUser(userName: userName, emailAddress: email))
+                
+                
+                
+                let chatUser = ChatAppUser(userName: userName, emailAddress: email)
+                DatabaseManager.shared.insertUser(with: chatUser, completion: { success in
+                    if success {
+                        // upload image
+                        guard let image = strongSelf.imageView.image,
+                              let data = image.pngData() else {
+                            return
+                        }
+                        let filename = chatUser.profilePictureFileName
+                        StorageManager.shared.uploadProfilePicture(with: data, fileName: filename, completion: { result in
+                            switch result {
+                            case .success(let downloadUrl):
+                                UserDefaults.standard.set(downloadUrl, forKey: "profile_picture_url")
+                                print(downloadUrl)
+                            case .failure(let error):
+                                print("Storage maanger error: \(error)")
+                            }
+                        })
+                    }
+                })
                 
             })
             
@@ -236,7 +258,7 @@ extension SignUpVC: LoginButtonDelegate {
             return
         }
         let facebookRequest = FBSDKLoginKit.GraphRequest(graphPath: "me",
-                                                         parameters: ["fields" : "email, name"],
+                                                         parameters: ["fields" : "email, name, picture.type(large)"],
                                                          tokenString: token,
                                                          version: nil,
                                                          httpMethod: .get)
@@ -246,15 +268,44 @@ extension SignUpVC: LoginButtonDelegate {
                 print("Fail to make facebook request")
                 return
             }
+            // vi result tra ve la file json, truy xuat de lay dc url
             guard let userName = result["name"] as? String,
-                  let email = result["email"] as? String else {
+                  let email = result["email"] as? String,
+                  let picture = result["picture"] as? [String: Any],
+                  let data = picture["data"] as? [String: Any],
+                  let pictureURL = data["url"] as? String else {
                 print("Fail to get email result from fb")
                 return
             }
-            
+            UserDefaults.standard.set(email, forKey: "email")
             DatabaseManager.shared.userExists(with: email, completion: { exists in
                 if !exists {
-                    DatabaseManager.shared.insertUser(with: ChatAppUser(userName: userName, emailAddress: email))
+                    let chatUser = ChatAppUser(userName: userName, emailAddress: email)
+                    DatabaseManager.shared.insertUser(with: chatUser, completion: { success in
+                        if success {
+                            // upload image
+                            guard let url = URL(string: pictureURL) else {
+                                return
+                            }
+                            URLSession.shared.dataTask(with: url, completionHandler: {data, _, _ in
+                                guard let data = data else {
+                                    return
+                                }
+                                
+                                let filename = chatUser.profilePictureFileName
+                                StorageManager.shared.uploadProfilePicture(with: data, fileName: filename, completion: { result in
+                                    switch result {
+                                    case .success(let downloadUrl):
+                                        UserDefaults.standard.set(downloadUrl, forKey: "profile_picture_url")
+                                        print(downloadUrl)
+                                    case .failure(let error):
+                                        print("Storage maanger error: \(error)")
+                                    }
+                                })
+                            }).resume()
+                            
+                        }
+                    })
                 }
             })
             let credential = FacebookAuthProvider.credential(withAccessToken: token)

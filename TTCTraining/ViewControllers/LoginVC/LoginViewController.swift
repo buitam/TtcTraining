@@ -69,9 +69,7 @@ class LoginViewController: UIViewController {
                 guard let strongSelf = self else {
                     return
                 }
-                DispatchQueue.main.async {
-                    strongSelf.spinner.dismiss()
-                }
+               
                 guard let _ = authResult, error == nil else {
                     if (email == "" || password == "") {
                         let alert: UIAlertController = UIAlertController(title: "Thông báo", message: "Vui lòng nhập đầy đủ thông tin", preferredStyle: .alert)
@@ -92,6 +90,10 @@ class LoginViewController: UIViewController {
                 let homeVC = self?.storyboard?.instantiateViewController(withIdentifier: "Tabbar") as! TabbarViewController
                 homeVC.modalPresentationStyle = .fullScreen
                 self!.present(homeVC, animated: true, completion: nil)
+                UserDefaults.standard.set(email, forKey: "email")
+                DispatchQueue.main.async {
+                    strongSelf.spinner.dismiss()
+                }
             })
             
         })
