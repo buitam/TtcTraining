@@ -578,10 +578,12 @@ extension DatabaseManager {
             let postId = "post_\(safeEmail)_\(dateString)"
             let newPost: [String: Any] = [
                 "id": postId,
+                "email": safeEmail,
                 "content_post": contentPost,
                 "post_image": postImage,
                 "user_post": currentName,
                 "user_post_profile_image": currentProfileImage,
+                "date": dateString
                 //                "comment": [
                 //                    "user_comment": "comment name",
                 //                    "user_comment_image": "user_comment_image",
@@ -594,7 +596,7 @@ extension DatabaseManager {
                 //append
                 posts.append(newPost)
                 userNode["posts"] = posts
-                ref.setValue(userNode, withCompletionBlock: { [weak self] error, _ in
+                ref.setValue(userNode, withCompletionBlock: {error, _ in
                     guard error == nil else {
                         completion(false)
                         return
@@ -607,7 +609,7 @@ extension DatabaseManager {
                 userNode["posts"] = [
                     newPost
                 ]
-                ref.setValue(userNode, withCompletionBlock: { [weak self] error, _ in
+                ref.setValue(userNode, withCompletionBlock: {error, _ in
                     guard error == nil else {
                         completion(false)
                         return
@@ -617,10 +619,35 @@ extension DatabaseManager {
             }
         })
     }
+    
+    // create list post of user
+    
+    public func getAllPosts(with email: String, completion: @escaping (Result<[PostModel], Error>) -> Void) {
+        database.child("\(email)/posts").observe(.value, with: { snapshot in
+            guard let value = snapshot.value as? [[String: Any]] else{
+                completion(.failure(DatabaseError.failedToFetch))
+                return
+            }
+
+            let posts: [PostModel] = value.compactMap({ dictionary in
+                guard let postId = dictionary["id"] as? String,
+                      let email = dictionary["email"] as? String,
+                      let contentPost = dictionary["content_post"] as? String,
+                      let userPostName = dictionary["user_post"] as? String,
+                      let date = dictionary["date"] as? String,
+                      let postImageURL = dictionary["post_image"] as? String,
+                      let userImageURL = dictionary["user_post_profile_image"] as? String else {
+                    return nil
+                }
+                return PostModel(id: postId, contentPost: contentPost, userPostName: userPostName, userPostEmail: email, postDate: date, postImageURL: postImageURL, userImageURL: userImageURL)
+            })
+
+            print("post: \(posts)")
+            completion(.success(posts))
+        })
+
+    }
 }
-
-
-
 
 struct ChatAppUser {
     let userName: String

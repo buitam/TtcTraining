@@ -115,6 +115,7 @@ PODS:
     - nanopb/encode (= 1.30906.0)
   - nanopb/decode (1.30906.0)
   - nanopb/encode (1.30906.0)
+  - ProgressHUD (13.4)
   - PromisesObjC (1.2.10)
   - Realm (5.4.3):
     - Realm/Headers (= 5.4.3)
@@ -124,7 +125,6 @@ PODS:
   - SDWebImage (5.9.1):
     - SDWebImage/Core (= 5.9.1)
   - SDWebImage/Core (5.9.1)
-  - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
   - CenteredCollectionView
@@ -137,9 +137,9 @@ DEPENDENCIES:
   - GoogleSignIn
   - JGProgressHUD
   - MessageKit
+  - ProgressHUD
   - RealmSwift
   - SDWebImage
-  - SVProgressHUD
 
 SPEC REPOS:
   trunk:
@@ -167,11 +167,11 @@ SPEC REPOS:
     - leveldb-library
     - MessageKit
     - nanopb
+    - ProgressHUD
     - PromisesObjC
     - Realm
     - RealmSwift
     - SDWebImage
-    - SVProgressHUD
 
 SPEC CHECKSUMS:
   AppAuth: 31bcec809a638d7bd2f86ea8a52bd45f6e81e7c7
@@ -198,12 +198,12 @@ SPEC CHECKSUMS:
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   MessageKit: aa047ad093f022189ed5a0d1cea04fc59f064c93
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
+  ProgressHUD: 137a7fc677487c5581668f4490563124fb35c232
   PromisesObjC: b14b1c6b68e306650688599de8a45e49fae81151
   Realm: e3d5fcc50fd79ddf87a2d86301f6edbf57531f84
   RealmSwift: db608068eccc54bce47928e8118bde13c120c307
   SDWebImage: a990c053fff71e388a10f3357edb0be17929c9c5
-  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 29137a976319261baed8b99be4155b3bbf5963ba
+PODFILE CHECKSUM: 59f5d509e91634b9faba7711138d4c930b4f0c74
 
 COCOAPODS: 1.9.3

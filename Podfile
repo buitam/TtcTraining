@@ -4,7 +4,7 @@
 target 'TTCTraining' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-	pod 'SVProgressHUD'
+  pod 'ProgressHUD'
 	pod 'FSPagerView'
 	pod 'CenteredCollectionView'
 

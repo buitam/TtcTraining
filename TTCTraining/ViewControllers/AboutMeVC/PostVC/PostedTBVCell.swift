@@ -29,10 +29,22 @@ class PostedTBVCell: UITableViewCell {
     @IBOutlet weak var contentPost: UILabel!
     @IBOutlet weak var imgPost: UIImageView!
     
-    func configCell(_ data: PostedMD){
-        btnCheckIn.setTitle(data.placeCheckIn.value(), for: .normal)
-        contentPost.text = data.contentPost.value()
-        imgPost.image = UIImage(named: data.imgPost!)
+    func configCell(_ data: PostModel){
+        contentPost.text = data.contentPost
+        let path = "postImages/\(data.userPostName)_post.png"
+        StorageManager.shared.downloadURL(for: path, completion: { [weak self] result in
+            switch result {
+            case .success(let url):
+
+                DispatchQueue.main.async {
+                    self?.imgPost.sd_setImage(with: url, completed: nil)
+                }
+
+            case .failure(let error):
+                print("failed to get image url: \(error)")
+            }
+        })
+       
     }
     
     

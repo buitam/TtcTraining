@@ -919,7 +919,7 @@
                                                     <constraint firstAttribute="height" constant="1000" id="XTp-sE-fWa"/>
                                                 </constraints>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="218" id="YrI-j2-ul6" customClass="PostedTBVCell" customModule="TravelApp" customModuleProvider="target">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostedTBVCell" rowHeight="218" id="YrI-j2-ul6" customClass="PostedTBVCell" customModule="TravelApp" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28" width="414" height="218"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YrI-j2-ul6" id="ucH-MP-ZKN">

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import ProgressHUD
 class CreatePostVC: UIViewController {
     @IBAction func btnSelectPhoto(_ sender: Any) {
         presentPhotoActionSheet()
@@ -23,6 +23,7 @@ class CreatePostVC: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     @IBAction func btnPostAction(_ sender: Any) {
+        ProgressHUD.show("Loading...")
         guard let image = self.postImage.image,
               let data = image.pngData() else {
             return
@@ -40,9 +41,14 @@ class CreatePostVC: UIViewController {
                 DatabaseManager.shared.createNewPost(contentPost: self.contentPost.text, postImage: downloadUrl, completion: {success in
                     if success {
                         print("created post")
+                        ProgressHUD.showSucceed("Post successfully!")
+                        ProgressHUD.dismiss()
+                        self.dismiss(animated: true, completion: nil)
                     }
                     else {
+                        ProgressHUD.showFailed("Post fail!")
                         print("faield to post")
+                        ProgressHUD.dismiss()
                         
                     }
                 })
@@ -155,28 +161,3 @@ extension CreatePostVC: UIImagePickerControllerDelegate, UINavigationControllerD
     
 }
 
-struct Post {
-    public var id: String
-    public var contentPost: String
-    public var userPostName: String
-    public var emailAddress: String
-    public var comment: Comment
-    public var postDate: Date
-    var safeEmail: String {
-        var safeEmail = emailAddress.replacingOccurrences(of: ".", with: "-")
-        safeEmail = safeEmail.replacingOccurrences(of: "@", with: "-")
-        return safeEmail
-    }
-    public var postImageName: String {
-        return "\(safeEmail)_post.png"
-    }
-    public var userImageName: String {
-        return "\(safeEmail)_profile_picture.png"
-    }
-}
-
-struct Comment {
-    public var userComment: String
-    public var userCommentImage: String
-    public var contentComment: String
-}

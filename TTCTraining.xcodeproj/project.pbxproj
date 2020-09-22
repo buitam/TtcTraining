@@ -27,7 +27,6 @@
 		18B324862361F3E20008DF0C /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B324842361F3E20008DF0C /* HomeTableViewCell.xib */; };
 		321806422519B294001E6341 /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321806412519B294001E6341 /* Conversation.swift */; };
 		321807222519CBC1001E6341 /* ConversationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321807212519CBC1001E6341 /* ConversationTableViewCell.swift */; };
-		32180748251A3A14001E6341 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32180747251A3A14001E6341 /* PostModel.swift */; };
 		32290128251641F90093D20F /* ChatContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32290127251641F90093D20F /* ChatContentVC.swift */; };
 		323B0BBB24D807D1003C28E4 /* ColorsConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323B0BBA24D807D1003C28E4 /* ColorsConst.swift */; };
 		323B0BBD24D807FE003C28E4 /* StringsConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323B0BBC24D807FE003C28E4 /* StringsConst.swift */; };
@@ -41,6 +40,7 @@
 		323B0C1E24D972D0003C28E4 /* TouchEffectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323B0C1D24D972D0003C28E4 /* TouchEffectButton.swift */; };
 		323B0C4924E04D7C003C28E4 /* AboutMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323B0C4824E04D7C003C28E4 /* AboutMeViewController.swift */; };
 		3241C8F624E6BCA9003D5011 /* PostedMD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3241C8F524E6BCA9003D5011 /* PostedMD.swift */; };
+		3247ED93251A6E5F0082D5AA /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3247ED92251A6E5F0082D5AA /* PostModel.swift */; };
 		3263164D24E8EB9C002DCD0F /* EditDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3263164B24E8EB9C002DCD0F /* EditDetailVC.swift */; };
 		3263164E24E8EB9C002DCD0F /* EditDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3263164C24E8EB9C002DCD0F /* EditDetailVC.xib */; };
 		32856EC42513A4450062221B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 32856EC32513A4450062221B /* GoogleService-Info.plist */; };
@@ -94,7 +94,6 @@
 		1CD3AE4F87DF56A2FF0D4C48 /* Pods-TTCTraining.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTCTraining.release.xcconfig"; path = "Target Support Files/Pods-TTCTraining/Pods-TTCTraining.release.xcconfig"; sourceTree = "<group>"; };
 		321806412519B294001E6341 /* Conversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
 		321807212519CBC1001E6341 /* ConversationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationTableViewCell.swift; sourceTree = "<group>"; };
-		32180747251A3A14001E6341 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		32290127251641F90093D20F /* ChatContentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatContentVC.swift; sourceTree = "<group>"; };
 		323B0BBA24D807D1003C28E4 /* ColorsConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsConst.swift; sourceTree = "<group>"; };
 		323B0BBC24D807FE003C28E4 /* StringsConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringsConst.swift; sourceTree = "<group>"; };
@@ -108,6 +107,7 @@
 		323B0C1D24D972D0003C28E4 /* TouchEffectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchEffectButton.swift; sourceTree = "<group>"; };
 		323B0C4824E04D7C003C28E4 /* AboutMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMeViewController.swift; sourceTree = "<group>"; };
 		3241C8F524E6BCA9003D5011 /* PostedMD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostedMD.swift; sourceTree = "<group>"; };
+		3247ED92251A6E5F0082D5AA /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		3263164B24E8EB9C002DCD0F /* EditDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDetailVC.swift; sourceTree = "<group>"; };
 		3263164C24E8EB9C002DCD0F /* EditDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditDetailVC.xib; sourceTree = "<group>"; };
 		32856EC32513A4450062221B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -159,7 +159,7 @@
 				32C1B5B12518520900404623 /* DatabaseManager.swift */,
 				32C1B5B4251865EA00404623 /* SearchResult.swift */,
 				321806412519B294001E6341 /* Conversation.swift */,
-				32180747251A3A14001E6341 /* PostModel.swift */,
+				3247ED92251A6E5F0082D5AA /* PostModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -645,7 +645,7 @@
 				32983D1524E69D130025D503 /* CreatePostVC.swift in Sources */,
 				18B324852361F3E20008DF0C /* HomeTableViewCell.swift in Sources */,
 				32290128251641F90093D20F /* ChatContentVC.swift in Sources */,
-				32180748251A3A14001E6341 /* PostModel.swift in Sources */,
+				3247ED93251A6E5F0082D5AA /* PostModel.swift in Sources */,
 				32983D0524E269AB0025D503 /* EditProfileMD.swift in Sources */,
 				32B7096924E95A0900B74732 /* ButtonExtension.swift in Sources */,
 				18A1E51923600C8E005CDBC4 /* ViewController.swift in Sources */,
