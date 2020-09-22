@@ -30,6 +30,9 @@ final class ConversationsViewController: UIViewController {
         view.addSubview(noConversationsLabel)
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.register(ConversationTableViewCell.self,
+                       forCellReuseIdentifier: ConversationTableViewCell.identifier)
+
         fetchConversation()
         startListenningForConversation()
         
@@ -75,7 +78,7 @@ final class ConversationsViewController: UIViewController {
         else {
             return
         }
-        let vc = ChatContentVC(with: email)
+        let vc = ChatContentVC(with: email, id: nil)
         vc.isNewConversation = true
         vc.title = name
         vc.navigationItem.largeTitleDisplayMode = .never
@@ -92,14 +95,14 @@ extension ConversationsViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! DiscussionsTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: ConversationTableViewCell.identifier, for: indexPath) as! ConversationTableViewCell
         cell.configure(with: conversations[indexPath.row])
         cell.accessoryType = .disclosureIndicator
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let vc = ChatContentVC(with: conversations[indexPath.row].otherUserEmail)
+        let vc = ChatContentVC(with: conversations[indexPath.row].otherUserEmail, id: conversations[indexPath.row].id)
         vc.title = conversations[indexPath.row].name
         vc.navigationItem.largeTitleDisplayMode = .never
         navigationController?.pushViewController(vc, animated: true)

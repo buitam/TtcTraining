@@ -84,13 +84,29 @@ class LoginViewController: UIViewController {
                     }
                     return
                 }
+                let safeEmail = DatabaseManager.safeEmail(emailAddress: email)
+                DatabaseManager.shared.getDataFor(path: safeEmail, completion: { result in
+                    switch result {
+                    case .success(let data):
+                        guard let userData = data as? [String: Any],
+                            let userName = userData["user_name"] as? String else {
+                                return
+                        }
+                        UserDefaults.standard.set("\(userName)", forKey: "name")
+
+                    case .failure(let error):
+                        print("Failed to read data with error \(error)")
+                    }
+                })
                 
                 strongSelf.navigationController?.dismiss(animated: true, completion: nil)
                 
                 let homeVC = self?.storyboard?.instantiateViewController(withIdentifier: "Tabbar") as! TabbarViewController
                 homeVC.modalPresentationStyle = .fullScreen
                 self!.present(homeVC, animated: true, completion: nil)
+                
                 UserDefaults.standard.set(email, forKey: "email")
+
                 DispatchQueue.main.async {
                     strongSelf.spinner.dismiss()
                 }

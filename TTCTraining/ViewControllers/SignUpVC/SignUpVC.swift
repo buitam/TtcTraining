@@ -278,6 +278,7 @@ extension SignUpVC: LoginButtonDelegate {
                 return
             }
             UserDefaults.standard.set(email, forKey: "email")
+            UserDefaults.standard.set(userName, forKey: "name")
             DatabaseManager.shared.userExists(with: email, completion: { exists in
                 if !exists {
                     let chatUser = ChatAppUser(userName: userName, emailAddress: email)
