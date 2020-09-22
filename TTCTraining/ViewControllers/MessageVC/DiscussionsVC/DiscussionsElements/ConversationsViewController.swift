@@ -12,7 +12,7 @@ final class ConversationsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     private let spinner = JGProgressHUD(style: .dark)
-    
+    private var conversations = [Conversation]()
     private let noConversationsLabel: UILabel = {
         let label = UILabel()
         label.text = "No Conversations!"
@@ -31,16 +31,55 @@ final class ConversationsViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         fetchConversation()
+        startListenningForConversation()
         
     }
     override func viewDidLayoutSubviews() {
         tableView.frame = view.bounds
     }
+    
+    // user for update table conversation if one new conversation create
+    private func startListenningForConversation (){
+        guard let email = UserDefaults.standard.value(forKey: "email") as? String else {
+            return
+        }
+        let safeEmail = DatabaseManager.safeEmail(emailAddress: email)
+        DatabaseManager.shared.getAllConversations(with: safeEmail, completion: {[weak self] result in
+            switch result {
+            case .success(let conversations):
+                guard !conversations.isEmpty else {
+                    return
+                }
+                self?.conversations = conversations
+                DispatchQueue.main.async {
+                    self?.tableView.reloadData()
+                }
+            case .failure(let error):
+                print("fail to get conversation")
+            }
+        })
+    }
+    
     @objc private func didTapComposeButton() {
         let vc = NewConversationViewController()
+        vc.completion = {[weak self] result in
+            self?.createNewConversation(result: result)
+        }
         let navVC = UINavigationController(rootViewController: vc)
         present(navVC, animated: true)
         
+    }
+    func createNewConversation(result: [String:String]) {
+        guard let name = result["name"],
+              let email = result["email"]
+        else {
+            return
+        }
+        let vc = ChatContentVC(with: email)
+        vc.isNewConversation = true
+        vc.title = name
+        vc.navigationItem.largeTitleDisplayMode = .never
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func fetchConversation() {
@@ -49,20 +88,24 @@ final class ConversationsViewController: UIViewController {
 }
 extension ConversationsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return conversations.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = "hello world"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! DiscussionsTableViewCell
+        cell.configure(with: conversations[indexPath.row])
         cell.accessoryType = .disclosureIndicator
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = ChatContentVC()
-        vc.title = "jon Smith"
+        
+        let vc = ChatContentVC(with: conversations[indexPath.row].otherUserEmail)
+        vc.title = conversations[indexPath.row].name
         vc.navigationItem.largeTitleDisplayMode = .never
         navigationController?.pushViewController(vc, animated: true)
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
     
     

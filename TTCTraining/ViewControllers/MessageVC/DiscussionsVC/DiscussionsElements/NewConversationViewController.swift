@@ -10,7 +10,8 @@ import UIKit
 import JGProgressHUD
 
 final class NewConversationViewController: UIViewController {
-
+// create closure to send data back
+    public var completion: (([String: String]) -> (Void))?
     private let spinner = JGProgressHUD(style: .dark)
 
     private var users = [[String: String]]()
@@ -86,6 +87,16 @@ extension NewConversationViewController: UITableViewDelegate, UITableViewDataSou
                                                  for: indexPath)
         cell.textLabel?.text = results[indexPath.row]["name"]
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        // start new converation
+        let targetUserData = results[indexPath.row]
+        dismiss(animated: true, completion: {
+            self.completion?(targetUserData)
+        })
+        
+        
     }
 
 }

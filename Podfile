@@ -21,7 +21,7 @@ target 'TTCTraining' do
 # Google
 	pod 'GoogleSignIn'
 # Message
-	pod 'MessageKit'
+  pod 'MessageKit'
 	pod 'JGProgressHUD'
 	pod 'RealmSwift'
 	pod 'SDWebImage'

@@ -25,6 +25,7 @@
 		18A1E54D2361C4FA005CDBC4 /* AddFriendCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A1E54B2361C4FA005CDBC4 /* AddFriendCollectionViewCell.xib */; };
 		18B324852361F3E20008DF0C /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B324832361F3E20008DF0C /* HomeTableViewCell.swift */; };
 		18B324862361F3E20008DF0C /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B324842361F3E20008DF0C /* HomeTableViewCell.xib */; };
+		321806422519B294001E6341 /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321806412519B294001E6341 /* Conversation.swift */; };
 		32290128251641F90093D20F /* ChatContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32290127251641F90093D20F /* ChatContentVC.swift */; };
 		323B0BBB24D807D1003C28E4 /* ColorsConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323B0BBA24D807D1003C28E4 /* ColorsConst.swift */; };
 		323B0BBD24D807FE003C28E4 /* StringsConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323B0BBC24D807FE003C28E4 /* StringsConst.swift */; };
@@ -91,6 +92,7 @@
 		18B324832361F3E20008DF0C /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		18B324842361F3E20008DF0C /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 		1CD3AE4F87DF56A2FF0D4C48 /* Pods-TTCTraining.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTCTraining.release.xcconfig"; path = "Target Support Files/Pods-TTCTraining/Pods-TTCTraining.release.xcconfig"; sourceTree = "<group>"; };
+		321806412519B294001E6341 /* Conversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
 		32290127251641F90093D20F /* ChatContentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatContentVC.swift; sourceTree = "<group>"; };
 		323B0BBA24D807D1003C28E4 /* ColorsConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsConst.swift; sourceTree = "<group>"; };
 		323B0BBC24D807FE003C28E4 /* StringsConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringsConst.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				32C1B58D2517B27D00404623 /* StorageManager.swift */,
 				32C1B5B12518520900404623 /* DatabaseManager.swift */,
 				32C1B5B4251865EA00404623 /* SearchResult.swift */,
+				321806412519B294001E6341 /* Conversation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -657,6 +660,7 @@
 				32983D0D24E69CA00025D503 /* PostedTBVCell.swift in Sources */,
 				323B0BDD24D81BB8003C28E4 /* NumbersConst.swift in Sources */,
 				32983CF924E1A95D0025D503 /* SettingTBVCell.swift in Sources */,
+				321806422519B294001E6341 /* Conversation.swift in Sources */,
 				32C1B5BA2518813200404623 /* ConversationsViewController.swift in Sources */,
 				3241C8F624E6BCA9003D5011 /* PostedMD.swift in Sources */,
 				32983CED24E182FB0025D503 /* EditProfileVC.swift in Sources */,

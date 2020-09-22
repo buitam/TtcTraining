@@ -7,12 +7,12 @@
 //
 
 import UIKit
-
+import SDWebImage
 class DiscussionsTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var profileImg: UIImageView!
-    @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var newMesage: UILabel!
+    @IBOutlet weak var userImageView: UIImageView!
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var userMessageLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -23,29 +23,24 @@ class DiscussionsTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-//    func configCell(with model: SearchResult) {
-//        name.text = model.name
-//
-//        let path = "images/\(model.email)_profile_picture.png"
-//        StorageManager.shared.downloadURL(for: path, completion: { [weak self] result in
-//            switch result {
-//            case .success(let url):
-//
-//                DispatchQueue.main.async {
-//                    self?.profileImg.sd_setImage(with: url, completed: nil)
-//                }
-//
-//            case .failure(let error):
-//                print("failed to get image url: \(error)")
-//            }
-//        })
-//        newMesage.text = model.name
-//    }
-    func configCell(_ data: Info){
-        // config UI
-        // Config Data
-        profileImg.image = data.profileImg
-        name.text = data.name
+    public func configure(with model: Conversation) {
+        userMessageLabel.text = model.latestMessage.text
+        userNameLabel.text = model.name
+
+        let path = "images/\(model.otherUserEmail)_profile_picture.png"
+        StorageManager.shared.downloadURL(for: path, completion: { [weak self] result in
+            switch result {
+            case .success(let url):
+                // this is an UI operation so need put on main thread
+                DispatchQueue.main.async {
+                    self?.userImageView.sd_setImage(with: url, completed: nil)
+                }
+
+            case .failure(let error):
+                print("failed to get image url: \(error)")
+            }
+        })
     }
+
     
 }
