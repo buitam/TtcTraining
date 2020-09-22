@@ -112,8 +112,13 @@ extension ChatContentVC: InputBarAccessoryViewDelegate {
             })
         }
         else {
+            guard let conversationId = conversationId,
+                  let name = self.title
+                  else {
+                return
+            }
             // append to existing conversation data
-            DatabaseManager.shared.sendMessage(to: otherUserEmail, mmessage: mmessage, completion: { [weak self] success in
+            DatabaseManager.shared.sendMessage(to: conversationId, name: name, newMessage: mmessage, completion: { [weak self] success in
                 if success {
                     print("message sent")
                 }
