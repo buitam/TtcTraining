@@ -99,7 +99,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                                     return
                                 }
                                 let filename = chatUser.profilePictureFileName
-                                StorageManager.shared.uploadProfilePicture(with: data, fileName: filename, completion: { result in
+                                let folder = "images/"
+                                StorageManager.shared.uploadPicture(with: data, fileName: filename, folder: folder, completion: { result in
                                     switch result {
                                     case .success(let downloadUrl):
                                         UserDefaults.standard.set(downloadUrl, forKey: "profile_picture_url")

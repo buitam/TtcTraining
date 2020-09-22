@@ -142,10 +142,6 @@ class SignUpVC: UIViewController {
                 }
                 
                 strongSelf.navigationController?.dismiss(animated: true, completion: nil)
-                
-                
-                
-                
                 let chatUser = ChatAppUser(userName: userName, emailAddress: email)
                 DatabaseManager.shared.insertUser(with: chatUser, completion: { success in
                     if success {
@@ -155,7 +151,8 @@ class SignUpVC: UIViewController {
                             return
                         }
                         let filename = chatUser.profilePictureFileName
-                        StorageManager.shared.uploadProfilePicture(with: data, fileName: filename, completion: { result in
+                        let folder = "images/"
+                        StorageManager.shared.uploadPicture(with: data, fileName: filename, folder: folder, completion: { result in
                             switch result {
                             case .success(let downloadUrl):
                                 UserDefaults.standard.set(downloadUrl, forKey: "profile_picture_url")
@@ -251,6 +248,7 @@ extension SignUpVC: UIImagePickerControllerDelegate, UINavigationControllerDeleg
     }
     
 }
+
 extension SignUpVC: LoginButtonDelegate {
     func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
         guard let token = result?.token?.tokenString else {
@@ -294,11 +292,12 @@ extension SignUpVC: LoginButtonDelegate {
                                 }
                                 
                                 let filename = chatUser.profilePictureFileName
-                                StorageManager.shared.uploadProfilePicture(with: data, fileName: filename, completion: { result in
+                                let folder = "images/"
+                                StorageManager.shared.uploadPicture(with: data, fileName: filename, folder: folder, completion: { result in
                                     switch result {
                                     case .success(let downloadUrl):
                                         UserDefaults.standard.set(downloadUrl, forKey: "profile_picture_url")
-                                        print(downloadUrl)
+                                        print("downloadUrl\(downloadUrl)")
                                     case .failure(let error):
                                         print("Storage maanger error: \(error)")
                                     }

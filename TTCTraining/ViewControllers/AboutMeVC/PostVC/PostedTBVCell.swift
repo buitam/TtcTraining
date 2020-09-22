@@ -10,9 +10,13 @@ import UIKit
 
 class PostedTBVCell: UITableViewCell {
 
+    @IBOutlet weak var currentName: UILabel!
+    @IBOutlet weak var profileImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        setImageProfile(profileImage: profileImage)
+        currentName.text = UserDefaults.standard.value(forKey: "name") as? String
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

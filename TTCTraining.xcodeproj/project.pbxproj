@@ -27,6 +27,7 @@
 		18B324862361F3E20008DF0C /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B324842361F3E20008DF0C /* HomeTableViewCell.xib */; };
 		321806422519B294001E6341 /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321806412519B294001E6341 /* Conversation.swift */; };
 		321807222519CBC1001E6341 /* ConversationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321807212519CBC1001E6341 /* ConversationTableViewCell.swift */; };
+		32180748251A3A14001E6341 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32180747251A3A14001E6341 /* PostModel.swift */; };
 		32290128251641F90093D20F /* ChatContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32290127251641F90093D20F /* ChatContentVC.swift */; };
 		323B0BBB24D807D1003C28E4 /* ColorsConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323B0BBA24D807D1003C28E4 /* ColorsConst.swift */; };
 		323B0BBD24D807FE003C28E4 /* StringsConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323B0BBC24D807FE003C28E4 /* StringsConst.swift */; };
@@ -93,6 +94,7 @@
 		1CD3AE4F87DF56A2FF0D4C48 /* Pods-TTCTraining.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTCTraining.release.xcconfig"; path = "Target Support Files/Pods-TTCTraining/Pods-TTCTraining.release.xcconfig"; sourceTree = "<group>"; };
 		321806412519B294001E6341 /* Conversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
 		321807212519CBC1001E6341 /* ConversationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationTableViewCell.swift; sourceTree = "<group>"; };
+		32180747251A3A14001E6341 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		32290127251641F90093D20F /* ChatContentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatContentVC.swift; sourceTree = "<group>"; };
 		323B0BBA24D807D1003C28E4 /* ColorsConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsConst.swift; sourceTree = "<group>"; };
 		323B0BBC24D807FE003C28E4 /* StringsConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringsConst.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				32C1B5B12518520900404623 /* DatabaseManager.swift */,
 				32C1B5B4251865EA00404623 /* SearchResult.swift */,
 				321806412519B294001E6341 /* Conversation.swift */,
+				32180747251A3A14001E6341 /* PostModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -642,6 +645,7 @@
 				32983D1524E69D130025D503 /* CreatePostVC.swift in Sources */,
 				18B324852361F3E20008DF0C /* HomeTableViewCell.swift in Sources */,
 				32290128251641F90093D20F /* ChatContentVC.swift in Sources */,
+				32180748251A3A14001E6341 /* PostModel.swift in Sources */,
 				32983D0524E269AB0025D503 /* EditProfileMD.swift in Sources */,
 				32B7096924E95A0900B74732 /* ButtonExtension.swift in Sources */,
 				18A1E51923600C8E005CDBC4 /* ViewController.swift in Sources */,

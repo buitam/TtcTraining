@@ -118,7 +118,7 @@ extension ChatContentVC: InputBarAccessoryViewDelegate {
                 return
             }
             // append to existing conversation data
-            DatabaseManager.shared.sendMessage(to: conversationId, name: name, newMessage: mmessage, completion: { [weak self] success in
+            DatabaseManager.shared.sendMessage(to: conversationId, otherUserEmail: otherUserEmail, name: name, newMessage: mmessage, completion: { [weak self] success in
                 if success {
                     print("message sent")
                 }
@@ -157,8 +157,6 @@ extension ChatContentVC: MessagesDataSource, MessagesLayoutDelegate, MessagesDis
     func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int {
         return messages.count
     }
-    
-    
 }
 struct Message: MessageType {
     public var sender: SenderType

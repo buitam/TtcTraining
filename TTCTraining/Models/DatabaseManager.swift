@@ -172,10 +172,10 @@ extension DatabaseManager {
     // create new conversation
     public func createNewConversation(with otherUserEmail: String, name: String, firstMessage: Message, completion: @escaping (Bool) -> Void)  {
         guard let currentEmail = UserDefaults.standard.value(forKey: "email") as? String,
-        let currentName = UserDefaults.standard.value(forKey: "name") as? String
+              let currentName = UserDefaults.standard.value(forKey: "name") as? String
         else {
-                return
-              }
+            return
+        }
         
         let safeEmail = DatabaseManager.safeEmail(emailAddress: currentEmail)
         
@@ -421,10 +421,15 @@ extension DatabaseManager {
     }
     
     // send message to target conversation and message
-    public func sendMessage(to conversation: String, name: String, newMessage: Message, completion: @escaping (Bool) -> Void) {
+    public func sendMessage(to conversation: String, otherUserEmail: String, name: String, newMessage: Message, completion: @escaping (Bool) -> Void) {
         // add message to message
         // update sender latest message
         // update recipient message
+        guard let myEmail = UserDefaults.standard.value(forKey: "email") as? String else {
+            completion(false)
+            return
+        }
+        let currentEmail = DatabaseManager.safeEmail(emailAddress: myEmail)
         database.child("\(conversation)/messages").observeSingleEvent(of: .value, with: {[weak self] snapshot in
             guard let strongSelf = self else {
                 return
@@ -479,11 +484,141 @@ extension DatabaseManager {
                     completion(false)
                     return
                 }
-                completion(true)
+                strongSelf.database.child("\(currentEmail)/conversations").observeSingleEvent(of: .value, with: { snapshot in
+                    guard var currentUserConversations =  snapshot.value as? [[String: Any]] else {
+                        completion(false)
+                        return
+                    }
+                    let updatedValue: [String: Any] = [
+                        "date": dateString,
+                        "is_read": false,
+                        "message": message
+                    ]
+                    var targetConversation: [String: Any]?
+                    var position = 0
+                    for conversationDictionary in currentUserConversations {
+                        if let currentId = conversationDictionary["id"] as? String, currentId == conversation {
+                            targetConversation = conversationDictionary
+                            break
+                        }
+                        position += 1
+                    }
+                    targetConversation?["latest_message"] = updatedValue
+                    guard let finalConversation = targetConversation else {
+                        completion(false)
+                        return
+                    }
+                    currentUserConversations[position] = finalConversation
+                    strongSelf.database.child("\(currentEmail)/conversations").setValue(currentUserConversations, withCompletionBlock: { error, _ in
+                        guard error == nil else {
+                            completion(false)
+                            return
+                        }
+                        // update latest message for recipient user
+                        strongSelf.database.child("\(otherUserEmail)/conversations").observeSingleEvent(of: .value, with: { snapshot in
+                            guard var otherUserConversations =  snapshot.value as? [[String: Any]] else {
+                                completion(false)
+                                return
+                            }
+                            let updatedValue: [String: Any] = [
+                                "date": dateString,
+                                "is_read": false,
+                                "message": message
+                            ]
+                            var targetConversation: [String: Any]?
+                            var position = 0
+                            for conversationDictionary in otherUserConversations {
+                                if let currentId = conversationDictionary["id"] as? String, currentId == conversation {
+                                    targetConversation = conversationDictionary
+                                    break
+                                }
+                                position += 1
+                            }
+                            targetConversation?["latest_message"] = updatedValue
+                            guard let finalConversation = targetConversation else {
+                                completion(false)
+                                return
+                            }
+                            otherUserConversations[position] = finalConversation
+                            strongSelf.database.child("\(otherUserEmail)/conversations").setValue(otherUserConversations, withCompletionBlock: { error, _ in
+                                guard error == nil else {
+                                    completion(false)
+                                    return
+                                }
+                                completion(true)
+                            })
+                        })
+                    })
+                })
+                
             })
         })
     }
+    
+    // MARK: - Create new POST
+    public func createNewPost(contentPost: String, postImage: String , completion: @escaping (Bool) -> Void)  {
+        guard let currentEmail = UserDefaults.standard.value(forKey: "email") as? String,
+              let currentName = UserDefaults.standard.value(forKey: "name") as? String,
+              let currentProfileImage = UserDefaults.standard.value(forKey: "profile_picture_url") as? String
+        else {
+            return
+        }
+        
+        let dateString = ChatContentVC.dateFormatter.string(from: Date())
+        
+        let safeEmail = DatabaseManager.safeEmail(emailAddress: currentEmail)
+        
+        let ref = database.child("\(safeEmail)")
+        ref.observeSingleEvent(of: .value, with: { [weak self] snapshot in
+            guard var userNode = snapshot.value as? [String: Any] else {
+                completion(false)
+                print("user not found")
+                return
+            }
+            let postId = "post_\(safeEmail)_\(dateString)"
+            let newPost: [String: Any] = [
+                "id": postId,
+                "content_post": contentPost,
+                "post_image": postImage,
+                "user_post": currentName,
+                "user_post_profile_image": currentProfileImage,
+                //                "comment": [
+                //                    "user_comment": "comment name",
+                //                    "user_comment_image": "user_comment_image",
+                //                    "content_comment": "content_comment"
+                //                ]
+            ]
+            
+            if var posts = userNode["posts"] as? [[String: Any]]{
+                // conve exist for current user
+                //append
+                posts.append(newPost)
+                userNode["posts"] = posts
+                ref.setValue(userNode, withCompletionBlock: { [weak self] error, _ in
+                    guard error == nil else {
+                        completion(false)
+                        return
+                    }
+                })
+                
+            } else {
+                // conve does not exist for current user
+                // create it
+                userNode["posts"] = [
+                    newPost
+                ]
+                ref.setValue(userNode, withCompletionBlock: { [weak self] error, _ in
+                    guard error == nil else {
+                        completion(false)
+                        return
+                    }
+                    completion(true)
+                })
+            }
+        })
+    }
 }
+
 
 
 

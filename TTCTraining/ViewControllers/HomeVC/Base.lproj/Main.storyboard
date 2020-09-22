@@ -1007,7 +1007,8 @@
                         <outlet property="postTableViewHeight" destination="XTp-sE-fWa" id="0dC-aP-IxE"/>
                         <outlet property="postedTableView" destination="xSe-5v-CHf" id="5xk-Yx-XI6"/>
                         <outlet property="profileImage" destination="xxP-vi-Jwu" id="4qX-TI-e50"/>
-                        <outlet property="userName" destination="zgJ-as-Rwb" id="Dfp-6u-DY6"/>
+                        <outlet property="profileImg" destination="egl-YL-ZEM" id="7rL-ns-doR"/>
+                        <outlet property="userName" destination="zgJ-as-Rwb" id="jtZ-JV-L7m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1OS-zj-EF5" userLabel="First Responder" sceneMemberID="firstResponder"/>

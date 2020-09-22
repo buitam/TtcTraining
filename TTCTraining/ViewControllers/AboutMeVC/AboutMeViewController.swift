@@ -14,14 +14,12 @@ import SDWebImage
 class AboutMeViewController: UIViewController {
     var lstPost = PostedMD.initPost()
     
-    @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var profileImg: UIImageView!
     @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var postedTableView: UITableView!
     @IBOutlet weak var postTableViewHeight: NSLayoutConstraint!
-    @IBAction func btnBackAction(_ sender: Any) {
-        createAnimated(self: self)
-        self.dismiss(animated: false, completion: nil)
-    }
+
    
     
     @IBAction func createPostGestureAction(_ sender: Any) {
@@ -46,21 +44,7 @@ class AboutMeViewController: UIViewController {
         super.viewDidLoad()
         initUI()
         initData()
-        guard let email = UserDefaults.standard.value(forKey: "email") as? String else {
-            return
-        }
-        let safeEmail =  DatabaseManager.safeEmail(emailAddress: email)
-        let filename = safeEmail + "_profile_picture.png"
-        let path = "images/"+filename
-        
-        StorageManager.shared.downloadURL(for: path, completion: { result in
-            switch result {
-            case .success(let url):
-                self.profileImage.sd_setImage(with: url, completed: nil)
-            case .failure(let error):
-                print("Failed to get download url: \(error)")
-            }
-        })
+
     }
     
     func initData(){
@@ -74,6 +58,9 @@ class AboutMeViewController: UIViewController {
         postedTableView.dataSource = self
         postedTableView.register(UINib(nibName: "PostedTBVCell", bundle: nil), forCellReuseIdentifier: "PostedTBVCell")
         postTableViewHeight.constant = CGFloat(lstPost.count * 500)
+        setImageProfile(profileImage: profileImage)
+        setImageProfile(profileImage: profileImg)
+        userName.text = UserDefaults.standard.value(forKey: "name") as? String
     }
 }
 
@@ -95,3 +82,4 @@ extension AboutMeViewController: UITableViewDelegate, UITableViewDataSource{
         return 500
     }
 }
+
