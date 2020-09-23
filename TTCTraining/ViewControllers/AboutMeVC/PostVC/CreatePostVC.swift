@@ -38,7 +38,7 @@ class CreatePostVC: UIViewController {
             switch result {
             case .success(let downloadUrl):
                 UserDefaults.standard.set(downloadUrl, forKey: "post_picture_url")
-                DatabaseManager.shared.createNewPost(contentPost: self.contentPost.text, postImage: downloadUrl, completion: {success in
+                DatabaseManager.shared.createNewPost(contentPost: self.contentPost.text, postImage: downloadUrl, completion: { success in
                     if success {
                         print("created post")
                         ProgressHUD.showSucceed("Post successfully!")
@@ -55,6 +55,8 @@ class CreatePostVC: UIViewController {
                 print("post_picture_url: \(downloadUrl)")
             case .failure(let error):
                 print("Storage maanger error: \(error)")
+                ProgressHUD.showFailed("Post fail!")
+                ProgressHUD.dismiss()
             }
         })
     }
@@ -66,6 +68,8 @@ class CreatePostVC: UIViewController {
     }
     
     func initUI() {
+        contentPost.text = "What is in your my?"
+        contentPost.textColor = UIColor.lightGray
         contentPost.delegate = self
         hideKeyboard()
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -100,6 +104,20 @@ extension CreatePostVC: UITextViewDelegate {
     func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
             btnPost.setTitleColor(BLUE_MAIN, for: .normal)
             return true
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if contentPost.textColor == UIColor.lightGray {
+            contentPost.text = nil
+            contentPost.textColor = UIColor.black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if contentPost.text.isEmpty {
+            contentPost.text = "What is in your my?"
+            contentPost.textColor = UIColor.lightGray
+        }
     }
 }
 

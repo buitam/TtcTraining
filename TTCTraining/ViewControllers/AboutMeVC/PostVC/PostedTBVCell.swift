@@ -44,8 +44,15 @@ class PostedTBVCell: UITableViewCell {
                 print("failed to get image url: \(error)")
             }
         })
-       
+
     }
+
     
+//
+//    func configCell(_ data: PostedMD){
+//        contentPost.text = data.contentPost
+//
+//    }
+
     
 }

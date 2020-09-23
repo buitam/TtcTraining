@@ -40,15 +40,9 @@ class AboutMeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initUI()
-        initData()
         startListenningForPost()
 
     }
-    
-    func initData(){
-    }
-    
-    
     func initUI(){
         postedTableView.delegate = self
         postedTableView.dataSource = self
@@ -58,9 +52,6 @@ class AboutMeViewController: UIViewController {
         setImageProfile(profileImage: profileImg)
         userName.text = UserDefaults.standard.value(forKey: "name") as? String
     }
-    
-    
-    // user for update table conversation if one new conversation create
     private func startListenningForPost (){
         guard let email = UserDefaults.standard.value(forKey: "email") as? String else {
             return
@@ -75,7 +66,7 @@ class AboutMeViewController: UIViewController {
                 self?.posts = posts
                 print("post 2: \(posts)")
                 DispatchQueue.main.async {
-                    self!.postedTableView.reloadData()
+                    self?.postedTableView.reloadData()
                 }
             case .failure(let error):
                 print("fail to get conversation")
@@ -91,7 +82,7 @@ extension AboutMeViewController: UITableViewDelegate, UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print("Total post: \(posts.count)")
-        return posts.count
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

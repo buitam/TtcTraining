@@ -570,7 +570,7 @@ extension DatabaseManager {
         
         let ref = database.child("\(safeEmail)")
         ref.observeSingleEvent(of: .value, with: { [weak self] snapshot in
-            guard var userNode = snapshot.value as? [String: Any] else {
+            guard var postNode = snapshot.value as? [String: Any] else {
                 completion(false)
                 print("user not found")
                 return
@@ -591,25 +591,26 @@ extension DatabaseManager {
                 //                ]
             ]
             
-            if var posts = userNode["posts"] as? [[String: Any]]{
+            if var posts = postNode["posts"] as? [[String: Any]]{
                 // conve exist for current user
                 //append
                 posts.append(newPost)
-                userNode["posts"] = posts
-                ref.setValue(userNode, withCompletionBlock: {error, _ in
+                postNode["posts"] = posts
+                ref.setValue(postNode, withCompletionBlock: {error, _ in
                     guard error == nil else {
                         completion(false)
                         return
                     }
+                    completion(true)
                 })
                 
             } else {
                 // conve does not exist for current user
                 // create it
-                userNode["posts"] = [
+                postNode["posts"] = [
                     newPost
                 ]
-                ref.setValue(userNode, withCompletionBlock: {error, _ in
+                ref.setValue(postNode, withCompletionBlock: {error, _ in
                     guard error == nil else {
                         completion(false)
                         return
