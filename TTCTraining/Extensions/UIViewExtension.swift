@@ -14,7 +14,10 @@ extension UIView{
         self.layer.cornerRadius = radius
         self.clipsToBounds = true
     }
-    
+    func cornerRadius(_ radius: CGFloat) {
+        self.layer.cornerRadius = radius
+        self.clipsToBounds = true
+    }
     
     func createShadow(scale: Bool = true, color shadowColor: UIColor = SHADOW_VIEW_COLOR) {
         layer.masksToBounds = false
@@ -24,5 +27,21 @@ extension UIView{
         layer.shadowRadius = 4
         layer.shouldRasterize = true
         layer.rasterizationScale = scale ? UIScreen.main.scale : 1
+    }
+}
+extension UIImageView {
+    func downloaded(from url: URL, contentMode mode: UIView.ContentMode = .scaleAspectFit) {
+        contentMode = mode
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard
+                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
+                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
+                let data = data, error == nil,
+                let image = UIImage(data: data)
+                else { return }
+            DispatchQueue.main.async() { [weak self] in
+                self?.image = image
+            }
+        }.resume()
     }
 }

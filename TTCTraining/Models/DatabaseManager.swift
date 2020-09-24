@@ -555,7 +555,7 @@ extension DatabaseManager {
         })
     }
     
-    // MARK: - Create new POST
+    // MARK: - Create new POST and get list POST
     public func createNewPost(contentPost: String, postImage: String , completion: @escaping (Bool) -> Void)  {
         guard let currentEmail = UserDefaults.standard.value(forKey: "email") as? String,
               let currentName = UserDefaults.standard.value(forKey: "name") as? String,
@@ -563,54 +563,59 @@ extension DatabaseManager {
         else {
             return
         }
-        
         let dateString = ChatContentVC.dateFormatter.string(from: Date())
         
         let safeEmail = DatabaseManager.safeEmail(emailAddress: currentEmail)
-        
-        let ref = database.child("\(safeEmail)")
-        ref.observeSingleEvent(of: .value, with: { [weak self] snapshot in
-            guard var postNode = snapshot.value as? [String: Any] else {
-                completion(false)
-                print("user not found")
-                return
-            }
-            let postId = "post_\(safeEmail)_\(dateString)"
-            let newPost: [String: Any] = [
-                "id": postId,
-                "email": safeEmail,
-                "content_post": contentPost,
-                "post_image": postImage,
-                "user_post": currentName,
-                "user_post_profile_image": currentProfileImage,
-                "date": dateString
-                //                "comment": [
-                //                    "user_comment": "comment name",
-                //                    "user_comment_image": "user_comment_image",
-                //                    "content_comment": "content_comment"
-                //                ]
-            ]
-            
-            if var posts = postNode["posts"] as? [[String: Any]]{
-                // conve exist for current user
-                //append
-                posts.append(newPost)
-                postNode["posts"] = posts
-                ref.setValue(postNode, withCompletionBlock: {error, _ in
+        let postId = "post_\(safeEmail)_\(dateString)"
+        database.child("posts").observeSingleEvent(of: .value, with: { snapshot in
+            if var usersCollection = snapshot.value as? [[String: String]] {
+                // append to user dictionary
+                
+                let newElement = [
+                    "id": postId,
+                    "email": safeEmail,
+                    "content_post": contentPost,
+                    "post_image": postImage,
+                    "user_post": currentName,
+                    "user_post_profile_image": currentProfileImage,
+                    "date": dateString
+                    //                "comment": [
+                    //                    "user_comment": "comment name",
+                    //                    "user_comment_image": "user_comment_image",
+                    //                    "content_comment": "content_comment"
+                    //                ]
+                ]
+                usersCollection.append(newElement)
+                
+                self.database.child("posts").setValue(usersCollection, withCompletionBlock: { error, _ in
                     guard error == nil else {
                         completion(false)
                         return
                     }
+                    
                     completion(true)
                 })
-                
-            } else {
-                // conve does not exist for current user
-                // create it
-                postNode["posts"] = [
-                    newPost
+            }
+            else {
+                // create that array
+                let newCollection: [[String: String]] = [
+                    [
+                        "id": postId,
+                        "email": safeEmail,
+                        "content_post": contentPost,
+                        "post_image": postImage,
+                        "user_post": currentName,
+                        "user_post_profile_image": currentProfileImage,
+                        "date": dateString
+                        //                "comment": [
+                        //                    "user_comment": "comment name",
+                        //                    "user_comment_image": "user_comment_image",
+                        //                    "content_comment": "content_comment"
+                        //                ]
+                    ]
                 ]
-                ref.setValue(postNode, withCompletionBlock: {error, _ in
+                
+                self.database.child("posts").setValue(newCollection, withCompletionBlock: { error, _ in
                     guard error == nil else {
                         completion(false)
                         return
@@ -621,15 +626,48 @@ extension DatabaseManager {
         })
     }
     
-    // create list post of user
-    
-    public func getAllPosts(with email: String, completion: @escaping (Result<[PostModel], Error>) -> Void) {
-        database.child("\(email)/posts").observe(.value, with: { snapshot in
+    // get list post of user
+    public func getAllPostsForUser(with email: String, completion: @escaping (Result<[PostModel], Error>) -> Void) {
+        database.child("posts/").observe(.value, with: { snapshot in
             guard let value = snapshot.value as? [[String: Any]] else{
                 completion(.failure(DatabaseError.failedToFetch))
                 return
             }
-
+            guard let currentEmail = UserDefaults.standard.value(forKey: "email") as? String else {
+                return
+            }
+            let safeEmail = DatabaseManager.safeEmail(emailAddress: currentEmail)
+            print("post all : \(value)")
+            let posts: [PostModel] = value.compactMap({ dictionary in
+                guard let postId = dictionary["id"] as? String,
+                      let email = dictionary["email"] as? String,
+                      let contentPost = dictionary["content_post"] as? String,
+                      let userPostName = dictionary["user_post"] as? String,
+                      let date = dictionary["date"] as? String,
+                      let postImageURL = dictionary["post_image"] as? String,
+                      let userImageURL = dictionary["user_post_profile_image"] as? String else {
+                    return nil
+                }
+                if email == "\(safeEmail)" {
+                    return PostModel(id: postId, contentPost: contentPost, userPostName: userPostName, userPostEmail: safeEmail, postDate: date, postImageURL: postImageURL, userImageURL: userImageURL)
+                } else {
+                    return nil
+                }
+            })
+            
+            print("post for user: \(posts)")
+            completion(.success(posts))
+        })
+        
+    }
+    // get list post of all user
+    public func getAllPosts(with email: String, completion: @escaping (Result<[PostModel], Error>) -> Void) {
+        database.child("posts").observe(.value, with: { snapshot in
+            guard let value = snapshot.value as? [[String: Any]] else{
+                completion(.failure(DatabaseError.failedToFetch))
+                return
+            }
+            
             let posts: [PostModel] = value.compactMap({ dictionary in
                 guard let postId = dictionary["id"] as? String,
                       let email = dictionary["email"] as? String,
@@ -642,13 +680,15 @@ extension DatabaseManager {
                 }
                 return PostModel(id: postId, contentPost: contentPost, userPostName: userPostName, userPostEmail: email, postDate: date, postImageURL: postImageURL, userImageURL: userImageURL)
             })
-
+            
             print("post: \(posts)")
             completion(.success(posts))
         })
-
+        
     }
 }
+
+
 
 struct ChatAppUser {
     let userName: String

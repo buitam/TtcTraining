@@ -57,3 +57,25 @@ class Info:NSObject {
     }
     
 }
+//class SectionClass {
+//    var genre: String!
+//    var movies: [Info]!
+//    var expanded: Bool!
+//    init(genre: String, movies: [Info], expanded: Bool) {
+//        self.genre = genre
+//        self.movies = movies
+//        self.expanded = expanded
+//    }
+//    
+//    static func initInfo1() -> [SectionClass] {
+//        return [
+//            SectionClass(genre: "👻 Danh Lam Thắng Cảnh", movies: [Info(mainImg: UIImage(named: "banaHill"), profileImg: UIImage(named: "suli"), title: "Ai đi bà nà không?", position: "Đà Nẵng", place: "Bà nà Hill", name: "Su Li", time: "09:00 AM", date: "21/11/2019", job: "Kế toán", tickImg: UIImage(named: "checked")),
+//                                                                    Info(mainImg: UIImage(named: "daLat"), profileImg: UIImage(named: "lily"), title: "Đà lạt lạnh quá?", position: "Đà Lạt", place: "Lâm đồng, Đà Lạt", name: "LiLy Maymac", time: "11:00 AM", date: "07/11/2010", job: "Sinh Viên", tickImg: UIImage(named: "cancel")),
+//                                                                    Info(mainImg: UIImage(named: "langBac"), profileImg: UIImage(named: "duongTu"), title: "Lăng bác cùng đồng đội", position: "Hà Nội", place: "Lăng bác hồ", name: "Dương Tử", time: "02:00 PM", date: "21/12/2019", job: "Quản lí", tickImg: UIImage(named: "checked")),
+//                                                                    Info(mainImg: UIImage(named: "muCangChai"), profileImg: UIImage(named: "huongGiang"), title: "Tìm bạn Việt Nam dẫn đi chơi", position: "Tây bắc", place: "Mù Cang Chải", name: "Hương Giang", time: "08:00 AM", date: "04/12/2019", job: "Kinh doanh tự do", tickImg: UIImage(named: "checked"))
+//            ], expanded: false),
+//            SectionClass(genre: "👻 Di Tích Lịch Sử", movies: [Info(mainImg: UIImage(named: "daLat"), profileImg: UIImage(named: "lily"), title: "Đà lạt lạnh quá?", position: "Đà Lạt", place: "Lâm đồng, Đà Lạt", name: "LiLy Maymac", time: "11:00 AM", date: "07/11/2010", job: "Sinh Viên", tickImg: UIImage(named: "cancel")),Info(mainImg: UIImage(named: "daLat"), profileImg: UIImage(named: "lily"), title: "Đà lạt lạnh quá?", position: "Đà Lạt", place: "Lâm đồng, Đà Lạt", name: "LiLy Maymac", time: "11:00 AM", date: "07/11/2010", job: "Sinh Viên", tickImg: UIImage(named: "cancel"))], expanded: false),
+//            SectionClass(genre: "👻 Địa Điểm Ăn Uống", movies: [Info(mainImg: UIImage(named: "daLat"), profileImg: UIImage(named: "lily"), title: "Đà lạt lạnh quá?", position: "Đà Lạt", place: "Lâm đồng, Đà Lạt", name: "LiLy Maymac", time: "11:00 AM", date: "07/11/2010", job: "Sinh Viên", tickImg: UIImage(named: "cancel")),Info(mainImg: UIImage(named: "daLat"), profileImg: UIImage(named: "lily"), title: "Đà lạt lạnh quá?", position: "Đà Lạt", place: "Lâm đồng, Đà Lạt", name: "LiLy Maymac", time: "11:00 AM", date: "07/11/2010", job: "Sinh Viên", tickImg: UIImage(named: "cancel"))], expanded: false),
+//        ]
+//    }
+//}

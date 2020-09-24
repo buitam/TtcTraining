@@ -21,9 +21,6 @@ class TouchEffectButton: UIButton {
         
         required init?(coder aDecoder: NSCoder) {
             super.init(coder: aDecoder)
-            
-            self.titleLabel?.font = UIFont.systemFont(ofSize: 16)
-            self.setTitle(self.titleLabel?.text?.uppercased(), for: .normal)
         }
         
         override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
