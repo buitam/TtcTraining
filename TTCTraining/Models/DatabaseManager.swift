@@ -386,6 +386,46 @@ extension DatabaseManager {
         })
     }
     
+    // Delete conversation
+    public func deleteConversation(conversationId: String, completion: @escaping (Bool) -> Void) {
+        guard let email = UserDefaults.standard.value(forKey: "email") as? String else {
+            return
+        }
+        let safeEmail = DatabaseManager.safeEmail(emailAddress: email)
+
+        print("Deleting conversation with id: \(conversationId)")
+
+        // Get all conversations for current user
+        // delete conversation in collection with target id
+        // reset those conversations for the user in database
+        let ref = database.child("\(safeEmail)/conversations")
+        ref.observeSingleEvent(of: .value) { snapshot in
+            if var conversations = snapshot.value as? [[String: Any]] {
+                var positionToRemove = 0
+                for conversation in conversations {
+                    if let id = conversation["id"] as? String,
+                        id == conversationId {
+                        print("found conversation to delete")
+                        break
+                    }
+                    positionToRemove += 1
+                }
+
+                conversations.remove(at: positionToRemove)
+                ref.setValue(conversations, withCompletionBlock: { error, _  in
+                    guard error == nil else {
+                        completion(false)
+                        print("faield to write new conversatino array")
+                        return
+                    }
+                    print("deleted conversaiton")
+                    completion(true)
+                })
+            }
+        }
+    }
+
+    
     // get all message in conversation through ID
     public func getAllMessagesForConversation(with id: String, completion: @escaping (Result<[Message], Error>) -> Void) {
         database.child("\(id)/messages").observe(.value, with: { snapshot in
@@ -558,8 +598,7 @@ extension DatabaseManager {
     // MARK: - Create new POST and get list POST
     public func createNewPost(contentPost: String, postImage: String , completion: @escaping (Bool) -> Void)  {
         guard let currentEmail = UserDefaults.standard.value(forKey: "email") as? String,
-              let currentName = UserDefaults.standard.value(forKey: "name") as? String,
-              let currentProfileImage = UserDefaults.standard.value(forKey: "profile_picture_url") as? String
+              let currentName = UserDefaults.standard.value(forKey: "name") as? String
         else {
             return
         }
@@ -577,7 +616,6 @@ extension DatabaseManager {
                     "content_post": contentPost,
                     "post_image": postImage,
                     "user_post": currentName,
-                    "user_post_profile_image": currentProfileImage,
                     "date": dateString
                     //                "comment": [
                     //                    "user_comment": "comment name",
@@ -605,7 +643,6 @@ extension DatabaseManager {
                         "content_post": contentPost,
                         "post_image": postImage,
                         "user_post": currentName,
-                        "user_post_profile_image": currentProfileImage,
                         "date": dateString
                         //                "comment": [
                         //                    "user_comment": "comment name",
@@ -644,11 +681,12 @@ extension DatabaseManager {
                       let contentPost = dictionary["content_post"] as? String,
                       let userPostName = dictionary["user_post"] as? String,
                       let date = dictionary["date"] as? String,
-                      let postImageURL = dictionary["post_image"] as? String,
-                      let userImageURL = dictionary["user_post_profile_image"] as? String else {
+                      let postImageURL = dictionary["post_image"] as? String
+                else {
                     return nil
                 }
                 if email == "\(safeEmail)" {
+                    let userImageURL = "images/\(email)_profile_picture.png"
                     return PostModel(id: postId, contentPost: contentPost, userPostName: userPostName, userPostEmail: safeEmail, postDate: date, postImageURL: postImageURL, userImageURL: userImageURL)
                 } else {
                     return nil
@@ -674,10 +712,11 @@ extension DatabaseManager {
                       let contentPost = dictionary["content_post"] as? String,
                       let userPostName = dictionary["user_post"] as? String,
                       let date = dictionary["date"] as? String,
-                      let postImageURL = dictionary["post_image"] as? String,
-                      let userImageURL = dictionary["user_post_profile_image"] as? String else {
+                      let postImageURL = dictionary["post_image"] as? String
+                else {
                     return nil
                 }
+                let userImageURL = "images/\(email)_profile_picture.png"
                 return PostModel(id: postId, contentPost: contentPost, userPostName: userPostName, userPostEmail: email, postDate: date, postImageURL: postImageURL, userImageURL: userImageURL)
             })
             

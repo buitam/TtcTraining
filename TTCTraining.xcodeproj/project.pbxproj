@@ -20,8 +20,6 @@
 		18A1E53D2361535F005CDBC4 /* BannerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A1E53B2361535F005CDBC4 /* BannerCollectionViewCell.xib */; };
 		18A1E54C2361C4FA005CDBC4 /* AddFriendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A1E54A2361C4FA005CDBC4 /* AddFriendCollectionViewCell.swift */; };
 		18A1E54D2361C4FA005CDBC4 /* AddFriendCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A1E54B2361C4FA005CDBC4 /* AddFriendCollectionViewCell.xib */; };
-		18B324852361F3E20008DF0C /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B324832361F3E20008DF0C /* HomeTableViewCell.swift */; };
-		18B324862361F3E20008DF0C /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B324842361F3E20008DF0C /* HomeTableViewCell.xib */; };
 		32044999251BC687005C9DF2 /* NotiTBVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32044997251BC687005C9DF2 /* NotiTBVCell.swift */; };
 		3204499A251BC687005C9DF2 /* NotiTBVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32044998251BC687005C9DF2 /* NotiTBVCell.xib */; };
 		3204499E251BC6C4005C9DF2 /* NotiVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3204499D251BC6C4005C9DF2 /* NotiVC.swift */; };
@@ -45,10 +43,14 @@
 		3247ED93251A6E5F0082D5AA /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3247ED92251A6E5F0082D5AA /* PostModel.swift */; };
 		3263164D24E8EB9C002DCD0F /* EditDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3263164B24E8EB9C002DCD0F /* EditDetailVC.swift */; };
 		3263164E24E8EB9C002DCD0F /* EditDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3263164C24E8EB9C002DCD0F /* EditDetailVC.xib */; };
-		32728179251D1A8B0078E65D /* AddFriendVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32728177251D1A8B0078E65D /* AddFriendVC.swift */; };
-		3272817A251D1A8B0078E65D /* AddFriendVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32728178251D1A8B0078E65D /* AddFriendVC.xib */; };
+		32728179251D1A8B0078E65D /* FollowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32728177251D1A8B0078E65D /* FollowVC.swift */; };
+		3272817A251D1A8B0078E65D /* FollowVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32728178251D1A8B0078E65D /* FollowVC.xib */; };
 		3272817E251D1AA80078E65D /* MatchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3272817C251D1AA80078E65D /* MatchVC.swift */; };
 		3272817F251D1AA80078E65D /* MatchVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3272817D251D1AA80078E65D /* MatchVC.xib */; };
+		327281C9251DC2810078E65D /* FollowTBV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327281C7251DC2810078E65D /* FollowTBV.swift */; };
+		327281CA251DC2810078E65D /* FollowTBV.xib in Resources */ = {isa = PBXBuildFile; fileRef = 327281C8251DC2810078E65D /* FollowTBV.xib */; };
+		32728213251DE0190078E65D /* GuideTBV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32728211251DE0190078E65D /* GuideTBV.swift */; };
+		32728214251DE0190078E65D /* GuideTBV.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32728212251DE0190078E65D /* GuideTBV.xib */; };
 		32856EC42513A4450062221B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 32856EC32513A4450062221B /* GoogleService-Info.plist */; };
 		32983CED24E182FB0025D503 /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32983CEB24E182FB0025D503 /* EditProfileVC.swift */; };
 		32983CEE24E182FB0025D503 /* EditProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32983CEC24E182FB0025D503 /* EditProfileVC.xib */; };
@@ -92,8 +94,6 @@
 		18A1E53B2361535F005CDBC4 /* BannerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BannerCollectionViewCell.xib; sourceTree = "<group>"; };
 		18A1E54A2361C4FA005CDBC4 /* AddFriendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendCollectionViewCell.swift; sourceTree = "<group>"; };
 		18A1E54B2361C4FA005CDBC4 /* AddFriendCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddFriendCollectionViewCell.xib; sourceTree = "<group>"; };
-		18B324832361F3E20008DF0C /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
-		18B324842361F3E20008DF0C /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 		1CD3AE4F87DF56A2FF0D4C48 /* Pods-TTCTraining.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTCTraining.release.xcconfig"; path = "Target Support Files/Pods-TTCTraining/Pods-TTCTraining.release.xcconfig"; sourceTree = "<group>"; };
 		32044997251BC687005C9DF2 /* NotiTBVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotiTBVCell.swift; sourceTree = "<group>"; };
 		32044998251BC687005C9DF2 /* NotiTBVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotiTBVCell.xib; sourceTree = "<group>"; };
@@ -118,10 +118,14 @@
 		3247ED92251A6E5F0082D5AA /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		3263164B24E8EB9C002DCD0F /* EditDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDetailVC.swift; sourceTree = "<group>"; };
 		3263164C24E8EB9C002DCD0F /* EditDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditDetailVC.xib; sourceTree = "<group>"; };
-		32728177251D1A8B0078E65D /* AddFriendVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendVC.swift; sourceTree = "<group>"; };
-		32728178251D1A8B0078E65D /* AddFriendVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddFriendVC.xib; sourceTree = "<group>"; };
+		32728177251D1A8B0078E65D /* FollowVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowVC.swift; sourceTree = "<group>"; };
+		32728178251D1A8B0078E65D /* FollowVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FollowVC.xib; sourceTree = "<group>"; };
 		3272817C251D1AA80078E65D /* MatchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchVC.swift; sourceTree = "<group>"; };
 		3272817D251D1AA80078E65D /* MatchVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchVC.xib; sourceTree = "<group>"; };
+		327281C7251DC2810078E65D /* FollowTBV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowTBV.swift; sourceTree = "<group>"; };
+		327281C8251DC2810078E65D /* FollowTBV.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FollowTBV.xib; sourceTree = "<group>"; };
+		32728211251DE0190078E65D /* GuideTBV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideTBV.swift; sourceTree = "<group>"; };
+		32728212251DE0190078E65D /* GuideTBV.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GuideTBV.xib; sourceTree = "<group>"; };
 		32856EC32513A4450062221B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		32983CEB24E182FB0025D503 /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
 		32983CEC24E182FB0025D503 /* EditProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditProfileVC.xib; sourceTree = "<group>"; };
@@ -374,8 +378,8 @@
 		323B0BC424D80A0E003C28E4 /* DanhLam */ = {
 			isa = PBXGroup;
 			children = (
-				18B324832361F3E20008DF0C /* HomeTableViewCell.swift */,
-				18B324842361F3E20008DF0C /* HomeTableViewCell.xib */,
+				32728211251DE0190078E65D /* GuideTBV.swift */,
+				32728212251DE0190078E65D /* GuideTBV.xib */,
 			);
 			path = DanhLam;
 			sourceTree = "<group>";
@@ -385,8 +389,10 @@
 			children = (
 				18A1E54A2361C4FA005CDBC4 /* AddFriendCollectionViewCell.swift */,
 				18A1E54B2361C4FA005CDBC4 /* AddFriendCollectionViewCell.xib */,
-				32728177251D1A8B0078E65D /* AddFriendVC.swift */,
-				32728178251D1A8B0078E65D /* AddFriendVC.xib */,
+				32728177251D1A8B0078E65D /* FollowVC.swift */,
+				32728178251D1A8B0078E65D /* FollowVC.xib */,
+				327281C7251DC2810078E65D /* FollowTBV.swift */,
+				327281C8251DC2810078E65D /* FollowTBV.xib */,
 			);
 			path = Follow;
 			sourceTree = "<group>";
@@ -589,14 +595,15 @@
 				32983D1624E69D130025D503 /* CreatePostVC.xib in Resources */,
 				18A1E54D2361C4FA005CDBC4 /* AddFriendCollectionViewCell.xib in Resources */,
 				32856EC42513A4450062221B /* GoogleService-Info.plist in Resources */,
+				32728214251DE0190078E65D /* GuideTBV.xib in Resources */,
 				32F1EDC024E927E500392F24 /* SignUpVC.xib in Resources */,
 				18A1E53D2361535F005CDBC4 /* BannerCollectionViewCell.xib in Resources */,
 				3272817F251D1AA80078E65D /* MatchVC.xib in Resources */,
 				32983CF624E1A2090025D503 /* SettingVC.xib in Resources */,
 				32983CEE24E182FB0025D503 /* EditProfileVC.xib in Resources */,
-				3272817A251D1A8B0078E65D /* AddFriendVC.xib in Resources */,
+				327281CA251DC2810078E65D /* FollowTBV.xib in Resources */,
+				3272817A251D1A8B0078E65D /* FollowVC.xib in Resources */,
 				32983D0E24E69CA00025D503 /* PostedTBVCell.xib in Resources */,
-				18B324862361F3E20008DF0C /* HomeTableViewCell.xib in Resources */,
 				3263164E24E8EB9C002DCD0F /* EditDetailVC.xib in Resources */,
 				32983CFE24E262980025D503 /* EditProfileTBVCell.xib in Resources */,
 				18A1E51C23600C8E005CDBC4 /* Main.storyboard in Resources */,
@@ -672,13 +679,14 @@
 				323B0BE924D83D33003C28E4 /* AlertView.swift in Sources */,
 				32983D1524E69D130025D503 /* CreatePostVC.swift in Sources */,
 				3272817E251D1AA80078E65D /* MatchVC.swift in Sources */,
-				18B324852361F3E20008DF0C /* HomeTableViewCell.swift in Sources */,
 				32290128251641F90093D20F /* ChatContentVC.swift in Sources */,
 				3247ED93251A6E5F0082D5AA /* PostModel.swift in Sources */,
 				32983D0524E269AB0025D503 /* EditProfileMD.swift in Sources */,
 				32B7096924E95A0900B74732 /* ButtonExtension.swift in Sources */,
 				3204499E251BC6C4005C9DF2 /* NotiVC.swift in Sources */,
+				327281C9251DC2810078E65D /* FollowTBV.swift in Sources */,
 				18A1E51923600C8E005CDBC4 /* ViewController.swift in Sources */,
+				32728213251DE0190078E65D /* GuideTBV.swift in Sources */,
 				323B0C4924E04D7C003C28E4 /* AboutMeViewController.swift in Sources */,
 				32C1B5B22518520900404623 /* DatabaseManager.swift in Sources */,
 				32C1B5BE2518825800404623 /* NewConversationViewController.swift in Sources */,
@@ -702,7 +710,7 @@
 				18A1E51723600C8E005CDBC4 /* AppDelegate.swift in Sources */,
 				323B0BBD24D807FE003C28E4 /* StringsConst.swift in Sources */,
 				32983CF524E1A2090025D503 /* SettingVC.swift in Sources */,
-				32728179251D1A8B0078E65D /* AddFriendVC.swift in Sources */,
+				32728179251D1A8B0078E65D /* FollowVC.swift in Sources */,
 				32983D0124E265980025D503 /* SettingMD.swift in Sources */,
 				32C1B58E2517B27D00404623 /* StorageManager.swift in Sources */,
 				323B0C1C24D972A5003C28E4 /* ButtonGradient.swift in Sources */,

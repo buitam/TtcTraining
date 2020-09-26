@@ -7,70 +7,109 @@
 //
 
 import UIKit
-
-
-
-import UIKit
+import SafariServices
 struct Section {
     var genre: String!
-    var movies: [Info]!
+    var details: [DetailGuide]!
     var expanded: Bool!
-    init(genre: String, movies: [Info], expanded: Bool) {
+    init(genre: String, details: [DetailGuide], expanded: Bool) {
         self.genre = genre
-        self.movies = movies
+        self.details = details
         self.expanded = expanded
+    }
+}
+
+class DetailGuide:NSObject {
+    var mainImg: UIImage?
+    var place: String?
+    var price: String?
+    var openDate: String?
+    var url: String?
+    
+    init(mainImg: UIImage?, place: String?, price: String?, openDate: String?, url: String?){
+        self.mainImg = mainImg
+        self.place = place
+        self.price = price
+        self.openDate = openDate
+        self.url = url
     }
 }
 class GuideVC: UIViewController, UITableViewDataSource, UITableViewDelegate, ExpandableHeaderViewDelegate {
     func tongleSection(header: ExpandableHeaderView, section: Int) {
         sections[section].expanded = !sections[section].expanded
         tableView.beginUpdates()
-        for i in 0 ..< sections[section].movies.count {
+        for i in 0 ..< sections[section].details.count {
             tableView.reloadRows(at: [IndexPath(row: i, section: section)], with: .automatic)
         }
         tableView.endUpdates()
     }
-
+    
     @IBOutlet weak var tableView: UITableView!
     var sections = [
-        Section(genre: "👻 Danh Lam Thắng Cảnh", movies: [Info(mainImg: UIImage(named: "banaHill"), profileImg: UIImage(named: "suli"), title: "Ai đi bà nà không?", position: "Đà Nẵng", place: "Bà nà Hill", name: "Su Li", time: "09:00 AM", date: "21/11/2019", job: "Kế toán", tickImg: UIImage(named: "checked")),
-                                                                Info(mainImg: UIImage(named: "daLat"), profileImg: UIImage(named: "lily"), title: "Đà lạt lạnh quá?", position: "Đà Lạt", place: "Lâm đồng, Đà Lạt", name: "LiLy Maymac", time: "11:00 AM", date: "07/11/2010", job: "Sinh Viên", tickImg: UIImage(named: "cancel")),
-                                                                Info(mainImg: UIImage(named: "langBac"), profileImg: UIImage(named: "duongTu"), title: "Lăng bác cùng đồng đội", position: "Hà Nội", place: "Lăng bác hồ", name: "Dương Tử", time: "02:00 PM", date: "21/12/2019", job: "Quản lí", tickImg: UIImage(named: "checked")),
-                                                                Info(mainImg: UIImage(named: "muCangChai"), profileImg: UIImage(named: "huongGiang"), title: "Tìm bạn Việt Nam dẫn đi chơi", position: "Tây bắc", place: "Mù Cang Chải", name: "Hương Giang", time: "08:00 AM", date: "04/12/2019", job: "Kinh doanh tự do", tickImg: UIImage(named: "checked"))
-        ], expanded: false),
-        Section(genre: "👻 Di Tích Lịch Sử", movies: [Info(mainImg: UIImage(named: "daLat"), profileImg: UIImage(named: "lily"), title: "Đà lạt lạnh quá?", position: "Đà Lạt", place: "Lâm đồng, Đà Lạt", name: "LiLy Maymac", time: "11:00 AM", date: "07/11/2010", job: "Sinh Viên", tickImg: UIImage(named: "cancel")),Info(mainImg: UIImage(named: "daLat"), profileImg: UIImage(named: "lily"), title: "Đà lạt lạnh quá?", position: "Đà Lạt", place: "Lâm đồng, Đà Lạt", name: "LiLy Maymac", time: "11:00 AM", date: "07/11/2010", job: "Sinh Viên", tickImg: UIImage(named: "cancel"))], expanded: false),
-        Section(genre: "👻 Địa Điểm Ăn Uống", movies: [Info(mainImg: UIImage(named: "daLat"), profileImg: UIImage(named: "lily"), title: "Đà lạt lạnh quá?", position: "Đà Lạt", place: "Lâm đồng, Đà Lạt", name: "LiLy Maymac", time: "11:00 AM", date: "07/11/2010", job: "Sinh Viên", tickImg: UIImage(named: "cancel")),Info(mainImg: UIImage(named: "daLat"), profileImg: UIImage(named: "lily"), title: "Đà lạt lạnh quá?", position: "Đà Lạt", place: "Lâm đồng, Đà Lạt", name: "LiLy Maymac", time: "11:00 AM", date: "07/11/2010", job: "Sinh Viên", tickImg: UIImage(named: "cancel"))], expanded: false),
+        Section(genre: "🏖 Travel",
+                details: [
+                    DetailGuide(mainImg: UIImage(named: "travel1"), place: "Da Lat", price: "120$-140$", openDate: "Mon-Sat", url: "https://www.foody.vn/ha-noi/food/sang-trong"),
+                    DetailGuide(mainImg: UIImage(named: "travel2"), place: "Da Lat", price: "120$-140$", openDate: "Mon-Sat", url: "https://www.foody.vn/ha-noi/food/sang-trong"),
+                    DetailGuide(mainImg: UIImage(named: "travel3"), place: "Da Lat", price: "120$-140$", openDate: "Mon-Sat", url: "https://www.foody.vn/ha-noi/food/sang-trong"),
+                    DetailGuide(mainImg: UIImage(named: "travel4"), place: "Da Lat", price: "120$-140$", openDate: "Mon-Sat", url: "https://www.foody.vn/ha-noi/food/sang-trong"),
+                    DetailGuide(mainImg: UIImage(named: "travel5"), place: "Da Lat", price: "120$-140$", openDate: "Mon-Sat", url: "https://www.foody.vn/ha-noi/food/sang-trong"),
+                    DetailGuide(mainImg: UIImage(named: "travel6"), place: "Da Lat", price: "120$-140$", openDate: "Mon-Sat", url: "https://www.foody.vn/ha-noi/food/sang-trong"),
+                    DetailGuide(mainImg: UIImage(named: "travel7"), place: "Da Lat", price: "120$-140$", openDate: "Mon-Sat", url: "https://www.foody.vn/ha-noi/food/sang-trong"),
+                ], expanded: false),
+        Section(genre: "🌻 Entertainment",
+                details: [
+                    DetailGuide(mainImg: UIImage(named: "game1"), place: "Da Lat", price: "120$-140$", openDate: "Mon-Sat", url: "https://www.foody.vn/ha-noi/food/sang-trong"),
+                    DetailGuide(mainImg: UIImage(named: "game2"), place: "Da Lat", price: "120$-140$", openDate: "Mon-Sat", url: "https://www.foody.vn/ha-noi/food/sang-trong"),
+                    DetailGuide(mainImg: UIImage(named: "game3"), place: "Da Lat", price: "120$-140$", openDate: "Mon-Sat", url: "https://www.foody.vn/ha-noi/food/sang-trong"),
+                    DetailGuide(mainImg: UIImage(named: "game4"), place: "Da Lat", price: "120$-140$", openDate: "Mon-Sat", url: "https://www.foody.vn/ha-noi/food/sang-trong")
+                ], expanded: false),
+        
+        Section(genre: "🥂Food & Drink",
+                details: [
+                    DetailGuide(mainImg: UIImage(named: "food1"), place: "Da Lat", price: "120$-140$", openDate: "Mon-Sat", url: "https://www.foody.vn/ha-noi/food/sang-trong"),
+                    DetailGuide(mainImg: UIImage(named: "food4"), place: "Da Lat", price: "120$-140$", openDate: "Mon-Sat", url: "https://www.foody.vn/ha-noi/food/sang-trong"),
+                    DetailGuide(mainImg: UIImage(named: "food3"), place: "Da Lat", price: "120$-140$", openDate: "Mon-Sat", url: "https://www.foody.vn/ha-noi/food/sang-trong"),
+                    DetailGuide(mainImg: UIImage(named: "food2"), place: "Da Lat", price: "120$-140$", openDate: "Mon-Sat", url: "https://www.foody.vn/ha-noi/food/sang-trong"),
+                    DetailGuide(mainImg: UIImage(named: "food5"), place: "Da Lat", price: "120$-140$", openDate: "Mon-Sat", url: "https://www.foody.vn/ha-noi/food/sang-trong")
+                ], expanded: true)
     ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         tableView.delegate = self
         tableView.dataSource = self
-        let nibHomeTableView = UINib.init(nibName: "HomeTableViewCell", bundle: nil)
+        let nibHomeTableView = UINib.init(nibName: "GuideTBV", bundle: nil)
         self.tableView.register(nibHomeTableView, forCellReuseIdentifier: "CellGuide")
-//
+        //
         // Do any additional setup after loading the view.
     }
-
+    func showTutorial(_ url: String) {
+            let config = SFSafariViewController.Configuration()
+            config.entersReaderIfAvailable = true
+            
+        let vc = SFSafariViewController(url: URL(string: url)!, configuration: config)
+            present(vc, animated: true)
+        }
+    
     //Table View
     func numberOfSections(in tableView: UITableView) -> Int {
         return sections.count
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sections[section].movies.count
+        return sections[section].details.count
     }
-
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 44
     }
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 2
     }
-
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if(self.sections[indexPath.section].expanded) {
-            return 350
+            return 400
         }
         else {
             return 0
@@ -81,58 +120,14 @@ class GuideVC: UIViewController, UITableViewDataSource, UITableViewDelegate, Exp
         header.customInit(title: sections[section].genre, section: section, delegate: self)
         return header
     }
-
-        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "CellGuide", for: indexPath) as! HomeTableViewCell
-           cell.configCell(sections[indexPath.section].movies[indexPath.row])
-            return cell
-        }
-
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CellGuide", for: indexPath) as! GuideTBV
+        cell.configCell(sections[indexPath.section].details[indexPath.row])
+        return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        showTutorial(sections[indexPath.section].details[indexPath.row].url!)
+    }
+    
 }
-
-
-
-
-
-//
-//
-//class GuideVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
-//
-//
-//
-//    @IBOutlet weak var tableView: UITableView!
-//    var listInfo:[Info] = [];
-//    var listDiscovery = ["Danh Lam Thắng Cảnh", "Di Tích Lịch Sử", "Địa Điểm Ăn Uống"]
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        listInfo = Info.initInfo()
-//        tableView.delegate = self
-//        tableView.dataSource = self
-//        let nibHomeTableView = UINib.init(nibName: "HomeTableViewCell", bundle: nil)
-//        self.tableView.register(nibHomeTableView, forCellReuseIdentifier: "CellGuide")
-//
-//        // Do any additional setup after loading the view.
-//    }
-//
-//    //Table View
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        return listDiscovery.count
-//    }
-//
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        return listDiscovery[section]
-//    }
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return listInfo.count
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "CellGuide", for: indexPath) as! HomeTableViewCell
-//        cell.configCell(listInfo[indexPath.row])
-//        return cell
-//    }
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 300
-//    }
-//
-//}

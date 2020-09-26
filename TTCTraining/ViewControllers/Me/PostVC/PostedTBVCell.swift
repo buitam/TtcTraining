@@ -15,8 +15,6 @@ class PostedTBVCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        setImageProfile(profileImage: profileImage)
-        currentName.text = UserDefaults.standard.value(forKey: "name") as? String
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -31,16 +29,20 @@ class PostedTBVCell: UITableViewCell {
     
     func configCell(_ data: PostModel){
         contentPost.text = data.contentPost
-        let url = URL(string: "\(data.postImageURL)")!
-        imgPost.sd_setImage(with: url, completed: nil)
+        imgPost.sd_setImage(with: URL(string: "\(data.postImageURL)")!, completed: nil)
+        currentName.text = data.userPostName
+        StorageManager.shared.downloadURL(for: data.userImageURL, completion: { [weak self] result in
+            switch result {
+            case .success(let url):
+
+                DispatchQueue.main.async {
+                    self?.profileImage.sd_setImage(with: url, completed: nil)
+                }
+
+            case .failure(let error):
+                print("failed to get image url: \(error)")
+            }
+        })
     }
-
-    
-//
-//    func configCell(_ data: PostedMD){
-//        contentPost.text = data.contentPost
-//
-//    }
-
     
 }

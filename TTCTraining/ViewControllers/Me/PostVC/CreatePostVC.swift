@@ -69,7 +69,7 @@ class CreatePostVC: UIViewController {
     }
     
     func initUI() {
-        contentPost.text = "What is in your my?"
+        contentPost.text = "What is in your mind?"
         contentPost.textColor = UIColor.lightGray
         contentPost.delegate = self
         hideKeyboard()
@@ -116,7 +116,7 @@ extension CreatePostVC: UITextViewDelegate {
     
     func textViewDidEndEditing(_ textView: UITextView) {
         if contentPost.text.isEmpty {
-            contentPost.text = "What is in your my?"
+            contentPost.text = "What is in your mind?"
             contentPost.textColor = UIColor.lightGray
         }
     }

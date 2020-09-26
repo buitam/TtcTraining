@@ -11,8 +11,10 @@ import FirebaseAuth
 import CenteredCollectionView
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout  {
     var lstPost = PostedMD.initPost()
+    @IBOutlet weak var userName: UILabel!
     private var posts = [PostModel]()
 
+    @IBOutlet weak var imgProfile: UIImageView!
     let cellPercentWidth: CGFloat = 0.8
     
     // A reference to the `CenteredCollectionViewFlowLayout`.
@@ -37,13 +39,20 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     @IBAction func followActionBtn(_ sender: Any) {
+        let vc = FollowVC(nibName: "FollowVC", bundle: nil)
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true, completion: nil)
     }
     
     @IBAction func matchActionBtn(_ sender: Any) {
+        let vc = MatchVC(nibName: "MatchVC", bundle: nil)
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true, completion: nil)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        userName.text = UserDefaults.standard.value(forKey: "name") as? String
+        setImageProfile(profileImage: imgProfile)
         headerView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapIntoHeaderView)))
         headerView.layer.cornerRadius = 10
 
@@ -140,7 +149,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             return
         }
         let safeEmail = DatabaseManager.safeEmail(emailAddress: email)
-        DatabaseManager.shared.getAllPostsForUser(with: safeEmail, completion: {[weak self] result in
+        DatabaseManager.shared.getAllPosts(with: safeEmail, completion: {[weak self] result in
             switch result {
             case .success(let posts):
                 guard !posts.isEmpty else {
