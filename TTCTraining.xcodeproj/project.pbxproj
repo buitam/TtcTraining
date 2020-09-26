@@ -51,6 +51,9 @@
 		327281CA251DC2810078E65D /* FollowTBV.xib in Resources */ = {isa = PBXBuildFile; fileRef = 327281C8251DC2810078E65D /* FollowTBV.xib */; };
 		32728213251DE0190078E65D /* GuideTBV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32728211251DE0190078E65D /* GuideTBV.swift */; };
 		32728214251DE0190078E65D /* GuideTBV.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32728212251DE0190078E65D /* GuideTBV.xib */; };
+		32757A8A251F3CC500B248C2 /* Follow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32757A89251F3CC500B248C2 /* Follow.swift */; };
+		32757BA6251FAA3200B248C2 /* ViewFollowerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32757BA4251FAA3200B248C2 /* ViewFollowerVC.swift */; };
+		32757BA7251FAA3200B248C2 /* ViewFollowerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32757BA5251FAA3200B248C2 /* ViewFollowerVC.xib */; };
 		32856EC42513A4450062221B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 32856EC32513A4450062221B /* GoogleService-Info.plist */; };
 		32983CED24E182FB0025D503 /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32983CEB24E182FB0025D503 /* EditProfileVC.swift */; };
 		32983CEE24E182FB0025D503 /* EditProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32983CEC24E182FB0025D503 /* EditProfileVC.xib */; };
@@ -126,6 +129,9 @@
 		327281C8251DC2810078E65D /* FollowTBV.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FollowTBV.xib; sourceTree = "<group>"; };
 		32728211251DE0190078E65D /* GuideTBV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideTBV.swift; sourceTree = "<group>"; };
 		32728212251DE0190078E65D /* GuideTBV.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GuideTBV.xib; sourceTree = "<group>"; };
+		32757A89251F3CC500B248C2 /* Follow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follow.swift; sourceTree = "<group>"; };
+		32757BA4251FAA3200B248C2 /* ViewFollowerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFollowerVC.swift; sourceTree = "<group>"; };
+		32757BA5251FAA3200B248C2 /* ViewFollowerVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewFollowerVC.xib; sourceTree = "<group>"; };
 		32856EC32513A4450062221B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		32983CEB24E182FB0025D503 /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
 		32983CEC24E182FB0025D503 /* EditProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditProfileVC.xib; sourceTree = "<group>"; };
@@ -170,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				32983CFF24E265720025D503 /* SettingModel */,
+				32757A89251F3CC500B248C2 /* Follow.swift */,
 				18A1E538236054F5005CDBC4 /* Info.swift */,
 				32C1B58D2517B27D00404623 /* StorageManager.swift */,
 				32C1B5B12518520900404623 /* DatabaseManager.swift */,
@@ -393,6 +400,8 @@
 				32728178251D1A8B0078E65D /* FollowVC.xib */,
 				327281C7251DC2810078E65D /* FollowTBV.swift */,
 				327281C8251DC2810078E65D /* FollowTBV.xib */,
+				32757BA4251FAA3200B248C2 /* ViewFollowerVC.swift */,
+				32757BA5251FAA3200B248C2 /* ViewFollowerVC.xib */,
 			);
 			path = Follow;
 			sourceTree = "<group>";
@@ -602,6 +611,7 @@
 				32983CF624E1A2090025D503 /* SettingVC.xib in Resources */,
 				32983CEE24E182FB0025D503 /* EditProfileVC.xib in Resources */,
 				327281CA251DC2810078E65D /* FollowTBV.xib in Resources */,
+				32757BA7251FAA3200B248C2 /* ViewFollowerVC.xib in Resources */,
 				3272817A251D1A8B0078E65D /* FollowVC.xib in Resources */,
 				32983D0E24E69CA00025D503 /* PostedTBVCell.xib in Resources */,
 				3263164E24E8EB9C002DCD0F /* EditDetailVC.xib in Resources */,
@@ -677,6 +687,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				323B0BE924D83D33003C28E4 /* AlertView.swift in Sources */,
+				32757BA6251FAA3200B248C2 /* ViewFollowerVC.swift in Sources */,
 				32983D1524E69D130025D503 /* CreatePostVC.swift in Sources */,
 				3272817E251D1AA80078E65D /* MatchVC.swift in Sources */,
 				32290128251641F90093D20F /* ChatContentVC.swift in Sources */,
@@ -698,6 +709,7 @@
 				32983D0D24E69CA00025D503 /* PostedTBVCell.swift in Sources */,
 				321807222519CBC1001E6341 /* ConversationTableViewCell.swift in Sources */,
 				323B0BDD24D81BB8003C28E4 /* NumbersConst.swift in Sources */,
+				32757A8A251F3CC500B248C2 /* Follow.swift in Sources */,
 				32983CF924E1A95D0025D503 /* SettingTBVCell.swift in Sources */,
 				321806422519B294001E6341 /* Conversation.swift in Sources */,
 				32C1B5BA2518813200404623 /* ConversationsViewController.swift in Sources */,

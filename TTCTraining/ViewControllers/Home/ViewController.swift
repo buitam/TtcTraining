@@ -108,6 +108,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         validateAuth()
     }
 
+    @IBAction func btnPostLogin(_ sender: Any) {
+        didTapIntoHeaderView()
+    }
     @objc func didTapIntoHeaderView() {
         let createPostVC = CreatePostVC(nibName: "CreatePostVC", bundle: nil)
         createPostVC.modalPresentationStyle = .fullScreen

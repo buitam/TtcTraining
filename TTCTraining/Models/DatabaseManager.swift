@@ -111,6 +111,7 @@ extension DatabaseManager {
             
             completion(.success(value))
         })
+        
     }
     
     public enum DatabaseError: Error {
@@ -725,6 +726,10 @@ extension DatabaseManager {
         })
         
     }
+    // MARK: - Create Follow and unfollow
+
+    
+    
 }
 
 
