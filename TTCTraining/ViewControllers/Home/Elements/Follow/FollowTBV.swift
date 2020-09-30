@@ -10,6 +10,7 @@ import UIKit
 import FirebaseDatabase
 
 class FollowTBV: UITableViewCell {    
+    @IBOutlet weak var btnView: TouchEffectButton!
     private let database = Database.database().reference()
     var followEmail: String?
     var followName: String?
@@ -26,8 +27,7 @@ class FollowTBV: UITableViewCell {
         
         // Configure the view for the selected state
     }
-    @IBAction func btnViewAction(_ sender: Any) {
-    }
+
     @IBAction func btnFollowAction(_ sender: Any) {
 //        click = !click
 //        if click == false {

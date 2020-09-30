@@ -10,10 +10,10 @@ import UIKit
 import FirebaseAuth
 import CenteredCollectionView
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout  {
-    var lstPost = PostedMD.initPost()
     @IBOutlet weak var userName: UILabel!
     private var posts = [PostModel]()
-
+    private var follows = [Follow]()
+    private var followings = [Follow]()
     @IBOutlet weak var imgProfile: UIImageView!
     let cellPercentWidth: CGFloat = 0.8
     
@@ -25,7 +25,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var addFriendCollectionView: UICollectionView!
     @IBOutlet weak var collectionView: UICollectionView!
-    var listInfo:[Info] = [];
     @IBOutlet weak var tableHeightLayout: NSLayoutConstraint!
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var viewHeightLayout: NSLayoutConstraint!
@@ -40,7 +39,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     @IBAction func followActionBtn(_ sender: Any) {
         let vc = FollowVC(nibName: "FollowVC", bundle: nil)
-        vc.fromController = "Home_SeeAll"
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true, completion: nil)
     }
@@ -77,7 +75,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         self.tableView.reloadData()
         self.tableView.layoutIfNeeded()
             
-        listInfo = Info.initInfo()
         let nib = UINib.init(nibName: "BannerCollectionViewCell", bundle: nil)
         self.collectionView.register(nib, forCellWithReuseIdentifier: "Cell")
         
@@ -97,6 +94,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         collectionView.delegate = self
         collectionView.dataSource = self
         startListenningForPost()
+        getAllFollowUser()
         
         // Configure the required item size (REQUIRED STEP)
         centeredCollectionViewFlowLayout.itemSize = CGSize(
@@ -127,22 +125,23 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     
+    
     //Collection View
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return listInfo.count
+        return posts.count
     }
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == self.collectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! BannerCollectionViewCell
-            cell.configCell(listInfo[indexPath.row])
+            cell.configCell(posts[indexPath.row])
             return cell
         }
             
         else {
             let cellAddFriend = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! AddFriendCollectionViewCell
-            cellAddFriend.configCell(listInfo[indexPath.row])
+            cellAddFriend.configCell(follows[indexPath.row])
             return cellAddFriend
         }
     }
@@ -163,20 +162,65 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 DispatchQueue.main.async {
                     self?.posts = posts
                     self?.tableView.reloadData()
+                    self?.collectionView.reloadData()
+
                 }
             case .failure(let error):
                 print("fail to get post:\(error)")
             }
         })
     }
+    
+    // get user follow
+    func getAllFollowUser() {
+        guard let currentEmail = UserDefaults.standard.value(forKey: "email") as? String
+        else {
+            return
+        }
+        let safeEmail = DatabaseManager.safeEmail(emailAddress: currentEmail)
+        DatabaseManager.shared.getAllUnFollows(with: safeEmail, completion: { [weak self] result in
+                switch result {
+                case .success(let usersCollection):
+                    self!.follows = usersCollection
+                    print("follow111: \(self!.follows)")
+                    DatabaseManager.shared.getAllFollowings(with: safeEmail, completion: { [weak self] result in
+                            switch result {
+                            case .success(let allFollowings):
+                                self?.followings = allFollowings
+                                
+                                var listIndex = [Int]()
+                                for follow in self!.followings {
+                                    for i in 0 ..< self!.follows.count {
+                                        if follow.userRecieveRequestEmail == self!.follows[i].userRecieveRequestEmail {
+                                            listIndex.append(i)
+                                        }
+                                    }
+                                }
+                                self!.follows = self!.follows
+                                    .enumerated()
+                                    .filter { !listIndex.contains($0.offset) }
+                                    .map { $0.element }
+                                print("follow: \(self!.follows)")
+                                self!.addFriendCollectionView.reloadData()
+                                
+                            case .failure( _):
+                                self!.addFriendCollectionView.reloadData()
+
+                                print("follow2: \(self!.follows)")
+                                return
+                            }
+                        })
+                case .failure(let error):
+                    print("Failed to get usres: \(error)")
+                }
+            
+            })
+        }
 }
 
 
 // MARK: - TableViewDelegates and datasources
 extension ViewController: UITableViewDelegate, UITableViewDataSource{
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print("Total post: \(posts.count)")
         return posts.count

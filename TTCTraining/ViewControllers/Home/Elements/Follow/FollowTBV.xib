@@ -32,7 +32,7 @@
                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Djs-Fe-Sxv">
                         <rect key="frame" x="155" y="84.5" width="239" height="35"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0I6-ZP-04l" customClass="TouchEffectButton" customModule="TravelApp" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0I6-ZP-04l">
                                 <rect key="frame" x="0.0" y="0.0" width="114.5" height="35"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
@@ -44,9 +44,6 @@
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="btnViewAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="LVi-T5-hCm"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egA-ho-3JQ" customClass="TouchEffectButton" customModule="TravelApp" customModuleProvider="target">
                                 <rect key="frame" x="124.5" y="0.0" width="114.5" height="35"/>
@@ -98,6 +95,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="btnFollow" destination="egA-ho-3JQ" id="eBD-jc-Yd2"/>
+                <outlet property="btnView" destination="0I6-ZP-04l" id="P1L-fn-oYy"/>
                 <outlet property="name" destination="2rX-4g-Ure" id="Mvc-pP-rQI"/>
                 <outlet property="profileImg" destination="SAT-L7-Zbk" id="VsO-lF-9OS"/>
             </connections>

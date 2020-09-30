@@ -21,17 +21,17 @@ class BannerCollectionViewCell: UICollectionViewCell {
         // Initialization code
         
     }
-    func configCell(_ data: Info){
+    func configCell(_ data: PostModel){
         // config UI
         profileImg.cornerRadius(40)
         // Config Data
-        mainImg.image = data.mainImg
-        profileImg.image = data.profileImg
-        position.text = data.position
-        place.text = data.place
-        title.text = data.title
-        time.text = data.time
-        date.text = data.date
+        mainImg.sd_setImage(with: URL(string: "\(data.postImageURL)")!, completed: nil)
+        profileImg.sd_setImage(with: URL(string: "\(data.userImageURL)")!, completed: nil)
+        position.text = "Viet Nam"
+        place.text = "Viet Nam"
+        title.text = "Title"
+        time.text = "10h"
+        date.text = "2020"
     }
 
 }

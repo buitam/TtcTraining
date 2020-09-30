@@ -9,6 +9,7 @@
 import Foundation
 struct PostModel {
      let id: String
+    var like: String?
      let contentPost: String
      let userPostName: String
      let userPostEmail: String

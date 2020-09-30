@@ -40,7 +40,7 @@ class FollowingsVC: UIViewController {
         DatabaseManager.shared.getAllFollowings(with: safeEmail, completion: {[weak self] result in
             switch result {
             case .success(let allFollowings):
-                self!.follows = allFollowings
+                self?.follows = allFollowings
                 self!.tableView.reloadData()
             case .failure(let error):
                 print("Failed to get usres: \(error)")

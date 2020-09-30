@@ -20,14 +20,24 @@ class AddFriendCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
     
-    func configCell(_ data: Info){
+    func configCell(_ data: Follow){
         // config UI
         btnAdd.cornerRadius(5)
         btnFollow.cornerRadius(5)
         // Config Data
-        profileImg.image = data.profileImg
-        
-        job.text = data.job
+        StorageManager.shared.downloadURL(for: data.image!, completion: { [weak self] result in
+            switch result {
+            case .success(let url):
+                
+                DispatchQueue.main.async {
+                    self?.profileImg.sd_setImage(with: url, completed: nil)
+                }
+                
+            case .failure(let error):
+                print("failed to get image url: \(error)")
+            }
+        })
+        job.text = "JOB"
         name.text = data.name
     }
 }

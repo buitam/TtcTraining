@@ -10,6 +10,8 @@ import UIKit
 
 class ViewFollowerVC: UIViewController {
 
+    @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var profileImg: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
 

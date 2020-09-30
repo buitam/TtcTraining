@@ -9,12 +9,16 @@
 import UIKit
 
 class PostedTBVCell: UITableViewCell {
-
+    var likeImage: Bool = false
+    var valueLike: String = "10"
+    @IBOutlet weak var btnLike: UIButton!
     @IBOutlet weak var currentName: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var countLike: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        countLike.setTitle(valueLike, for: .normal)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -22,10 +26,27 @@ class PostedTBVCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    @IBAction func btnCommentAction(_ sender: Any) {
+        print("true cmt")
+    }
     
     @IBOutlet weak var btnCheckIn: UIButton!
     @IBOutlet weak var contentPost: UILabel!
     @IBOutlet weak var imgPost: UIImageView!
+    @IBAction func btnLikeAction(_ sender: Any) {
+        print("true tru1e")
+       likeImage = !likeImage
+        if likeImage == true {
+             btnLike.setImage(UIImage(named: "heart_red"), for: .normal)
+            valueLike = String((valueLike as NSString).integerValue + 1)
+            countLike.setTitle(valueLike, for: .normal)
+
+         } else {
+            btnLike.setImage(UIImage(named: "like"), for: .normal)
+            valueLike = String((valueLike as NSString).integerValue - 1)
+            countLike.setTitle(valueLike, for: .normal)
+         }
+    }
     
     func configCell(_ data: PostModel){
         contentPost.text = data.contentPost
@@ -43,6 +64,7 @@ class PostedTBVCell: UITableViewCell {
                 print("failed to get image url: \(error)")
             }
         })
+
     }
     
 }

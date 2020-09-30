@@ -614,6 +614,7 @@ extension DatabaseManager {
                 
                 let newElement = [
                     "id": postId,
+                    "like": "0",
                     "email": safeEmail,
                     "content_post": contentPost,
                     "post_image": postImage,
@@ -641,6 +642,7 @@ extension DatabaseManager {
                 let newCollection: [[String: String]] = [
                     [
                         "id": postId,
+                        "like": "0",
                         "email": safeEmail,
                         "content_post": contentPost,
                         "post_image": postImage,
@@ -679,6 +681,7 @@ extension DatabaseManager {
             print("post all : \(value)")
             let posts: [PostModel] = value.compactMap({ dictionary in
                 guard let postId = dictionary["id"] as? String,
+                      let like = dictionary["like"] as? String,
                       let email = dictionary["email"] as? String,
                       let contentPost = dictionary["content_post"] as? String,
                       let userPostName = dictionary["user_post"] as? String,
@@ -689,7 +692,7 @@ extension DatabaseManager {
                 }
                 if email == "\(safeEmail)" {
                     let userImageURL = "images/\(email)_profile_picture.png"
-                    return PostModel(id: postId, contentPost: contentPost, userPostName: userPostName, userPostEmail: safeEmail, postDate: date, postImageURL: postImageURL, userImageURL: userImageURL)
+                    return PostModel(id: postId, like: like, contentPost: contentPost, userPostName: userPostName, userPostEmail: safeEmail, postDate: date, postImageURL: postImageURL, userImageURL: userImageURL)
                 } else {
                     return nil
                 }
@@ -710,6 +713,7 @@ extension DatabaseManager {
             
             let posts: [PostModel] = value.compactMap({ dictionary in
                 guard let postId = dictionary["id"] as? String,
+                      let like = dictionary["like"] as? String,
                       let email = dictionary["email"] as? String,
                       let contentPost = dictionary["content_post"] as? String,
                       let userPostName = dictionary["user_post"] as? String,
@@ -719,7 +723,7 @@ extension DatabaseManager {
                     return nil
                 }
                 let userImageURL = "images/\(email)_profile_picture.png"
-                return PostModel(id: postId, contentPost: contentPost, userPostName: userPostName, userPostEmail: email, postDate: date, postImageURL: postImageURL, userImageURL: userImageURL)
+                return PostModel(id: postId, like: like, contentPost: contentPost, userPostName: userPostName, userPostEmail: email, postDate: date, postImageURL: postImageURL, userImageURL: userImageURL)
             })
             
             print("post: \(posts)")

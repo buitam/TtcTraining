@@ -123,9 +123,7 @@ class AboutMeViewController: UIViewController {
 
 // MARK: - TableViewDelegates and datasources
 extension AboutMeViewController: UITableViewDelegate, UITableViewDataSource{
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print("Total post: \(posts.count)")
         return posts.count

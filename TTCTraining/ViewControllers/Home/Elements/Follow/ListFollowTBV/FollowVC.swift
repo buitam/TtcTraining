@@ -10,7 +10,6 @@ import UIKit
 class FollowVC: UIViewController {
     private var follows = [Follow]()
     private var followings = [Follow]()
-    public var fromController: String?
 
     @IBAction func btnBackAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -44,7 +43,7 @@ class FollowVC: UIViewController {
                     DatabaseManager.shared.getAllFollowings(with: safeEmail, completion: { [weak self] result in
                             switch result {
                             case .success(let allFollowings):
-                                self!.followings = allFollowings
+                                self?.followings = allFollowings
                                 
                                 var listIndex = [Int]()
                                 for follow in self!.followings {
@@ -74,7 +73,6 @@ class FollowVC: UIViewController {
             
             })
         }
-    
 }
 extension FollowVC: UITableViewDelegate, UITableViewDataSource {
     
@@ -87,7 +85,14 @@ extension FollowVC: UITableViewDelegate, UITableViewDataSource {
         cell.followEmail = follows[indexPath.row].userRecieveRequestEmail
         cell.followName = follows[indexPath.row].name
         cell.configCell(follows[indexPath.row])
+        cell.btnView.addTarget(self, action: #selector(btnViewTapped), for: .touchUpInside)
         return cell
+    }
+    
+    @objc func btnViewTapped(sender:UIButton){
+        let vc = ViewFollowerVC(nibName: "ViewFollowerVC", bundle: nil)
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true, completion: nil)
     }
 }
 
