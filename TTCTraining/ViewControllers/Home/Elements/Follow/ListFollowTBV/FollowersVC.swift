@@ -1,15 +1,19 @@
 //
-//  AddFriendVC.swift
+//  FollowersVC.swift
 //  TTCTraining
 //
-//  Created by Bui Tam on 9/25/20.
+//  Created by Bui Tam on 9/30/20.
 //  Copyright © 2020 Apple. All rights reserved.
 //
 
 import UIKit
-class FollowVC: UIViewController {
+
+class FollowersVC: UIViewController {
 
     private var follows = [Follow]()
+    private var followings = [Follow]()
+    public var fromController: String?
+
     @IBAction func btnBackAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -20,36 +24,33 @@ class FollowVC: UIViewController {
         self.tableView.register(cell, forCellReuseIdentifier: "FollowTBV")
         tableView.delegate = self
         tableView.dataSource = self
-        getAllFollowUser()
-
+        initData()
+        
         // Do any additional setup after loading the view.
     }
-    func getAllFollowUser() {
-        DatabaseManager.shared.getAllUsers(completion: { [weak self] result in
-            switch result {
-            case .success(let usersCollection):
-                self!.follows = usersCollection.compactMap({ dictionary in
-                    guard let email = dictionary["email"],
-                          let name = dictionary["name"]
-                    else {
-                        return nil
-                    }
-                    let userImageURL = "images/\(email)_profile_picture.png"
-                    
-                    
-                    return Follow(image: userImageURL, name: name, userRecieveRequestEmail: email)
-                })
-                self!.tableView.reloadData()
-               
-            case .failure(let error):
-                print("Failed to get usres: \(error)")
-            }
-        })
+    func initData() {
+        getAllFollowers()
     }
 
-
+    // get All followers
+    func getAllFollowers() {
+        guard let currentEmail = UserDefaults.standard.value(forKey: "email") as? String
+        else {
+            return
+        }
+        let safeEmail = DatabaseManager.safeEmail(emailAddress: currentEmail)
+        DatabaseManager.shared.getAllFollowers(with: safeEmail, completion: {[weak self] result in
+            switch result {
+            case .success(let allFollowings):
+                self!.follows = allFollowings
+                print("self!.followings: \(self!.follows)")
+                self!.tableView.reloadData()
+            case .failure(let error):
+                print("Failed to get usres: \(error)")
+            }})
+    }
 }
-extension FollowVC: UITableViewDelegate, UITableViewDataSource {
+extension FollowersVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return follows.count
@@ -62,15 +63,4 @@ extension FollowVC: UITableViewDelegate, UITableViewDataSource {
         cell.configCell(follows[indexPath.row])
         return cell
     }
-
-
-    
-}
-
-struct Follow {
-     var image: String?
-     var name: String?
-    var userSendRequestEmail: String?
-    var userRecieveRequestEmail: String?
-    
 }

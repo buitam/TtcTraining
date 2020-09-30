@@ -24,7 +24,7 @@ class SettingTBVCell: UITableViewCell {
     @IBOutlet weak var lblDesSetting: UILabel!
     
     func configCell(_ data: SettingMD){
-        imgSetting.image = UIImage(named: data.imgSettingURL!)
+        imgSetting.image = data.imgSettingURL
         lblDesSetting.text = data.desSetting.value()
     }
     

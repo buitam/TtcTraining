@@ -873,6 +873,9 @@
                                                                 <state key="normal" title="Following">
                                                                     <color key="titleColor" systemColor="systemGrayColor"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="btnListAllFollowings:" destination="Kgq-aF-ezZ" eventType="touchUpInside" id="c8Q-Hn-TlG"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
@@ -900,6 +903,9 @@
                                                                 <state key="normal" title="Followers">
                                                                     <color key="titleColor" systemColor="systemGrayColor"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="btnListAllFollowers:" destination="Kgq-aF-ezZ" eventType="touchUpInside" id="Jo6-y8-8US"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
@@ -1159,6 +1165,9 @@
                         <color key="badgeColor" systemColor="darkTextColor"/>
                     </tabBarItem>
                     <connections>
+                        <outlet property="countFollowers" destination="Xtm-Qg-tWe" id="wbQ-1T-FYz"/>
+                        <outlet property="countFollowings" destination="1D3-04-aC2" id="xda-py-ddP"/>
+                        <outlet property="countPosts" destination="Rbi-7k-nSS" id="hpp-yy-oDt"/>
                         <outlet property="postTableViewHeight" destination="XTp-sE-fWa" id="0dC-aP-IxE"/>
                         <outlet property="postedTableView" destination="xSe-5v-CHf" id="5xk-Yx-XI6"/>
                         <outlet property="profileImage" destination="xxP-vi-Jwu" id="4qX-TI-e50"/>

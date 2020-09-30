@@ -41,6 +41,12 @@
 		323B0C4924E04D7C003C28E4 /* AboutMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323B0C4824E04D7C003C28E4 /* AboutMeViewController.swift */; };
 		3241C8F624E6BCA9003D5011 /* PostedMD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3241C8F524E6BCA9003D5011 /* PostedMD.swift */; };
 		3247ED93251A6E5F0082D5AA /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3247ED92251A6E5F0082D5AA /* PostModel.swift */; };
+		3253213F252463AB00D92012 /* FollowingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3253213D252463AB00D92012 /* FollowingsVC.swift */; };
+		32532140252463AB00D92012 /* FollowingsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3253213E252463AB00D92012 /* FollowingsVC.xib */; };
+		32532144252463BB00D92012 /* FollowersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32532142252463BB00D92012 /* FollowersVC.swift */; };
+		32532145252463BB00D92012 /* FollowersVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32532143252463BB00D92012 /* FollowersVC.xib */; };
+		3253214B2524673300D92012 /* UnfollowTBV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325321492524673300D92012 /* UnfollowTBV.swift */; };
+		3253214C2524673300D92012 /* UnfollowTBV.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3253214A2524673300D92012 /* UnfollowTBV.xib */; };
 		3263164D24E8EB9C002DCD0F /* EditDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3263164B24E8EB9C002DCD0F /* EditDetailVC.swift */; };
 		3263164E24E8EB9C002DCD0F /* EditDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3263164C24E8EB9C002DCD0F /* EditDetailVC.xib */; };
 		32728179251D1A8B0078E65D /* FollowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32728177251D1A8B0078E65D /* FollowVC.swift */; };
@@ -119,6 +125,12 @@
 		323B0C4824E04D7C003C28E4 /* AboutMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMeViewController.swift; sourceTree = "<group>"; };
 		3241C8F524E6BCA9003D5011 /* PostedMD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostedMD.swift; sourceTree = "<group>"; };
 		3247ED92251A6E5F0082D5AA /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
+		3253213D252463AB00D92012 /* FollowingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingsVC.swift; sourceTree = "<group>"; };
+		3253213E252463AB00D92012 /* FollowingsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FollowingsVC.xib; sourceTree = "<group>"; };
+		32532142252463BB00D92012 /* FollowersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersVC.swift; sourceTree = "<group>"; };
+		32532143252463BB00D92012 /* FollowersVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FollowersVC.xib; sourceTree = "<group>"; };
+		325321492524673300D92012 /* UnfollowTBV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnfollowTBV.swift; sourceTree = "<group>"; };
+		3253214A2524673300D92012 /* UnfollowTBV.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UnfollowTBV.xib; sourceTree = "<group>"; };
 		3263164B24E8EB9C002DCD0F /* EditDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDetailVC.swift; sourceTree = "<group>"; };
 		3263164C24E8EB9C002DCD0F /* EditDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditDetailVC.xib; sourceTree = "<group>"; };
 		32728177251D1A8B0078E65D /* FollowVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowVC.swift; sourceTree = "<group>"; };
@@ -394,10 +406,11 @@
 		323B0BC524D80A3A003C28E4 /* Follow */ = {
 			isa = PBXGroup;
 			children = (
+				325321472524644900D92012 /* ListFollowTBV */,
 				18A1E54A2361C4FA005CDBC4 /* AddFriendCollectionViewCell.swift */,
 				18A1E54B2361C4FA005CDBC4 /* AddFriendCollectionViewCell.xib */,
-				32728177251D1A8B0078E65D /* FollowVC.swift */,
-				32728178251D1A8B0078E65D /* FollowVC.xib */,
+				325321492524673300D92012 /* UnfollowTBV.swift */,
+				3253214A2524673300D92012 /* UnfollowTBV.xib */,
 				327281C7251DC2810078E65D /* FollowTBV.swift */,
 				327281C8251DC2810078E65D /* FollowTBV.xib */,
 				32757BA4251FAA3200B248C2 /* ViewFollowerVC.swift */,
@@ -465,6 +478,19 @@
 				323B0BC324D809C7003C28E4 /* DiscussionsElements */,
 			);
 			path = DiscussionsVC;
+			sourceTree = "<group>";
+		};
+		325321472524644900D92012 /* ListFollowTBV */ = {
+			isa = PBXGroup;
+			children = (
+				32728177251D1A8B0078E65D /* FollowVC.swift */,
+				32728178251D1A8B0078E65D /* FollowVC.xib */,
+				3253213D252463AB00D92012 /* FollowingsVC.swift */,
+				3253213E252463AB00D92012 /* FollowingsVC.xib */,
+				32532142252463BB00D92012 /* FollowersVC.swift */,
+				32532143252463BB00D92012 /* FollowersVC.xib */,
+			);
+			path = ListFollowTBV;
 			sourceTree = "<group>";
 		};
 		32728156251D08AB0078E65D /* NewFeed */ = {
@@ -608,10 +634,13 @@
 				32F1EDC024E927E500392F24 /* SignUpVC.xib in Resources */,
 				18A1E53D2361535F005CDBC4 /* BannerCollectionViewCell.xib in Resources */,
 				3272817F251D1AA80078E65D /* MatchVC.xib in Resources */,
+				32532140252463AB00D92012 /* FollowingsVC.xib in Resources */,
 				32983CF624E1A2090025D503 /* SettingVC.xib in Resources */,
+				32532145252463BB00D92012 /* FollowersVC.xib in Resources */,
 				32983CEE24E182FB0025D503 /* EditProfileVC.xib in Resources */,
 				327281CA251DC2810078E65D /* FollowTBV.xib in Resources */,
 				32757BA7251FAA3200B248C2 /* ViewFollowerVC.xib in Resources */,
+				3253214C2524673300D92012 /* UnfollowTBV.xib in Resources */,
 				3272817A251D1A8B0078E65D /* FollowVC.xib in Resources */,
 				32983D0E24E69CA00025D503 /* PostedTBVCell.xib in Resources */,
 				3263164E24E8EB9C002DCD0F /* EditDetailVC.xib in Resources */,
@@ -694,6 +723,7 @@
 				3247ED93251A6E5F0082D5AA /* PostModel.swift in Sources */,
 				32983D0524E269AB0025D503 /* EditProfileMD.swift in Sources */,
 				32B7096924E95A0900B74732 /* ButtonExtension.swift in Sources */,
+				3253214B2524673300D92012 /* UnfollowTBV.swift in Sources */,
 				3204499E251BC6C4005C9DF2 /* NotiVC.swift in Sources */,
 				327281C9251DC2810078E65D /* FollowTBV.swift in Sources */,
 				18A1E51923600C8E005CDBC4 /* ViewController.swift in Sources */,
@@ -712,6 +742,7 @@
 				32757A8A251F3CC500B248C2 /* Follow.swift in Sources */,
 				32983CF924E1A95D0025D503 /* SettingTBVCell.swift in Sources */,
 				321806422519B294001E6341 /* Conversation.swift in Sources */,
+				32532144252463BB00D92012 /* FollowersVC.swift in Sources */,
 				32C1B5BA2518813200404623 /* ConversationsViewController.swift in Sources */,
 				3241C8F624E6BCA9003D5011 /* PostedMD.swift in Sources */,
 				32983CED24E182FB0025D503 /* EditProfileVC.swift in Sources */,
@@ -735,6 +766,7 @@
 				3263164D24E8EB9C002DCD0F /* EditDetailVC.swift in Sources */,
 				32983CF224E198450025D503 /* UIViewControllerExtension.swift in Sources */,
 				18A1E53C2361535F005CDBC4 /* BannerCollectionViewCell.swift in Sources */,
+				3253213F252463AB00D92012 /* FollowingsVC.swift in Sources */,
 				320449E2251BCCA0005C9DF2 /* GuideVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

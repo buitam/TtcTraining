@@ -40,6 +40,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     @IBAction func followActionBtn(_ sender: Any) {
         let vc = FollowVC(nibName: "FollowVC", bundle: nil)
+        vc.fromController = "Home_SeeAll"
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true, completion: nil)
     }

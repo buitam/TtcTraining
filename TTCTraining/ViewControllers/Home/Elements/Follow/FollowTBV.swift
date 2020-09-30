@@ -11,7 +11,6 @@ import FirebaseDatabase
 
 class FollowTBV: UITableViewCell {    
     private let database = Database.database().reference()
-    var click: Bool = false
     var followEmail: String?
     var followName: String?
     @IBOutlet weak var btnFollow: TouchEffectButton!
@@ -30,34 +29,34 @@ class FollowTBV: UITableViewCell {
     @IBAction func btnViewAction(_ sender: Any) {
     }
     @IBAction func btnFollowAction(_ sender: Any) {
-        click = !click
-        if click == false {
-            unFollow(userRecieveUnfollowEmail: followEmail!, completion: {[self] success in
-                if success {
-                    btnFollow.setTitle("Follow", for: .normal)
-                    print("UnFollow sent")
-                }
-                else {
-                    print("faield to UnFollow")
-                    
-                }
-            })
-        }
-        else {
-            addFollow(userRecieveRequestEmail: followEmail!, userRecieveRequestName: followName!, completion: { [self] success in
-                if success {
-                    btnFollow.setTitle("Following ✅", for: .normal)
-                    print("Follow sent")
-                    
-                }
-                else {
-                    print("faield to Follow")
-                    
-                }
-            })
-            
-        }
-        
+//        click = !click
+//        if click == false {
+//            unFollow(userRecieveUnfollowEmail: followEmail!, completion: {[self] success in
+//                if success {
+//                    btnFollow.setTitle("Follow", for: .normal)
+//                    print("UnFollow sent")
+//                }
+//                else {
+//                    print("faield to UnFollow")
+//
+//                }
+//            })
+//        }
+//        else {
+//
+//
+//        }
+        addFollow(userRecieveRequestEmail: followEmail!, userRecieveRequestName: followName!, completion: { [self] success in
+            if success {
+//                btnFollow.setTitle("Following ✅", for: .normal)
+                print("Follow sent")
+                
+            }
+            else {
+                print("faield to Follow")
+                
+            }
+        })
     }
     
     func configCell(_ data: Follow) {
@@ -162,61 +161,61 @@ class FollowTBV: UITableViewCell {
         
     }
 
-    private func unFollow(userRecieveUnfollowEmail: String , completion: @escaping (Bool) -> Void)  {
-        guard let email = UserDefaults.standard.value(forKey: "email") as? String else {
-            return
-        }
-        let safeEmail = DatabaseManager.safeEmail(emailAddress: email)
-        
-        // current user unfollow-> delete
-        database.child("\(safeEmail)/followings").observeSingleEvent(of: .value) { snapshot in
-            if var followings = snapshot.value as? [[String: Any]] {
-                var positionToRemove = 0
-                for following in followings {
-                    if let email = following["email"] as? String,
-                       email == userRecieveUnfollowEmail {
-                        print("found user follow to delete")
-                        break
-                    }
-                    positionToRemove += 1
-                }
-                followings.remove(at: positionToRemove)
-                self.database.child("\(safeEmail)/followings").setValue(followings, withCompletionBlock: { error, _  in
-                    guard error == nil else {
-                        completion(false)
-                        print("faield to delete following")
-                        return
-                    }
-                    print("deleted following")
-                    completion(true)
-                })
-            }
-        }
-        // current user unfollow
-        database.child("\(userRecieveUnfollowEmail)/followers").observeSingleEvent(of: .value) { snapshot in
-            if var followers = snapshot.value as? [[String: Any]] {
-                var positionRemove = 0
-                for follower in followers {
-                    if let email = follower["email"] as? String,
-                       email == safeEmail {
-                        print("found user follower to delete")
-                        break
-                    }
-                    positionRemove += 1
-                }
-                followers.remove(at: positionRemove)
-                self.database.child("\(userRecieveUnfollowEmail)/followers").setValue(followers, withCompletionBlock: { error, _  in
-                    guard error == nil else {
-                        completion(false)
-                        print("faield to delete follower")
-                        return
-                    }
-                    print("deleted follower")
-                    completion(true)
-                })
-            }
-        }
-        
-    }
+//    private func unFollow(userRecieveUnfollowEmail: String , completion: @escaping (Bool) -> Void)  {
+//        guard let email = UserDefaults.standard.value(forKey: "email") as? String else {
+//            return
+//        }
+//        let safeEmail = DatabaseManager.safeEmail(emailAddress: email)
+//
+//        // current user unfollow-> delete
+//        database.child("\(safeEmail)/followings").observeSingleEvent(of: .value) { snapshot in
+//            if var followings = snapshot.value as? [[String: Any]] {
+//                var positionToRemove = 0
+//                for following in followings {
+//                    if let email = following["email"] as? String,
+//                       email == userRecieveUnfollowEmail {
+//                        print("found user follow to delete")
+//                        break
+//                    }
+//                    positionToRemove += 1
+//                }
+//                followings.remove(at: positionToRemove)
+//                self.database.child("\(safeEmail)/followings").setValue(followings, withCompletionBlock: { error, _  in
+//                    guard error == nil else {
+//                        completion(false)
+//                        print("faield to delete following")
+//                        return
+//                    }
+//                    print("deleted following")
+//                    completion(true)
+//                })
+//            }
+//        }
+//        // current user unfollow
+//        database.child("\(userRecieveUnfollowEmail)/followers").observeSingleEvent(of: .value) { snapshot in
+//            if var followers = snapshot.value as? [[String: Any]] {
+//                var positionRemove = 0
+//                for follower in followers {
+//                    if let email = follower["email"] as? String,
+//                       email == safeEmail {
+//                        print("found user follower to delete")
+//                        break
+//                    }
+//                    positionRemove += 1
+//                }
+//                followers.remove(at: positionRemove)
+//                self.database.child("\(userRecieveUnfollowEmail)/followers").setValue(followers, withCompletionBlock: { error, _  in
+//                    guard error == nil else {
+//                        completion(false)
+//                        print("faield to delete follower")
+//                        return
+//                    }
+//                    print("deleted follower")
+//                    completion(true)
+//                })
+//            }
+//        }
+//
+//    }
 }
 

@@ -25,9 +25,8 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="50"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🌻Follow" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FLo-e5-nSj">
-                            <rect key="frame" x="170.5" y="14.5" width="73" height="21"/>
+                            <rect key="frame" x="60" y="14.5" width="294" height="21"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="73" id="RyU-1s-lU4"/>
                                 <constraint firstAttribute="height" constant="21" id="fay-xd-PTr"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -56,17 +55,17 @@
                                 <constraint firstAttribute="width" constant="30" id="yYq-1o-2EQ"/>
                             </constraints>
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <state key="normal">
-                                <imageReference key="image" image="magnifyingglass" catalog="system" symbolScale="large"/>
-                            </state>
+                            <state key="normal" image="magnifyingglass" catalog="system"/>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="JCe-5J-Dus" secondAttribute="trailing" constant="20" id="6ja-tx-pJG"/>
+                        <constraint firstItem="JCe-5J-Dus" firstAttribute="leading" secondItem="FLo-e5-nSj" secondAttribute="trailing" constant="10" id="JJu-kz-fjx"/>
                         <constraint firstItem="rB9-mK-sZd" firstAttribute="leading" secondItem="sJq-jp-PWt" secondAttribute="leading" constant="20" id="L8C-gm-ePg"/>
                         <constraint firstAttribute="height" constant="50" id="QgG-e8-E0b"/>
                         <constraint firstItem="FLo-e5-nSj" firstAttribute="centerX" secondItem="sJq-jp-PWt" secondAttribute="centerX" id="dYE-Jm-ANq"/>
+                        <constraint firstItem="FLo-e5-nSj" firstAttribute="leading" secondItem="rB9-mK-sZd" secondAttribute="trailing" constant="10" id="dwk-e2-lYT"/>
                         <constraint firstItem="JCe-5J-Dus" firstAttribute="centerY" secondItem="sJq-jp-PWt" secondAttribute="centerY" id="dzS-Rb-k6Y"/>
                         <constraint firstItem="rB9-mK-sZd" firstAttribute="centerY" secondItem="sJq-jp-PWt" secondAttribute="centerY" id="eep-TH-o6i"/>
                         <constraint firstItem="FLo-e5-nSj" firstAttribute="centerY" secondItem="sJq-jp-PWt" secondAttribute="centerY" id="sJ0-GR-HIE"/>

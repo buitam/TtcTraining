@@ -11,7 +11,6 @@ import Foundation
 import FirebaseDatabase
 
 final class DatabaseManager {
-    
     /// Shared instance of class
     public static let shared = DatabaseManager()
     
@@ -113,6 +112,8 @@ extension DatabaseManager {
         })
         
     }
+    
+    
     
     public enum DatabaseError: Error {
         case failedToFetch
@@ -393,9 +394,9 @@ extension DatabaseManager {
             return
         }
         let safeEmail = DatabaseManager.safeEmail(emailAddress: email)
-
+        
         print("Deleting conversation with id: \(conversationId)")
-
+        
         // Get all conversations for current user
         // delete conversation in collection with target id
         // reset those conversations for the user in database
@@ -405,13 +406,13 @@ extension DatabaseManager {
                 var positionToRemove = 0
                 for conversation in conversations {
                     if let id = conversation["id"] as? String,
-                        id == conversationId {
+                       id == conversationId {
                         print("found conversation to delete")
                         break
                     }
                     positionToRemove += 1
                 }
-
+                
                 conversations.remove(at: positionToRemove)
                 ref.setValue(conversations, withCompletionBlock: { error, _  in
                     guard error == nil else {
@@ -425,7 +426,7 @@ extension DatabaseManager {
             }
         }
     }
-
+    
     
     // get all message in conversation through ID
     public func getAllMessagesForConversation(with id: String, completion: @escaping (Result<[Message], Error>) -> Void) {
@@ -727,9 +728,92 @@ extension DatabaseManager {
         
     }
     // MARK: - Create Follow and unfollow
-
+    //
+    //    // get all following
     
     
+    public func getAllFollowings(with email: String, completion: @escaping (Result<[Follow], Error>) -> Void) {
+        database.child("\(email)/followings").observe(.value, with: { snapshot in
+            guard let value = snapshot.value as? [[String: Any]] else{
+                completion(.failure(DatabaseError.failedToFetch))
+                return
+            }
+            
+            let posts: [Follow] = value.compactMap({ dictionary in
+                guard let name = dictionary["name"] as? String,
+                      let email2 = dictionary["email"] as? String
+                  
+                else {
+                    return nil
+                }
+                let userImageURL = "images/\(email2)_profile_picture.png"
+                return Follow(image: userImageURL, name: name, userSendRequestEmail: email, userRecieveRequestEmail: email2)
+            })
+            
+            print("post: \(posts)")
+            completion(.success(posts))
+        })
+    }
+    // get All followers
+    
+    public func getAllFollowers(with email: String, completion: @escaping (Result<[Follow], Error>) -> Void) {
+        database.child("\(email)/followers").observe(.value, with: { snapshot in
+            guard let value = snapshot.value as? [[String: Any]] else{
+                completion(.failure(DatabaseError.failedToFetch))
+                return
+            }
+            
+            let posts: [Follow] = value.compactMap({ dictionary in
+                guard let name = dictionary["name"] as? String,
+                      let email2 = dictionary["email"] as? String
+                  
+                else {
+                    return nil
+                }
+                let userImageURL = "images/\(email2)_profile_picture.png"
+                return Follow(image: userImageURL, name: name, userSendRequestEmail: email, userRecieveRequestEmail: email2)
+            })
+            
+            print("post: \(posts)")
+            completion(.success(posts))
+        })
+    }
+    
+    
+    // get All un follow
+//    public func getAllUsers(completion: @escaping (Result<[[String: String]], Error>) -> Void) {
+//        database.child("users").observeSingleEvent(of: .value, with: { snapshot in
+//            guard let value = snapshot.value as? [[String: String]] else {
+//                completion(.failure(DatabaseError.failedToFetch))
+//                return
+//            }
+//
+//            completion(.success(value))
+//        })
+//
+//    }
+    public func getAllUnFollows(with email: String, completion: @escaping (Result<[Follow], Error>) -> Void) {
+        database.child("users").observe(.value, with: { snapshot in
+            guard let value = snapshot.value as? [[String: Any]] else{
+                completion(.failure(DatabaseError.failedToFetch))
+                return
+            }
+            
+            let posts: [Follow] = value.compactMap({ dictionary in
+                guard let name = dictionary["name"] as? String,
+                      let email2 = dictionary["email"] as? String
+                  
+                else {
+                    return nil
+                }
+                let userImageURL = "images/\(email2)_profile_picture.png"
+                return Follow(image: userImageURL, name: name, userSendRequestEmail: email, userRecieveRequestEmail: email2)
+            })
+            
+            print("post: \(posts)")
+            completion(.success(posts))
+        })
+    }
 }
 
 
