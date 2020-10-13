@@ -758,6 +758,28 @@ extension DatabaseManager {
             completion(.success(posts))
         })
     }
+    public func getAllFollowings2(with email: String, completion: @escaping (Result<[Follow], Error>) -> Void) {
+        database.child("\(email)/followings").observe(.value, with: { snapshot in
+            guard let value = snapshot.value as? [[String: Any]] else{
+                completion(.failure(DatabaseError.failedToFetch))
+                return
+            }
+            
+            let posts: [Follow] = value.compactMap({ dictionary in
+                guard let name = dictionary["name"] as? String,
+                      let email2 = dictionary["email"] as? String
+                  
+                else {
+                    return nil
+                }
+                let userImageURL = "images/\(email2)_profile_picture.png"
+                return Follow(image: userImageURL, name: name, userSendRequestEmail: email, userRecieveRequestEmail: email2)
+            })
+            
+            print("post: \(posts)")
+            completion(.success(posts))
+        })
+    }
     // get All followers
     
     public func getAllFollowers(with email: String, completion: @escaping (Result<[Follow], Error>) -> Void) {

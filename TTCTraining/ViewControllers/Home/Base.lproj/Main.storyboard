@@ -33,8 +33,9 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LP3-8z-gkf" customClass="ButtonGradientRed" customModule="TravelApp" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LP3-8z-gkf">
                                                         <rect key="frame" x="284" y="60" width="80" height="30"/>
+                                                        <color key="backgroundColor" red="0.94230312110000003" green="0.43952530620000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="80" id="9zE-eP-aVm"/>
                                                             <constraint firstAttribute="height" constant="30" id="ZGy-fw-Z7V"/>
@@ -388,7 +389,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="K8S-fl-Hub">
                                         <rect key="frame" x="25" y="791" width="364" height="40"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kvl-Om-1jc" customClass="ButtonGradientPurple" customModule="TravelApp" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kvl-Om-1jc">
                                                 <rect key="frame" x="0.0" y="0.0" width="177" height="40"/>
                                                 <color key="backgroundColor" red="0.77708071469999995" green="0.2075605392" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="25"/>
@@ -404,7 +405,7 @@
                                                     <action selector="showLoginPop:" destination="6HL-yL-02b" eventType="touchUpInside" id="9gj-cK-Qwe"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7FG-2A-P58" customClass="ButtonGradientBlue" customModule="TravelApp" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7FG-2A-P58">
                                                 <rect key="frame" x="187" y="0.0" width="177" height="40"/>
                                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                                 <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="25"/>
@@ -549,7 +550,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tTz-MJ-v3X" customClass="ButtonGradientBlue" customModule="TravelApp" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tTz-MJ-v3X">
                                                 <rect key="frame" x="0.0" y="119" width="314" height="45"/>
                                                 <color key="backgroundColor" red="0.4381028414" green="0.18554040790000001" blue="0.65666139130000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -1247,20 +1248,6 @@
             <point key="canvasLocation" x="-278" y="850"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="7FG-2A-P58">
-            <size key="intrinsicContentSize" width="73" height="52"/>
-        </designable>
-        <designable name="Kvl-Om-1jc">
-            <size key="intrinsicContentSize" width="65" height="52"/>
-        </designable>
-        <designable name="LP3-8z-gkf">
-            <size key="intrinsicContentSize" width="41" height="30"/>
-        </designable>
-        <designable name="tTz-MJ-v3X">
-            <size key="intrinsicContentSize" width="52" height="33"/>
-        </designable>
-    </designables>
     <resources>
         <image name="back" width="512" height="512"/>
         <image name="bell" catalog="system" width="128" height="124"/>

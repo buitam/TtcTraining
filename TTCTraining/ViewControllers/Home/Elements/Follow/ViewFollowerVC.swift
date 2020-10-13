@@ -10,23 +10,63 @@ import UIKit
 
 class ViewFollowerVC: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var profileImg: UIImageView!
+    private var posts = [PostModel]()
+    @IBAction func btnBackAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tableView.register(UINib(nibName: "PostedTBVCell", bundle: nil), forCellReuseIdentifier: "PostedTBVCell")
+        tableView.delegate = self
+        tableView.dataSource = self
+        startListenningForPost()
         // Do any additional setup after loading the view.
     }
 
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func startListenningForPost (){
+        guard let email = UserDefaults.standard.value(forKey: "email") as? String else {
+            return
+        }
+        let safeEmail = DatabaseManager.safeEmail(emailAddress: email)
+        DatabaseManager.shared.getAllPosts(with: safeEmail, completion: {[weak self] result in
+            switch result {
+            case .success(let posts):
+                guard !posts.isEmpty else {
+                    return
+                }
+                print("post 2: \(posts)")
+                DispatchQueue.main.async {
+                    self?.posts = posts
+                    self?.tableView.reloadData()
+                }
+            case .failure(let error):
+                print("fail to get post:\(error)")
+            }
+        })
     }
-    */
 
+}
+extension ViewFollowerVC: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("Total post: \(posts.count)")
+        return posts.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PostedTBVCell", for: indexPath) as! PostedTBVCell
+        cell.configCell(posts[indexPath.row])
+        print("Cell for row: \(posts[indexPath.row])")
+        return cell
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 500
+    }
 }

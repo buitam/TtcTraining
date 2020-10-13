@@ -155,6 +155,7 @@ class SignUpVC: UIViewController {
                             case .success(let downloadUrl):
                                 UserDefaults.standard.set(downloadUrl, forKey: "profile_picture_url")
                                 print(downloadUrl)
+                                
                             case .failure(let error):
                                 print("Storage maanger error: \(error)")
                             }
@@ -300,11 +301,15 @@ extension SignUpVC: LoginButtonDelegate {
                                     case .success(let downloadUrl):
                                         UserDefaults.standard.set(downloadUrl, forKey: "profile_picture_url")
                                         print("downloadUrl\(downloadUrl)")
+                                        
+                                        
+                                        
                                     case .failure(let error):
                                         print("Storage maanger error: \(error)")
                                     }
                                 })
                             }).resume()
+                           
                             
                         }
                     })

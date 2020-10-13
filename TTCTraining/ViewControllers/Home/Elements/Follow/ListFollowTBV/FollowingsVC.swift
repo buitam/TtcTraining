@@ -23,25 +23,26 @@ class FollowingsVC: UIViewController {
         self.tableView.register(cell, forCellReuseIdentifier: "UnfollowTBV")
         tableView.delegate = self
         tableView.dataSource = self
-        initData()
+       initData()
         
         // Do any additional setup after loading the view.
     }
+    
     func initData() {
-        getAllFollowings()
+        getAllFollowings2()
     }
     // get All followings
-    func getAllFollowings() {
+    func getAllFollowings2() {
         guard let currentEmail = UserDefaults.standard.value(forKey: "email") as? String
         else {
             return
         }
         let safeEmail = DatabaseManager.safeEmail(emailAddress: currentEmail)
-        DatabaseManager.shared.getAllFollowings(with: safeEmail, completion: {[weak self] result in
+        DatabaseManager.shared.getAllFollowings2(with: safeEmail, completion: {[weak self] result in
             switch result {
             case .success(let allFollowings):
                 self?.follows = allFollowings
-                self!.tableView.reloadData()
+                self?.tableView.reloadData()
             case .failure(let error):
                 print("Failed to get usres: \(error)")
             }})

@@ -28,10 +28,10 @@ class BannerCollectionViewCell: UICollectionViewCell {
         mainImg.sd_setImage(with: URL(string: "\(data.postImageURL)")!, completed: nil)
         profileImg.sd_setImage(with: URL(string: "\(data.userImageURL)")!, completed: nil)
         position.text = "Viet Nam"
-        place.text = "Viet Nam"
-        title.text = "Title"
+        place.text = data.contentPost
+        title.text = data.userPostName
         time.text = "10h"
-        date.text = "2020"
+        date.text = data.postDate
     }
 
 }

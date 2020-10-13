@@ -46,19 +46,19 @@ class FollowVC: UIViewController {
                                 self?.followings = allFollowings
                                 
                                 var listIndex = [Int]()
-                                for follow in self!.followings {
-                                    for i in 0 ..< self!.follows.count {
-                                        if follow.userRecieveRequestEmail == self!.follows[i].userRecieveRequestEmail {
+                                for follow in allFollowings {
+                                    for i in 0 ..< usersCollection.count {
+                                        if follow.userRecieveRequestEmail == usersCollection[i].userRecieveRequestEmail {
                                             listIndex.append(i)
                                         }
                                     }
                                 }
-                                self!.follows = self!.follows
+                                self?.follows = usersCollection
                                     .enumerated()
                                     .filter { !listIndex.contains($0.offset) }
                                     .map { $0.element }
-                                print("follow: \(self!.follows)")
-                                self!.tableView.reloadData()
+                                print("follow: \(self?.follows)")
+                                self?.tableView.reloadData()
                                 
                             case .failure( _):
                                 self!.tableView.reloadData()
