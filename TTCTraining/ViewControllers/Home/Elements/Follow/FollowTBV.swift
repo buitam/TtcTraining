@@ -27,7 +27,14 @@ class FollowTBV: UITableViewCell {
         
         // Configure the view for the selected state
     }
-
+    
+    @IBAction func btnViewAction(_ sender: Any) {
+        let vc = ViewFollowerVC(nibName: "ViewFollowerVC", bundle: nil)
+        vc.modalPresentationStyle = .fullScreen
+        self.window?.rootViewController?.present(vc, animated: true, completion: nil)
+        print("Click view")
+    }
+    
     @IBAction func btnFollowAction(_ sender: Any) {
 //        click = !click
 //        if click == false {

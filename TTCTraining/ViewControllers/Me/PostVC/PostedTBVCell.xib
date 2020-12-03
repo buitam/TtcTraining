@@ -215,6 +215,7 @@
                 <outlet property="countLike" destination="o8v-7T-fHw" id="c0X-vb-x2o"/>
                 <outlet property="currentName" destination="CMo-fB-JgP" id="0VU-wK-TLw"/>
                 <outlet property="imgPost" destination="8B3-so-Zbr" id="fod-GU-N1D"/>
+                <outlet property="lblDate" destination="cqq-1M-qtd" id="3pc-Eq-tTP"/>
                 <outlet property="profileImage" destination="0nU-CV-9wC" id="NG0-Rp-wmU"/>
             </connections>
             <point key="canvasLocation" x="197.10144927536234" y="132.58928571428572"/>

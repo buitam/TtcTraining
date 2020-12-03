@@ -674,10 +674,7 @@ extension DatabaseManager {
                 completion(.failure(DatabaseError.failedToFetch))
                 return
             }
-            guard let currentEmail = UserDefaults.standard.value(forKey: "email") as? String else {
-                return
-            }
-            let safeEmail = DatabaseManager.safeEmail(emailAddress: currentEmail)
+            let safeEmail = DatabaseManager.safeEmail(emailAddress: email)
             print("post all : \(value)")
             let posts: [PostModel] = value.compactMap({ dictionary in
                 guard let postId = dictionary["id"] as? String,

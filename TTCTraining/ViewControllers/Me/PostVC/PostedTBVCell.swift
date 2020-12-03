@@ -11,6 +11,7 @@ import UIKit
 class PostedTBVCell: UITableViewCell {
     var likeImage: Bool = false
     var valueLike: String = "10"
+    @IBOutlet weak var lblDate: UILabel!
     @IBOutlet weak var btnLike: UIButton!
     @IBOutlet weak var currentName: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
@@ -50,9 +51,11 @@ class PostedTBVCell: UITableViewCell {
     
     func configCell(_ data: PostModel){
         contentPost.text = data.contentPost
+        lblDate.text = data.postDate
         imgPost.sd_setImage(with: URL(string: "\(data.postImageURL)")!, completed: nil)
         currentName.text = data.userPostName
-        StorageManager.shared.downloadURL(for: data.userImageURL, completion: { [weak self] result in
+        let path = "images/\(data.userPostEmail)_profile_picture.png"
+        StorageManager.shared.downloadURL(for: path, completion: { [weak self] result in
             switch result {
             case .success(let url):
 

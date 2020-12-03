@@ -44,6 +44,9 @@
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="btnViewAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="7RF-h9-dEj"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egA-ho-3JQ" customClass="TouchEffectButton" customModule="TravelApp" customModuleProvider="target">
                                 <rect key="frame" x="124.5" y="0.0" width="114.5" height="35"/>

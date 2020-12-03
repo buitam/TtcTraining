@@ -138,4 +138,16 @@ extension AboutMeViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 500
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("posthii")
+        let alertController = UIAlertController(title: "Modify", message: "Do you want to delete or update post?", preferredStyle: .alert)
+        let updateAction = UIAlertAction(title: "Update", style: .default) { (_) in
+            
+        }
+        let deleteAction = UIAlertAction(title: "Delete", style: .default) { (_) in
+        }
+        alertController.addAction(updateAction)
+        alertController.addAction(deleteAction)
+        print("CLick post")
+    }
 }

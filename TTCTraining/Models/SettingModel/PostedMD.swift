@@ -22,9 +22,9 @@ class PostedMD: NSObject {
         return PostedMD(placeCheckIn: self.placeCheckIn, contentPost: self.contentPost, imgPost: self.imgPost)
     }
     static func initPost() -> [PostedMD]{
-        return [PostedMD(placeCheckIn: "Đà Lạt", contentPost: "iOS 13 lets us use icons from a range of over 1500 designed by Apple, all of which come in a variety of weights and sizes. These icons form part of new UIImage API, and they are vector-based so you can us them at a range of sizes without loss of quality.", imgPost: "daLat"),
-                PostedMD(placeCheckIn: "Đà Lạt", contentPost: "iOS 13 lets us use icons from a range of over 1500 designed by Apple, all of which come in a variety of weights and sizes. These icons form part of new UIImage API, and they are vector-based so you can us them at a range of sizes without loss of quality.", imgPost: "daLat"),
-                PostedMD(placeCheckIn: "Đà Lạt", contentPost: "iOS 13 lets us use icons from a range of over 1500 designed by Apple, all of which come in a variety of weights and sizes. These icons form part of new UIImage API, and they are vector-based so you can us them at a range of sizes without loss of quality.", imgPost: "daLat")
+        return [PostedMD(placeCheckIn: "Da Lat", contentPost: "iOS 13 lets us use icons from a range of over 1500 designed by Apple, all of which come in a variety of weights and sizes. These icons form part of new UIImage API, and they are vector-based so you can us them at a range of sizes without loss of quality.", imgPost: "daLat"),
+                PostedMD(placeCheckIn: "Da Lat", contentPost: "iOS 13 lets us use icons from a range of over 1500 designed by Apple, all of which come in a variety of weights and sizes. These icons form part of new UIImage API, and they are vector-based so you can us them at a range of sizes without loss of quality.", imgPost: "daLat"),
+                PostedMD(placeCheckIn: "Da Lat", contentPost: "iOS 13 lets us use icons from a range of over 1500 designed by Apple, all of which come in a variety of weights and sizes. These icons form part of new UIImage API, and they are vector-based so you can us them at a range of sizes without loss of quality.", imgPost: "daLat")
             
         ]
     }

@@ -23,10 +23,8 @@ class BannerCollectionViewCell: UICollectionViewCell {
     }
     func configCell(_ data: PostModel){
         // config UI
-        profileImg.cornerRadius(40)
         // Config Data
         mainImg.sd_setImage(with: URL(string: "\(data.postImageURL)")!, completed: nil)
-        profileImg.sd_setImage(with: URL(string: "\(data.userImageURL)")!, completed: nil)
         position.text = "Viet Nam"
         place.text = data.contentPost
         title.text = data.userPostName

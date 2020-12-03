@@ -145,6 +145,19 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             return cellAddFriend
         }
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == self.collectionView {
+        }
+            
+        else {
+            let vc = ViewFollowerVC(nibName: "ViewFollowerVC", bundle: nil)
+            vc.modalPresentationStyle = .fullScreen
+            vc.userFollow = follows[indexPath.row]
+           self.present(vc, animated: true, completion: nil)
+        }
+        
+
+    }
     
     //Table View
     private func startListenningForPost (){
